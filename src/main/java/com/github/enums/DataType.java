@@ -7,13 +7,22 @@ public enum DataType {
     ENUM,
     OTHERS;
 
-    private DataType arrayElementDataType;
+    private DataType innerElementDataType;
+    private String qualifiedName;
 
-    public DataType getArrayElementDataType() {
-        return arrayElementDataType;
+    public DataType getInnerElementDataType() {
+        return innerElementDataType;
     }
 
-    public void setArrayElementDataType(DataType arrayElementDataType) {
-        this.arrayElementDataType = arrayElementDataType;
+    public void setInnerElementDataType(DataType innerElementDataType) {
+        this.innerElementDataType = innerElementDataType;
+    }
+
+    public String getQualifiedName() {
+        return qualifiedName;
+    }
+
+    public void setQualifiedName(String qualifiedName) {
+        this.qualifiedName = qualifiedName;
     }
 }
