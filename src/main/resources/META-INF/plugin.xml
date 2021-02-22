@@ -1,0 +1,27 @@
+<idea-plugin>
+    <id>com.github.MappingGeneratorIntellijPlugin</id>
+    <name>MappingGenerator</name>
+    <vendor email="quandang2102@gmail.com" url="">Quan Dang</vendor>
+
+    <description><![CDATA[
+    Generate mapping code between java classes, grpc messages<br>
+    <em></em>
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="com.github.action.TestPopUp" class="com.github.action.TestPopUp" text="TestPopUp">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
+
+</idea-plugin>

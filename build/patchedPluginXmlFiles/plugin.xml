@@ -1,0 +1,22 @@
+<idea-plugin>
+  <version>1.0-SNAPSHOT</version>
+  <change-notes>
+      First version&lt;br&gt;
+      &lt;em&gt;&lt;/em&gt;</change-notes>
+  <idea-version since-build="203.7148" until-build="203.*"/>
+  <id>com.github.MappingGeneratorIntellijPlugin</id>
+  <name>MappingGenerator</name>
+  <vendor email="quandang2102@gmail.com" url="">Quan Dang</vendor>
+  <description>
+    Generate mapping code between java classes, grpc messages&lt;br&gt;
+    &lt;em&gt;&lt;/em&gt;
+    </description>
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.java</depends>
+  <extensions defaultExtensionNs="com.intellij"/>
+  <actions>
+    <action id="com.github.action.TestPopUp" class="com.github.action.TestPopUp" text="TestPopUp">
+      <add-to-group group-id="ToolsMenu" anchor="first"/>
+    </action>
+  </actions>
+</idea-plugin>

@@ -1,0 +1,85 @@
+<application>
+  <component name="ActionsLocalSummary">
+    <e n="$SelectAll">
+      <i c="1" l="1613841812469" />
+    </e>
+    <e n="$Undo">
+      <i c="2" l="1613923814272" />
+    </e>
+    <e n="CodeCompletion">
+      <i c="3" l="1613897164273" />
+    </e>
+    <e n="EditorBackSpace">
+      <i c="97" l="1613923825255" />
+    </e>
+    <e n="EditorChooseLookupItem">
+      <i c="22" l="1613923807250" />
+    </e>
+    <e n="EditorCopy">
+      <i c="1" l="1613895260710" />
+    </e>
+    <e n="EditorCut">
+      <i c="2" l="1613923812414" />
+    </e>
+    <e n="EditorDown">
+      <i c="1" l="1613841798941" />
+    </e>
+    <e n="EditorDuplicate">
+      <i c="1" l="1613923813237" />
+    </e>
+    <e n="EditorEnter">
+      <i c="30" l="1613897160928" />
+    </e>
+    <e n="EditorPaste">
+      <i c="2" l="1613895263573" />
+    </e>
+    <e n="EditorRight">
+      <i c="2" l="1613897171249" />
+    </e>
+    <e n="EditorTab">
+      <i c="3" l="1613894348468" />
+    </e>
+    <e n="EditorUp">
+      <i c="1" l="1613894319556" />
+    </e>
+    <e n="Generate">
+      <i c="7" l="1613894350302" />
+    </e>
+    <e n="GenerateGetterAndSetter">
+      <i c="6" l="1613894352827" />
+    </e>
+    <e n="GotoAction">
+      <i c="4" l="1613804822457" />
+    </e>
+    <e n="NewClass">
+      <i c="3" l="1613841745063" />
+    </e>
+    <e n="NewElement">
+      <i c="1" l="1613838812194" />
+    </e>
+    <e n="NewProject">
+      <i c="1" l="1613838769982" />
+    </e>
+    <e n="ReformatCode">
+      <i c="12" l="1613897179073" />
+    </e>
+    <e n="SaveAll">
+      <i c="32" l="1613923826173" />
+    </e>
+    <e n="Switcher">
+      <i c="1" l="1613841768800" />
+    </e>
+    <e n="Tree-selectNextExtendSelection">
+      <i c="11" l="1613894353854" />
+    </e>
+    <e n="WelcomeScreen.OpenProject">
+      <i c="1" l="1613804635062" />
+    </e>
+    <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
+      <i c="2" l="1613891467350" />
+    </e>
+    <e n="com.intellij.openapi.project.DumbAwareAction$SimpleDumbAwareAction">
+      <i c="4" l="1613804823335" />
+    </e>
+  </component>
+</application>
