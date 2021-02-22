@@ -18,5 +18,8 @@
     <action id="com.github.action.TestPopUp" class="com.github.action.TestPopUp" text="TestPopUp">
       <add-to-group group-id="ToolsMenu" anchor="first"/>
     </action>
+    <action id="com.github.action.PopUp" class="com.github.action.PopUp" text="TestingTesting">
+      <add-to-group group-id="ToolsMenu" anchor="first"/>
+    </action>
   </actions>
 </idea-plugin>
