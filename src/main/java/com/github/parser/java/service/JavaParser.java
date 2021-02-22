@@ -1,4 +1,4 @@
-package com.github.parser.java;
+package com.github.parser.java.service;
 
 import com.github.model.ElementNode;
 import com.intellij.openapi.project.Project;

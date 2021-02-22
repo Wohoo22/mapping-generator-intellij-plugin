@@ -1,8 +1,8 @@
-package com.github.parser.java.impl;
+package com.github.parser.java.service.impl;
 
 import com.github.enums.DataType;
 import com.github.model.ElementNode;
-import com.github.parser.java.JavaParser;
+import com.github.parser.java.service.JavaParser;
 import com.github.parser.java.utils.PsiFieldTypeToDataType;
 import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.PsiClass;
