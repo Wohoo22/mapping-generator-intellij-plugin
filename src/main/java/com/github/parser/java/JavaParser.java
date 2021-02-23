@@ -27,8 +27,15 @@ public class JavaParser {
             return elementNodes;
         }
 
-        PsiField[] psiFields = psiClass.getAllFields();
+        // parse super class (if there is any)
+        PsiClass[] parentClasses = psiClass.getSupers();
+        for (PsiClass parentClass : parentClasses) {
+            List<ElementNode> parentElementNodes = parse(parentClass.getQualifiedName(), javaPsiFacade, globalSearchScope);
+            elementNodes.addAll(parentElementNodes);
+        }
 
+        // parse fields
+        PsiField[] psiFields = psiClass.getAllFields();
         for (PsiField field : psiFields) {
             // this is also qualified class name in Java
             String fieldName = field.getName();
