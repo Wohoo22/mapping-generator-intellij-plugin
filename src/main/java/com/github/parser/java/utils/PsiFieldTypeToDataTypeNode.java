@@ -19,7 +19,7 @@ public class PsiFieldTypeToDataTypeNode {
     public static DataTypeNode convert(PsiType psiType, String fieldName, JavaPsiFacade javaPsiFacade, GlobalSearchScope globalSearchScope) {
         String qualifiedName = psiType.getCanonicalText();
 
-        if (isCommonDataType(qualifiedName)) {
+        if (isPrimitiveType(qualifiedName)) {
             DataTypeNode res = new DataTypeNode();
             res.setDataType(DataTypeNode.DataType.OTHERS);
             res.setQualifiedName(qualifiedName);
@@ -70,7 +70,7 @@ public class PsiFieldTypeToDataTypeNode {
         return res;
     }
 
-    private static boolean isCommonDataType(String qualifiedName) {
+    private static boolean isPrimitiveType(String qualifiedName) {
         String[] types = {"boolean", "char", "int", "double", "float", "byte", "short", "long", "java.lang.String"};
         return Arrays.asList(types).contains(qualifiedName);
     }
