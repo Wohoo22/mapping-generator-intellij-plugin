@@ -16,13 +16,24 @@
         </entry>
         <entry key="$USER_HOME$/IdeaProjects/foo">
           <value>
-            <RecentProjectMetaInfo frameTitle="foo – Test.java" opened="true" projectWorkspaceId="1okm5z6ZRdFx66gDv20D4L0TZqx">
+            <RecentProjectMetaInfo frameTitle="foo – Test.java" projectWorkspaceId="1okm5z6ZRdFx66gDv20D4L0TZqx">
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="IC-203.7148.57" />
               <option name="buildTimestamp" value="1611627886562" />
               <frame x="85" y="25" width="1750" height="1030" />
               <option name="productionCode" value="IC" />
               <option name="projectOpenTimestamp" value="1613838784455" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="D:/Work/work-space/nexttech/foo">
+          <value>
+            <RecentProjectMetaInfo opened="true" projectWorkspaceId="1osF7JzZL7iJ6koU7GHD6k1ZUEs">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-203.7148.57" />
+              <option name="buildTimestamp" value="1611627849313" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1614067780861" />
             </RecentProjectMetaInfo>
           </value>
         </entry>

@@ -1,10 +1,11 @@
-com/github/action/PopUp.java
- com.github.action.PopUp
+com/github/parser/java/utils/PsiFieldTypeToDataTypeNode.java
+ com.github.parser.java.utils.PsiFieldTypeToDataTypeNode
 com/github/model/ElementNode.java
  com.github.model.ElementNode
-com/github/enums/DataType.java
- com.github.enums.DataType
 com/github/parser/java/JavaParser.java
  com.github.parser.java.JavaParser
-com/github/parser/java/utils/PsiFieldTypeToDataType.java
- com.github.parser.java.utils.PsiFieldTypeToDataType
+com/github/action/Test.java
+ com.github.action.Test
+com/github/model/DataTypeNode.java
+ com.github.model.DataTypeNode
+ com.github.model.DataTypeNode$DataType

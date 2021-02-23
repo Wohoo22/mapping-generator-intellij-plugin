@@ -1,12 +1,10 @@
 package com.github.model;
 
-import com.github.enums.DataType;
-
 import java.util.List;
 
 public class ElementNode {
     private String name;
-    private DataType dataType;
+    private DataTypeNode dataTypeNode;
     private List<ElementNode> children;
 
     public String getName() {
@@ -17,12 +15,12 @@ public class ElementNode {
         this.name = name;
     }
 
-    public DataType getDataType() {
-        return dataType;
+    public DataTypeNode getDataTypeNode() {
+        return dataTypeNode;
     }
 
-    public void setDataType(DataType dataType) {
-        this.dataType = dataType;
+    public void setDataTypeNode(DataTypeNode dataTypeNode) {
+        this.dataTypeNode = dataTypeNode;
     }
 
     public List<ElementNode> getChildren() {
