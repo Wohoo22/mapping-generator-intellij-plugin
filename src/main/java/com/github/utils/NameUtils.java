@@ -1,25 +1,30 @@
 package com.github.utils;
 
 import java.util.Locale;
+import java.util.Random;
+import java.util.Set;
 
 public class NameUtils {
-    public static String getPresentableName(String qualifiedName) {
-        return qualifiedName.split("\\.")[0];
-    }
 
     public static String toLowerCaseAllChars(String name) {
         return name.toLowerCase(Locale.ROOT);
     }
 
     public static String toLowerCaseFirstChar(String name) {
-        StringBuilder res = new StringBuilder();
-        for (int i = 0; i < name.length(); i++) {
-            if (i == 0) {
-                res.append(String.valueOf(name.charAt(i)).toLowerCase(Locale.ROOT));
-            } else {
-                res.append(name.charAt(i));
-            }
-        }
-        return res.toString();
+        return name.substring(0, 1).toLowerCase(Locale.ROOT) + name.substring(1);
+    }
+
+    public static String generateUniqueRandomName(String qualifiedName, Set<String> usedName) {
+        if (qualifiedName.length() == 0) return qualifiedName;
+
+        String[] parts = qualifiedName.split("\\.");
+        String name = parts[parts.length - 1];
+        // to lower case first char
+        name = name.substring(0, 1).toLowerCase(Locale.ROOT) + name.substring(1);
+
+        String res = name + new Random().nextInt(10000);
+        while (usedName.contains(res))
+            res = name + new Random().nextInt(10000);
+        return res;
     }
 }

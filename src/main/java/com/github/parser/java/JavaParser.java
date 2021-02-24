@@ -18,6 +18,7 @@ public class JavaParser {
     private static final Logger logger = LoggerFactory.getLogger(JavaParser.class);
 
     public static List<ElementNode> parse(String qualifiedClassName, JavaPsiFacade javaPsiFacade, GlobalSearchScope globalSearchScope) {
+
         List<ElementNode> elementNodes = new ArrayList<>();
 
         PsiClass psiClass = javaPsiFacade.findClass(qualifiedClassName, globalSearchScope);
