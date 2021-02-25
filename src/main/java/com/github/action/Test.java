@@ -22,7 +22,7 @@ public class Test extends AnAction {
         GlobalSearchScope globalSearchScope = GlobalSearchScope.projectScope(project);
 
         JavaToJavaCodeGenerator javaToJavaCodeGenerator = new JavaToJavaCodeGenerator();
-        String result = javaToJavaCodeGenerator.generateMappingCode("Src", "Des",
+        String result = javaToJavaCodeGenerator.generateMappingCode("Cat", "CatDto",
                 javaPsiFacade, globalSearchScope);
 
         FileWriter outputFile = null;

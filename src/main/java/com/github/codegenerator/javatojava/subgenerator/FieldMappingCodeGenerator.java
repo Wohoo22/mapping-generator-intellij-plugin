@@ -5,11 +5,14 @@ import com.github.model.ElementNode;
 import com.github.utils.DataTypeNodeUtils;
 import com.github.utils.JavaCommandUtils;
 
+import java.util.Set;
+
 public class FieldMappingCodeGenerator {
 
     public String generateMappingCode(String objectToSetVarName, String objectToGetVarName,
-                                      ElementNode fieldToSet, ElementNode fieldToGet, String result,
-                                      String indent) {
+                                      ElementNode fieldToSet, ElementNode fieldToGet, String indent, Set<String> usedVariableName) {
+
+        String result = "";
 
         // 2 data types are not equal -> return
         if (!DataTypeNodeUtils.dataTypeEqual(fieldToSet.getDataTypeNode(), fieldToGet.getDataTypeNode()))
@@ -26,7 +29,10 @@ public class FieldMappingCodeGenerator {
         }
         // type == OBJECT
         else if (fieldToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.OBJECT) {
-
+            ObjectMappingCodeGenerator objectMappingCodeGenerator = new ObjectMappingCodeGenerator();
+            result += "\n";
+            result += objectMappingCodeGenerator.generateMappingCode(objectToSetVarName, fieldToSet, objectToGetVarName, fieldToGet,
+                    usedVariableName, indent);
         }
         // type == ARRAY
         else if (fieldToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.ARRAY) {

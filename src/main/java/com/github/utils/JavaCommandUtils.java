@@ -4,6 +4,7 @@ public class JavaCommandUtils {
     private static final String sp = " ";
     private static final String lb = "\n";
     private static final String eoc = ";";
+    private static final String dot = ".";
 
 
     public static String generateObjectDeclaration(String qualifiedName, String varName) {
@@ -30,4 +31,7 @@ public class JavaCommandUtils {
         return objectToSetVarName + "." + "set" + NameUtils.toUpperCaseFirstChar(fieldToSetName) + "(" + valueToSet + ")" + eoc + lb;
     }
 
+    public static String generateGetter(String objectToGetVarName, String fieldToGetName) {
+        return objectToGetVarName + dot + "get" + NameUtils.toUpperCaseFirstChar(fieldToGetName) + "()";
+    }
 }

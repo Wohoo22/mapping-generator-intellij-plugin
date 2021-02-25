@@ -60,7 +60,7 @@ public class JavaToJavaCodeGenerator {
             // can't find a suitable field
             if (fieldToGet == null) continue;
 
-            result = fieldMappingCodeGenerator.generateMappingCode(desObjectVarName, srcObjectVarName, fieldToSet, fieldToGet, result, "");
+            result = result.concat(fieldMappingCodeGenerator.generateMappingCode(desObjectVarName, srcObjectVarName, fieldToSet, fieldToGet, "", usedVariableName));
         }
 
         return result;
