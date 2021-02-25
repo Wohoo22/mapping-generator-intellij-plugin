@@ -19,15 +19,15 @@ com/github/parser/proto/lexer/ProtoLexer.java
  com.github.parser.proto.lexer.ProtoLexer
 com/github/codegenerator/javatojava/subgenerator/ObjectMappingCodeGenerator.java
  com.github.codegenerator.javatojava.subgenerator.ObjectMappingCodeGenerator
-com/github/utils/JavaCommandUtils.java
- com.github.utils.JavaCommandUtils
-com/github/codegenerator/javatojava/JavaToJavaCodeGenerator.java
- com.github.codegenerator.javatojava.JavaToJavaCodeGenerator
 com/github/action/Test.java
  com.github.action.Test
-com/github/utils/DataTypeNodeUtils.java
- com.github.utils.DataTypeNodeUtils
-com/github/codegenerator/javatojava/subgenerator/FieldMappingCodeGenerator.java
- com.github.codegenerator.javatojava.subgenerator.FieldMappingCodeGenerator
 com/github/utils/NameUtils.java
  com.github.utils.NameUtils
+com/github/utils/JavaCommandUtils.java
+ com.github.utils.JavaCommandUtils
+com/github/utils/DataTypeNodeUtils.java
+ com.github.utils.DataTypeNodeUtils
+com/github/codegenerator/javatojava/JavaToJavaCodeGenerator.java
+ com.github.codegenerator.javatojava.JavaToJavaCodeGenerator
+com/github/codegenerator/javatojava/subgenerator/FieldMappingCodeGenerator.java
+ com.github.codegenerator.javatojava.subgenerator.FieldMappingCodeGenerator
