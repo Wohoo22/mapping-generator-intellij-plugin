@@ -17,7 +17,7 @@ public class JavaParser {
 
     private static final Logger logger = LoggerFactory.getLogger(JavaParser.class);
 
-    public static List<ElementNode> parse(String qualifiedClassName, JavaPsiFacade javaPsiFacade, GlobalSearchScope globalSearchScope) {
+    public List<ElementNode> parse(String qualifiedClassName, JavaPsiFacade javaPsiFacade, GlobalSearchScope globalSearchScope) {
 
         List<ElementNode> elementNodes = new ArrayList<>();
 
@@ -55,10 +55,10 @@ public class JavaParser {
                 // in case of List<List<...List<Object>...>>
                 DataTypeNode innermostDataTypeNode = dataTypeNode.getChild();
 
-                while (innermostDataTypeNode.getChild().getDataType() == DataTypeNode.DataType.ARRAY)
+                while (innermostDataTypeNode.getDataType() == DataTypeNode.DataType.ARRAY)
                     innermostDataTypeNode = innermostDataTypeNode.getChild();
 
-                if (innermostDataTypeNode.getChild().getDataType() == DataTypeNode.DataType.OBJECT)
+                if (innermostDataTypeNode.getDataType() == DataTypeNode.DataType.OBJECT)
                     elementNode.setChildren(parse(innermostDataTypeNode.getQualifiedName(), javaPsiFacade, globalSearchScope));
             }
 

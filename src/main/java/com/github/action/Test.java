@@ -1,37 +1,38 @@
 package com.github.action;
 
-import com.github.model.ElementNode;
-import com.github.parser.java.JavaParser;
+import com.github.codegenerator.javatojava.JavaToJavaCodeGenerator;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.JavaPsiFacade;
-import com.intellij.psi.PsiClass;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiFile;
 import com.intellij.psi.search.GlobalSearchScope;
-import com.intellij.psi.util.PsiTreeUtil;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Test extends AnAction {
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
-        // get opening Java class from IDE
-        Editor editor = (Editor) e.getDataContext().getData(CommonDataKeys.EDITOR);
-        PsiFile psiFile = (PsiFile) e.getDataContext().getData(CommonDataKeys.PSI_FILE);
-        Project project = editor.getProject();
-        PsiElement referenceAt = psiFile.findElementAt(editor.getCaretModel().getOffset());
-        PsiClass selectedClass = (PsiClass) PsiTreeUtil.getContextOfType(referenceAt, new Class[]{PsiClass.class});
 
+        Project project = e.getProject();
+
+        assert project != null;
         JavaPsiFacade javaPsiFacade = JavaPsiFacade.getInstance(project);
         GlobalSearchScope globalSearchScope = GlobalSearchScope.projectScope(project);
 
-        List<ElementNode> tree = JavaParser.parse(selectedClass.getQualifiedName(), javaPsiFacade, globalSearchScope);
+        JavaToJavaCodeGenerator javaToJavaCodeGenerator = new JavaToJavaCodeGenerator();
+        String result = javaToJavaCodeGenerator.generateMappingCode("Src", "Des",
+                javaPsiFacade, globalSearchScope);
 
-        int z = 0;
+        FileWriter outputFile = null;
+        try {
+            outputFile = new FileWriter("C:\\Users\\ADMIN\\Desktop\\test.txt");
+            outputFile.write(result);
+            outputFile.close();
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+
     }
 }

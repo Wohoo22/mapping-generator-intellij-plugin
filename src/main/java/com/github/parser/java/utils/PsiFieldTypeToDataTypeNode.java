@@ -18,11 +18,13 @@ public class PsiFieldTypeToDataTypeNode {
 
     public static DataTypeNode convert(PsiType psiType, String fieldName, JavaPsiFacade javaPsiFacade, GlobalSearchScope globalSearchScope) {
         String qualifiedName = psiType.getCanonicalText();
+        String presentableName = psiType.getPresentableText();
 
         if (isPrimitiveType(qualifiedName)) {
             DataTypeNode res = new DataTypeNode();
             res.setDataType(DataTypeNode.DataType.OTHERS);
             res.setQualifiedName(qualifiedName);
+            res.setPresentableName(presentableName);
             return res;
         }
 
@@ -30,6 +32,7 @@ public class PsiFieldTypeToDataTypeNode {
             DataTypeNode res = new DataTypeNode();
             res.setDataType(DataTypeNode.DataType.MAP);
             res.setQualifiedName(qualifiedName);
+            res.setPresentableName(presentableName);
             return res;
         }
 
@@ -46,6 +49,7 @@ public class PsiFieldTypeToDataTypeNode {
             DataTypeNode res = new DataTypeNode();
             res.setDataType(DataTypeNode.DataType.ARRAY);
             res.setQualifiedName(qualifiedName);
+            res.setPresentableName(presentableName);
             res.setChild(innerElementDataTypeNode);
             return res;
         }
@@ -54,6 +58,7 @@ public class PsiFieldTypeToDataTypeNode {
             DataTypeNode res = new DataTypeNode();
             res.setDataType(DataTypeNode.DataType.ENUM);
             res.setQualifiedName(qualifiedName);
+            res.setPresentableName(presentableName);
             return res;
         }
 
@@ -61,12 +66,14 @@ public class PsiFieldTypeToDataTypeNode {
             DataTypeNode res = new DataTypeNode();
             res.setDataType(DataTypeNode.DataType.OBJECT);
             res.setQualifiedName(qualifiedName);
+            res.setPresentableName(presentableName);
             return res;
         }
 
         DataTypeNode res = new DataTypeNode();
         res.setDataType(DataTypeNode.DataType.OTHERS);
         res.setQualifiedName(qualifiedName);
+        res.setPresentableName(presentableName);
         return res;
     }
 

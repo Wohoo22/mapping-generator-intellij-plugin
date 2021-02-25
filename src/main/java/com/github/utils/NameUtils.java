@@ -14,6 +14,10 @@ public class NameUtils {
         return name.substring(0, 1).toLowerCase(Locale.ROOT) + name.substring(1);
     }
 
+    public static String toUpperCaseFirstChar(String name) {
+        return name.substring(0, 1).toUpperCase(Locale.ROOT) + name.substring(1);
+    }
+
     public static String generateUniqueRandomName(String qualifiedName, Set<String> usedName) {
         if (qualifiedName.length() == 0) return qualifiedName;
 
@@ -25,6 +29,7 @@ public class NameUtils {
         String res = name + new Random().nextInt(10000);
         while (usedName.contains(res))
             res = name + new Random().nextInt(10000);
+        usedName.add(res);
         return res;
     }
 }

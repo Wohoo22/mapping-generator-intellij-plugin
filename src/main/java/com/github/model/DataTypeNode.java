@@ -4,6 +4,7 @@ public class DataTypeNode {
     private DataType dataType;
     private DataTypeNode child;
     private String qualifiedName;
+    private String presentableName;
 
     public enum DataType {
         ARRAY,
@@ -35,5 +36,13 @@ public class DataTypeNode {
 
     public void setQualifiedName(String qualifiedName) {
         this.qualifiedName = qualifiedName;
+    }
+
+    public String getPresentableName() {
+        return presentableName;
+    }
+
+    public void setPresentableName(String presentableName) {
+        this.presentableName = presentableName;
     }
 }

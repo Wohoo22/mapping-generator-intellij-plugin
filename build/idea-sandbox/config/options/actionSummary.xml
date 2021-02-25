@@ -87,6 +87,9 @@
     <e n="com.intellij.openapi.project.DumbAwareAction$SimpleDumbAwareAction">
       <i c="8" l="1614067821311" />
     </e>
+    <e n="com.intellij.openapi.ui.DialogWrapper$5">
+      <i c="1" l="1614187366876" />
+    </e>
     <e n="com.intellij.ui.ScrollingUtil$6">
       <i c="2" l="1614009059280" />
     </e>

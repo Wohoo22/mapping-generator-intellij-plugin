@@ -1,11 +1,33 @@
 com/github/parser/java/utils/PsiFieldTypeToDataTypeNode.java
  com.github.parser.java.utils.PsiFieldTypeToDataTypeNode
+com/github/parser/proto/lexer/enums/ProtoToken.java
+ com.github.parser.proto.lexer.enums.ProtoToken
+com/github/utils/ElementNodeUtils.java
+ com.github.utils.ElementNodeUtils
 com/github/model/ElementNode.java
  com.github.model.ElementNode
+com/github/utils/StringUtils.java
+ com.github.utils.StringUtils
+com/github/parser/proto/ProtoParser.java
+ com.github.parser.proto.ProtoParser
 com/github/parser/java/JavaParser.java
  com.github.parser.java.JavaParser
-com/github/action/Test.java
- com.github.action.Test
 com/github/model/DataTypeNode.java
  com.github.model.DataTypeNode
  com.github.model.DataTypeNode$DataType
+com/github/parser/proto/lexer/ProtoLexer.java
+ com.github.parser.proto.lexer.ProtoLexer
+com/github/codegenerator/javatojava/subgenerator/ObjectMappingCodeGenerator.java
+ com.github.codegenerator.javatojava.subgenerator.ObjectMappingCodeGenerator
+com/github/utils/JavaCommandUtils.java
+ com.github.utils.JavaCommandUtils
+com/github/codegenerator/javatojava/JavaToJavaCodeGenerator.java
+ com.github.codegenerator.javatojava.JavaToJavaCodeGenerator
+com/github/action/Test.java
+ com.github.action.Test
+com/github/utils/DataTypeNodeUtils.java
+ com.github.utils.DataTypeNodeUtils
+com/github/codegenerator/javatojava/subgenerator/FieldMappingCodeGenerator.java
+ com.github.codegenerator.javatojava.subgenerator.FieldMappingCodeGenerator
+com/github/utils/NameUtils.java
+ com.github.utils.NameUtils

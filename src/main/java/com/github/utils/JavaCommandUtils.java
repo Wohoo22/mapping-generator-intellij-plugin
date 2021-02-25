@@ -17,8 +17,12 @@ public class JavaCommandUtils {
         return qualifiedName + sp + varName + sp + "=" + sp + "new" + sp + qualifiedName + "()" + eoc + lb;
     }
 
-    public static String generateSetterGetter(String objectToGet, String objectToGetFieldName,
-                                              String objectToSet, String objectToSetFieldName) {
-        return "";
+    public static String generateSetterGetter(String objectToGetVarName, String objectToGetFieldName,
+                                              String objectToSetVarName, String objectToSetFieldName) {
+
+        return objectToSetVarName + "." + "set" + NameUtils.toUpperCaseFirstChar(objectToSetFieldName) + "(" +
+                objectToGetVarName + "." + "get" + NameUtils.toUpperCaseFirstChar(objectToGetFieldName) + "()" + ")" + lb
+                ;
+
     }
 }
