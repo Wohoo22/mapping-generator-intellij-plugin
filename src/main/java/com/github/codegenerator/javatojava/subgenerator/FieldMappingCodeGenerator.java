@@ -16,6 +16,8 @@ public class FieldMappingCodeGenerator {
         String result = "";
 
         // 2 data types are not equal -> return
+        if (fieldToGet == null || fieldToSet == null)
+            return result;
         if (!DataTypeNodeUtils.dataTypeEqual(fieldToSet.getDataTypeNode(), fieldToGet.getDataTypeNode()))
             return result;
 

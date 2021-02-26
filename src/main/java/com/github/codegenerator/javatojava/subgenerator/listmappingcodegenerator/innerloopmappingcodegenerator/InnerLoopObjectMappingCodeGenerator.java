@@ -12,9 +12,14 @@ import java.util.Set;
 
 public class InnerLoopObjectMappingCodeGenerator {
     public String generateMappingCode(String parentListToAddVarName, DataTypeNode objectToSetDataTypeNode, List<ElementNode> objectToSetFields,
-                                      DataTypeNode objectToGetDataTypeNode, String objectToGetVarName, List<ElementNode> objectToGetFields,
+                                      String objectToGetVarName, List<ElementNode> objectToGetFields,
                                       String indent, Set<String> usedVariableName) {
         String result = "";
+
+        if (objectToSetDataTypeNode == null || objectToSetFields == null || objectToGetFields == null)
+            return result;
+        if (objectToSetDataTypeNode.getDataType() != DataTypeNode.DataType.OBJECT)
+            return result;
 
         // declare object-to-set
         String crtObjectToSetVarName = NameUtils.generateUniqueRandomName(objectToSetDataTypeNode.getPresentableName(), usedVariableName);
@@ -27,8 +32,7 @@ public class InnerLoopObjectMappingCodeGenerator {
             // can't find a suitable field
             if (childFieldToGet == null) continue;
 
-            result = result.concat(fieldMappingCodeGenerator.generateMappingCode(crtObjectToSetVarName, objectToGetVarName,
-                    childFieldToSet, childFieldToGet, indent, usedVariableName));
+            result = result.concat(fieldMappingCodeGenerator.generateMappingCode(crtObjectToSetVarName, objectToGetVarName, childFieldToSet, childFieldToGet, indent, usedVariableName));
         }
 
         result += "\n";

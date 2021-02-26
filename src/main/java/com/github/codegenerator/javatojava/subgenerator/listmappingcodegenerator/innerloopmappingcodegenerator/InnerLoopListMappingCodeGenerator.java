@@ -18,6 +18,15 @@ public class InnerLoopListMappingCodeGenerator {
 
         String result = "";
 
+        // some pre-condition
+        if (listToAddDataTypeNode == null || listToGetDataTypeNode == null || childFieldsToSet == null || childFieldsToGet == null)
+            return result;
+        if (listToAddDataTypeNode.getDataType() != DataTypeNode.DataType.LIST || listToGetDataTypeNode.getDataType() != DataTypeNode.DataType.LIST)
+            return result;
+        if (listToAddDataTypeNode.getChild() == null || listToGetDataTypeNode.getChild() == null)
+            return result;
+
+
         // declare list-to-add
         String crtListToAddVarName = NameUtils.generateUniqueRandomName(listToAddDataTypeNode.getPresentableName(), usedVariableName);
         result += indent + JavaCommandUtils.generateListDeclaration(listToAddDataTypeNode.getQualifiedName(), crtListToAddVarName);
@@ -33,8 +42,7 @@ public class InnerLoopListMappingCodeGenerator {
         switch (listToAddDataTypeNode.getChild().getDataType()) {
             case OBJECT:
                 InnerLoopObjectMappingCodeGenerator innerLoopObjectMappingCodeGenerator = new InnerLoopObjectMappingCodeGenerator();
-                result += indent + innerLoopObjectMappingCodeGenerator.generateMappingCode(
-                        crtListToAddVarName, listToAddDataTypeNode.getChild(), childFieldsToSet, listToGetDataTypeNode.getChild(),
+                result += indent + innerLoopObjectMappingCodeGenerator.generateMappingCode(crtListToAddVarName, listToAddDataTypeNode.getChild(), childFieldsToSet,
                         innerLoopObjectToGetVarName, childFieldsToGet, indent, usedVariableName);
                 break;
             case ENUM:

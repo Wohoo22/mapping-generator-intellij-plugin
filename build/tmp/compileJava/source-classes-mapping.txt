@@ -16,15 +16,16 @@ com/github/utils/DataTypeNodeUtils.java
  com.github.utils.DataTypeNodeUtils
 com/github/parser/java/JavaParser.java
  com.github.parser.java.JavaParser
-com/github/action/Test.java
- com.github.action.Test
+com/github/action/form/FormInput.java
+ com.github.action.form.FormInput
 com/github/parser/proto/lexer/ProtoLexer.java
  com.github.parser.proto.lexer.ProtoLexer
 com/github/model/DataTypeNode.java
  com.github.model.DataTypeNode
  com.github.model.DataTypeNode$DataType
-com/github/codegenerator/javatojava/subgenerator/listmappingcodegenerator/innerloopmappingcodegenerator/InnerLoopObjectMappingCodeGenerator.java
- com.github.codegenerator.javatojava.subgenerator.listmappingcodegenerator.innerloopmappingcodegenerator.InnerLoopObjectMappingCodeGenerator
+com/github/codegenerator/javatojava/subgenerator/listmappingcodegenerator/innerloopmappingcodegenerator/InnerLoopListMappingCodeGenerator.java
+ com.github.codegenerator.javatojava.subgenerator.listmappingcodegenerator.innerloopmappingcodegenerator.InnerLoopListMappingCodeGenerator
+ com.github.codegenerator.javatojava.subgenerator.listmappingcodegenerator.innerloopmappingcodegenerator.InnerLoopListMappingCodeGenerator$1
 com/github/codegenerator/javatojava/subgenerator/ObjectMappingCodeGenerator.java
  com.github.codegenerator.javatojava.subgenerator.ObjectMappingCodeGenerator
 com/github/codegenerator/javatojava/subgenerator/listmappingcodegenerator/innerloopmappingcodegenerator/InnerLoopEnumMappingCodeGenerator.java
@@ -33,11 +34,14 @@ com/github/utils/JavaCommandUtils.java
  com.github.utils.JavaCommandUtils
 com/github/codegenerator/javatojava/JavaToJavaCodeGenerator.java
  com.github.codegenerator.javatojava.JavaToJavaCodeGenerator
-com/github/codegenerator/javatojava/subgenerator/listmappingcodegenerator/innerloopmappingcodegenerator/InnerLoopListMappingCodeGenerator.java
- com.github.codegenerator.javatojava.subgenerator.listmappingcodegenerator.innerloopmappingcodegenerator.InnerLoopListMappingCodeGenerator
- com.github.codegenerator.javatojava.subgenerator.listmappingcodegenerator.innerloopmappingcodegenerator.InnerLoopListMappingCodeGenerator$1
+com/github/action/GenerateMappingCode.java
+ com.github.action.GenerateMappingCode
 com/github/codegenerator/javatojava/subgenerator/FieldMappingCodeGenerator.java
  com.github.codegenerator.javatojava.subgenerator.FieldMappingCodeGenerator
 com/github/codegenerator/javatojava/subgenerator/listmappingcodegenerator/ListMappingCodeGenerator.java
  com.github.codegenerator.javatojava.subgenerator.listmappingcodegenerator.ListMappingCodeGenerator
  com.github.codegenerator.javatojava.subgenerator.listmappingcodegenerator.ListMappingCodeGenerator$1
+com/github/action/WriteCommand.java
+ com.github.action.WriteCommand
+com/github/codegenerator/javatojava/subgenerator/listmappingcodegenerator/innerloopmappingcodegenerator/InnerLoopObjectMappingCodeGenerator.java
+ com.github.codegenerator.javatojava.subgenerator.listmappingcodegenerator.innerloopmappingcodegenerator.InnerLoopObjectMappingCodeGenerator

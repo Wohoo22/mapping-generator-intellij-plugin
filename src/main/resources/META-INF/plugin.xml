@@ -25,7 +25,10 @@
         <action id="com.github.action.PopUp" class="com.github.action.PopUp" text="TestingTesting">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
-        <action id="com.github.action.Test" class="com.github.action.Test" text="Quan">
+        <action id="com.github.action.GenerateMappingCode" class="com.github.action.GenerateMappingCode" text="Quan">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+        <action id="com.github.action.GuiForm" class="com.github.action.GuiForm" text="Mapping generator">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
     </actions>

@@ -1,3 +1,5 @@
+co-inventory.8b81dcc1
+co-item.3a126c8e
 foo.cbf2f280
 foo.74c8c07
 co-admin-location.c997fc2e

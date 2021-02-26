@@ -20,6 +20,8 @@ public class ListMappingCodeGenerator {
         String result = "";
 
         // 2 data types are not equal -> return
+        if (fieldToSet == null || fieldToGet == null)
+            return result;
         if (!DataTypeNodeUtils.dataTypeEqual(fieldToSet.getDataTypeNode(), fieldToGet.getDataTypeNode()))
             return result;
 
@@ -40,8 +42,7 @@ public class ListMappingCodeGenerator {
 
         // declare list-to-get
         String crtListToGetVarName = NameUtils.generateUniqueRandomName(fieldToGet.getDataTypeNode().getPresentableName(), usedVariableName);
-        result += indent + fieldToGet.getDataTypeNode().getQualifiedName() + " " + crtListToGetVarName + " = "
-                + JavaCommandUtils.generateGetter(parentObjectToGetVarName, fieldToGet.getName()) + ";" + "\n";
+        result += indent + JavaCommandUtils.generateDeclarationByGetter(fieldToGet.getDataTypeNode().getQualifiedName(), crtListToGetVarName, parentObjectToGetVarName, fieldToGet.getName());
 
         result += "\n";
 
@@ -58,7 +59,7 @@ public class ListMappingCodeGenerator {
                 InnerLoopObjectMappingCodeGenerator innerLoopObjectMappingCodeGenerator = new InnerLoopObjectMappingCodeGenerator();
                 result += indent + innerLoopObjectMappingCodeGenerator.generateMappingCode(
                         crtListToSetVarName, fieldToSet.getDataTypeNode().getChild(), fieldToSet.getChildren(),
-                        fieldToGet.getDataTypeNode().getChild(), innerLoopObjectToGetVarName, fieldToGet.getChildren(), indent, usedVariableName
+                        innerLoopObjectToGetVarName, fieldToGet.getChildren(), indent, usedVariableName
                 );
                 break;
             case ENUM:

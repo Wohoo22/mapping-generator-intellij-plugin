@@ -7,6 +7,16 @@
             <ProjectPluginTrackerState />
           </value>
         </entry>
+        <entry key="1hcfPzNgaVl9H0JIdcy5YUawtZ7">
+          <value>
+            <ProjectPluginTrackerState />
+          </value>
+        </entry>
+        <entry key="1ogSxxj3ZUIcqLJUj09gq5bzFDK">
+          <value>
+            <ProjectPluginTrackerState />
+          </value>
+        </entry>
         <entry key="1okm5z6ZRdFx66gDv20D4L0TZqx">
           <value>
             <ProjectPluginTrackerState />
@@ -25,8 +35,8 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="build.toolwindow.Sync.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
     <property name="defaultJdkConfigured" value="true" />
-    <property name="file.chooser.recent.files" value="D:/Work/work-space/nexttech/foo&#10;D:/Work/work-space/nexttech/co-admin-location" />
-    <property name="file.gist.reindex.count" value="51" />
+    <property name="file.chooser.recent.files" value="D:/Work/work-space/nexttech/co-inventory&#10;D:/Work/work-space/nexttech/co-item&#10;D:/Work/work-space/nexttech/foo&#10;D:/Work/work-space/nexttech/co-admin-location" />
+    <property name="file.gist.reindex.count" value="158" />
     <property name="fileTypeChangedCounter" value="2" />
     <property name="ide.memory.adjusted" value="true" />
     <property name="ide.updates.previous.build.number" value="IC-203.7148.57" />

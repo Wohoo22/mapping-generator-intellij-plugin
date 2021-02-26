@@ -7,6 +7,12 @@ public class InnerLoopEnumMappingCodeGenerator {
     public String generateMappingCode(String parentListToAddVarName, String enumToGetVarName, DataTypeNode enumToSetDataTypeNode,
                                       String indent) {
 
-        return indent + JavaCommandUtils.generateListAdd(parentListToAddVarName, JavaCommandUtils.generateEnumConverter(enumToSetDataTypeNode.getQualifiedName(), enumToGetVarName));
+        if (enumToSetDataTypeNode == null)
+            return "";
+        if (enumToSetDataTypeNode.getDataType() != DataTypeNode.DataType.ENUM)
+            return "";
+
+        return indent + JavaCommandUtils.generateListAdd(parentListToAddVarName,
+                JavaCommandUtils.generateEnumConverter(enumToSetDataTypeNode.getQualifiedName(), enumToGetVarName));
     }
 }

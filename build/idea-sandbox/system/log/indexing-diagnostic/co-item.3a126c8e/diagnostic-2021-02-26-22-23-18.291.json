@@ -1,0 +1,122 @@
+{
+  "appInfo" : {
+    "build" : "203.7148.57",
+    "buildDate" : "Tue, 26 Jan 2021 09:24:37 +0700",
+    "productCode" : "IC",
+    "generated" : "Fri, 26 Feb 2021 22:23:18 +0700",
+    "os" : "Windows 10 10.0",
+    "runtime" : "JetBrains s.r.o. 11.0.9.1 11.0.9.1+11-b1145.77"
+  },
+  "runtimeInfo" : {
+    "maxMemory" : 536870912,
+    "numberOfProcessors" : 12,
+    "maxNumberOfIndexingThreads" : 4,
+    "maxSizeOfFileForIntelliSense" : 2560000,
+    "maxSizeOfFileForContentLoading" : 20971520
+  },
+  "projectIndexingHistory" : {
+    "projectName" : "co-item",
+    "numberOfFileProviders" : 181,
+    "totalNumberOfFiles" : 132587,
+    "totalNumberOfUpToDateFiles" : 132586,
+    "times" : {
+      "totalUpdatingTime" : "8 s 607 ms",
+      "indexingTime" : "489 ms",
+      "pushPropertiesTime" : "2 s 364 ms",
+      "updatingStart" : "Fri, 26 Feb 2021 22:23:09 +0700",
+      "updatingEnd" : "Fri, 26 Feb 2021 22:23:18 +0700",
+      "wasInterrupted" : false
+    },
+    "numberOfIndexingThreads" : 4,
+    "totalStatsPerFileType" : [ {
+      "fileType" : "JAVA",
+      "partOfTotalIndexingTime" : "100.0%",
+      "partOfTotalContentLoadingTime" : "100.0%",
+      "totalNumberOfFiles" : 1,
+      "totalFilesSize" : "6.17 kB",
+      "indexingSpeed" : "27.17 kB/s",
+      "biggestContributors" : [ {
+        "providerName" : "Module 'co-item'",
+        "numberOfFiles" : 1,
+        "totalFilesSize" : "6.17 kB",
+        "partOfTotalIndexingTimeOfThisFileType" : "100.0%"
+      } ]
+    } ],
+    "totalStatsPerIndexer" : [ {
+      "indexId" : "TodoIndex",
+      "partOfTotalIndexingTime" : "43.2%",
+      "totalNumberOfFiles" : 1,
+      "totalNumberOfFilesIndexedByExtensions" : 0,
+      "totalFilesSize" : "6.17 kB",
+      "indexingSpeed" : "62.9 kB/s"
+    }, {
+      "indexId" : "IdIndex",
+      "partOfTotalIndexingTime" : "23.3%",
+      "totalNumberOfFiles" : 1,
+      "totalNumberOfFilesIndexedByExtensions" : 0,
+      "totalFilesSize" : "6.17 kB",
+      "indexingSpeed" : "116.63 kB/s"
+    }, {
+      "indexId" : "Stubs",
+      "partOfTotalIndexingTime" : "20.2%",
+      "totalNumberOfFiles" : 1,
+      "totalNumberOfFilesIndexedByExtensions" : 0,
+      "totalFilesSize" : "6.17 kB",
+      "indexingSpeed" : "134.33 kB/s"
+    }, {
+      "indexId" : "java.binary.plus.expression",
+      "partOfTotalIndexingTime" : "7.4%",
+      "totalNumberOfFiles" : 1,
+      "totalNumberOfFilesIndexedByExtensions" : 0,
+      "totalFilesSize" : "6.17 kB",
+      "indexingSpeed" : "366.89 kB/s"
+    }, {
+      "indexId" : "Trigram.Index",
+      "partOfTotalIndexingTime" : "5.9%",
+      "totalNumberOfFiles" : 1,
+      "totalNumberOfFilesIndexedByExtensions" : 0,
+      "totalFilesSize" : "6.17 kB",
+      "indexingSpeed" : "463.54 kB/s"
+    } ],
+    "fileProviderStatistics" : [ {
+      "providerName" : "Module 'co-item'",
+      "totalNumberOfFiles" : 1,
+      "totalNumberOfFilesFullyIndexedByExtensions" : 0,
+      "totalIndexingTime" : "469 ms",
+      "statsPerFileType" : [ {
+        "fileType" : "JAVA",
+        "numberOfFiles" : 1,
+        "totalFilesSize" : "6.17 kB",
+        "partOfTotalIndexingTime" : "100.0%",
+        "partOfTotalContentLoadingTime" : "100.0%"
+      } ],
+      "statsPerIndexer" : [ {
+        "indexId" : "TodoIndex",
+        "numberOfFiles" : 1,
+        "numberOfFilesIndexedByExtensions" : 0,
+        "partOfTotalIndexingTime" : "43.2%"
+      }, {
+        "indexId" : "IdIndex",
+        "numberOfFiles" : 1,
+        "numberOfFilesIndexedByExtensions" : 0,
+        "partOfTotalIndexingTime" : "23.3%"
+      }, {
+        "indexId" : "Stubs",
+        "numberOfFiles" : 1,
+        "numberOfFilesIndexedByExtensions" : 0,
+        "partOfTotalIndexingTime" : "20.2%"
+      }, {
+        "indexId" : "java.binary.plus.expression",
+        "numberOfFiles" : 1,
+        "numberOfFilesIndexedByExtensions" : 0,
+        "partOfTotalIndexingTime" : "7.4%"
+      }, {
+        "indexId" : "Trigram.Index",
+        "numberOfFiles" : 1,
+        "numberOfFilesIndexedByExtensions" : 0,
+        "partOfTotalIndexingTime" : "5.9%"
+      } ],
+      "fastIndexers" : [ ]
+    } ]
+  }
+}

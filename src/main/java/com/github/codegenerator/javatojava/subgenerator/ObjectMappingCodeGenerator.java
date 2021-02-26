@@ -1,5 +1,6 @@
 package com.github.codegenerator.javatojava.subgenerator;
 
+import com.github.model.DataTypeNode;
 import com.github.model.ElementNode;
 import com.github.utils.DataTypeNodeUtils;
 import com.github.utils.ElementNodeUtils;
@@ -15,6 +16,10 @@ public class ObjectMappingCodeGenerator {
         String result = "";
 
         // 2 data types are not equal -> return
+        if (fieldToGet == null || fieldToSet == null)
+            return result;
+        if (fieldToSet.getDataTypeNode().getDataType() != DataTypeNode.DataType.OBJECT || fieldToGet.getDataTypeNode().getDataType() != DataTypeNode.DataType.OBJECT)
+            return result;
         if (!DataTypeNodeUtils.dataTypeEqual(fieldToSet.getDataTypeNode(), fieldToGet.getDataTypeNode()))
             return result;
 
@@ -24,8 +29,7 @@ public class ObjectMappingCodeGenerator {
 
         // declare object-to-get
         String crtObjectToGetVarName = NameUtils.generateUniqueRandomName(fieldToGet.getDataTypeNode().getPresentableName(), usedVariableName);
-        result += indent + fieldToGet.getDataTypeNode().getQualifiedName() + " " + crtObjectToGetVarName + " = "
-                + JavaCommandUtils.generateGetter(parentObjectToGetVarName, fieldToGet.getName()) + ";" + "\n";
+        result += indent + JavaCommandUtils.generateDeclarationByGetter(fieldToGet.getDataTypeNode().getQualifiedName(), crtObjectToGetVarName, parentObjectToGetVarName, fieldToGet.getName());
 
         // generate mapping code for object fields
         FieldMappingCodeGenerator fieldMappingCodeGenerator = new FieldMappingCodeGenerator();
