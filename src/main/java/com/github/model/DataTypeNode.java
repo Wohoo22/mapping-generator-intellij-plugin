@@ -7,7 +7,7 @@ public class DataTypeNode {
     private String presentableName;
 
     public enum DataType {
-        ARRAY,
+        LIST,
         OBJECT,
         MAP,
         ENUM,

@@ -20,7 +20,7 @@ public class PsiFieldTypeToDataTypeNode {
         String qualifiedName = psiType.getCanonicalText();
         String presentableName = psiType.getPresentableText();
 
-        if (isPrimitiveType(qualifiedName)) {
+        if (isPrimitive(qualifiedName)) {
             DataTypeNode res = new DataTypeNode();
             res.setDataType(DataTypeNode.DataType.OTHERS);
             res.setQualifiedName(qualifiedName);
@@ -28,7 +28,7 @@ public class PsiFieldTypeToDataTypeNode {
             return res;
         }
 
-        if (isMapType(qualifiedName)) {
+        if (isMap(qualifiedName)) {
             DataTypeNode res = new DataTypeNode();
             res.setDataType(DataTypeNode.DataType.MAP);
             res.setQualifiedName(qualifiedName);
@@ -36,7 +36,7 @@ public class PsiFieldTypeToDataTypeNode {
             return res;
         }
 
-        if (isArray(qualifiedName)) {
+        if (isList(qualifiedName)) {
             PsiType genericType = PsiUtil.extractIterableTypeParameter(psiType, false);
 
             if (genericType == null) {
@@ -47,7 +47,7 @@ public class PsiFieldTypeToDataTypeNode {
             DataTypeNode innerElementDataTypeNode = convert(genericType, fieldName, javaPsiFacade, globalSearchScope);
 
             DataTypeNode res = new DataTypeNode();
-            res.setDataType(DataTypeNode.DataType.ARRAY);
+            res.setDataType(DataTypeNode.DataType.LIST);
             res.setQualifiedName(qualifiedName);
             res.setPresentableName(presentableName);
             res.setChild(innerElementDataTypeNode);
@@ -77,19 +77,19 @@ public class PsiFieldTypeToDataTypeNode {
         return res;
     }
 
-    private static boolean isPrimitiveType(String qualifiedName) {
+    private static boolean isPrimitive(String qualifiedName) {
         String[] types = {"boolean", "char", "int", "double", "float", "byte", "short", "long", "java.lang.String"};
         return Arrays.asList(types).contains(qualifiedName);
     }
 
-    private static boolean isMapType(String qualifiedName) {
+    private static boolean isMap(String qualifiedName) {
         String[] types = {"java.util.Map", "java.util.HashMap"};
         for (String type : types)
             if (qualifiedName.startsWith(type)) return true;
         return false;
     }
 
-    private static boolean isArray(String qualifiedName) {
+    private static boolean isList(String qualifiedName) {
         String[] types = {"java.util.List", "java.util.ArrayList"};
         for (String type : types)
             if (qualifiedName.startsWith(type)) return true;

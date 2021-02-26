@@ -18,17 +18,19 @@ public class NameUtils {
         return name.substring(0, 1).toUpperCase(Locale.ROOT) + name.substring(1);
     }
 
-    public static String generateUniqueRandomName(String qualifiedName, Set<String> usedName) {
-        if (qualifiedName.length() == 0) return qualifiedName;
+    public static String generateUniqueRandomName(String name, Set<String> usedName) {
+        // delete all chars that are not letter
+        String cleanedName = "";
+        for (int i = 0; i < name.length(); i++)
+            if (Character.isLetter(name.charAt(i)))
+                cleanedName = cleanedName.concat(String.valueOf(name.charAt(i)));
 
-        String[] parts = qualifiedName.split("\\.");
-        String name = parts[parts.length - 1];
-        // to lower case first char
-        name = name.substring(0, 1).toLowerCase(Locale.ROOT) + name.substring(1);
+        cleanedName = toLowerCaseFirstChar(cleanedName);
 
-        String res = name + new Random().nextInt(10000);
+        String res = cleanedName;
         while (usedName.contains(res))
-            res = name + new Random().nextInt(10000);
+            res = cleanedName.concat(String.valueOf(new Random().nextInt(100000)));
+
         usedName.add(res);
         return res;
     }

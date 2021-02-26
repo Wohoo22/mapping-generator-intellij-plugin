@@ -51,11 +51,11 @@ public class JavaParser {
 
             if (dataTypeNode.getDataType() == DataTypeNode.DataType.OBJECT) {
                 elementNode.setChildren(parse(dataTypeNode.getQualifiedName(), javaPsiFacade, globalSearchScope));
-            } else if (dataTypeNode.getDataType() == DataTypeNode.DataType.ARRAY) {
+            } else if (dataTypeNode.getDataType() == DataTypeNode.DataType.LIST) {
                 // in case of List<List<...List<Object>...>>
                 DataTypeNode innermostDataTypeNode = dataTypeNode.getChild();
 
-                while (innermostDataTypeNode.getDataType() == DataTypeNode.DataType.ARRAY)
+                while (innermostDataTypeNode.getDataType() == DataTypeNode.DataType.LIST)
                     innermostDataTypeNode = innermostDataTypeNode.getChild();
 
                 if (innermostDataTypeNode.getDataType() == DataTypeNode.DataType.OBJECT)

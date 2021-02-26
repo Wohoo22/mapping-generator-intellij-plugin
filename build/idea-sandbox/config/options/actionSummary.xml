@@ -10,7 +10,7 @@
       <i c="4" l="1614010999367" />
     </e>
     <e n="EditorBackSpace">
-      <i c="186" l="1614268840062" />
+      <i c="196" l="1614325265214" />
     </e>
     <e n="EditorChooseLookupItem">
       <i c="38" l="1614247922688" />
@@ -52,7 +52,7 @@
       <i c="15" l="1614247946838" />
     </e>
     <e n="GotoAction">
-      <i c="19" l="1614268822171" />
+      <i c="24" l="1614331099686" />
     </e>
     <e n="GotoDeclaration">
       <i c="1" l="1614247769145" />
@@ -88,7 +88,7 @@
       <i c="4" l="1614247459836" />
     </e>
     <e n="com.intellij.openapi.project.DumbAwareAction$SimpleDumbAwareAction">
-      <i c="17" l="1614268825934" />
+      <i c="22" l="1614331102396" />
     </e>
     <e n="com.intellij.openapi.ui.DialogWrapper$5">
       <i c="1" l="1614187366876" />

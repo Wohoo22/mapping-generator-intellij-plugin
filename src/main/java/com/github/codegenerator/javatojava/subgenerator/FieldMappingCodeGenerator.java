@@ -1,5 +1,6 @@
 package com.github.codegenerator.javatojava.subgenerator;
 
+import com.github.codegenerator.javatojava.subgenerator.listmappingcodegenerator.ListMappingCodeGenerator;
 import com.github.model.DataTypeNode;
 import com.github.model.ElementNode;
 import com.github.utils.DataTypeNodeUtils;
@@ -25,18 +26,21 @@ public class FieldMappingCodeGenerator {
         // if type == ENUM
         else if (fieldToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.ENUM) {
             String valueToSet = JavaCommandUtils.generateEnumConverter(fieldToSet.getDataTypeNode().getQualifiedName(), objectToGetVarName, fieldToGet.getName());
-            result += JavaCommandUtils.generateSetter(objectToSetVarName, fieldToSet.getName(), valueToSet);
+            result += indent + JavaCommandUtils.generateSetter(objectToSetVarName, fieldToSet.getName(), valueToSet);
         }
         // type == OBJECT
         else if (fieldToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.OBJECT) {
             ObjectMappingCodeGenerator objectMappingCodeGenerator = new ObjectMappingCodeGenerator();
             result += "\n";
-            result += objectMappingCodeGenerator.generateMappingCode(objectToSetVarName, fieldToSet, objectToGetVarName, fieldToGet,
+            result += indent + objectMappingCodeGenerator.generateMappingCode(objectToSetVarName, fieldToSet, objectToGetVarName, fieldToGet,
                     usedVariableName, indent);
         }
         // type == ARRAY
-        else if (fieldToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.ARRAY) {
-
+        else if (fieldToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.LIST) {
+            ListMappingCodeGenerator listMappingCodeGenerator = new ListMappingCodeGenerator();
+            result += "\n";
+            result += indent + listMappingCodeGenerator.generateMappingCode(objectToSetVarName, fieldToSet, objectToGetVarName, fieldToGet,
+                    usedVariableName, indent);
         }
         // else (may be MAP or OTHERS)
         else {

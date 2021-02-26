@@ -1,6 +1,7 @@
 package com.github.codegenerator.javatojava.subgenerator;
 
 import com.github.model.ElementNode;
+import com.github.utils.DataTypeNodeUtils;
 import com.github.utils.ElementNodeUtils;
 import com.github.utils.JavaCommandUtils;
 import com.github.utils.NameUtils;
@@ -13,13 +14,17 @@ public class ObjectMappingCodeGenerator {
                                       Set<String> usedVariableName, String indent) {
         String result = "";
 
+        // 2 data types are not equal -> return
+        if (!DataTypeNodeUtils.dataTypeEqual(fieldToSet.getDataTypeNode(), fieldToGet.getDataTypeNode()))
+            return result;
+
         // declare object-to-set
         String crtObjectToSetVarName = NameUtils.generateUniqueRandomName(fieldToSet.getDataTypeNode().getPresentableName(), usedVariableName);
-        result += JavaCommandUtils.generateObjectDeclaration(fieldToSet.getDataTypeNode().getQualifiedName(), crtObjectToSetVarName);
+        result += indent + JavaCommandUtils.generateObjectDeclaration(fieldToSet.getDataTypeNode().getQualifiedName(), crtObjectToSetVarName);
 
         // declare object-to-get
         String crtObjectToGetVarName = NameUtils.generateUniqueRandomName(fieldToGet.getDataTypeNode().getPresentableName(), usedVariableName);
-        result += fieldToGet.getDataTypeNode().getQualifiedName() + " " + crtObjectToGetVarName + " = "
+        result += indent + fieldToGet.getDataTypeNode().getQualifiedName() + " " + crtObjectToGetVarName + " = "
                 + JavaCommandUtils.generateGetter(parentObjectToGetVarName, fieldToGet.getName()) + ";" + "\n";
 
         // generate mapping code for object fields
@@ -29,14 +34,14 @@ public class ObjectMappingCodeGenerator {
             // can't find a suitable field
             if (childFieldToGet == null) continue;
 
-            result = result.concat(fieldMappingCodeGenerator.generateMappingCode(crtObjectToSetVarName, crtObjectToGetVarName,
+            result = indent + result.concat(fieldMappingCodeGenerator.generateMappingCode(crtObjectToSetVarName, crtObjectToGetVarName,
                     childFieldToSet, childFieldToGet, indent, usedVariableName));
         }
 
         result += "\n";
 
         // set generated object to parent object
-        result += JavaCommandUtils.generateSetter(parentObjectToSetVarName, fieldToSet.getName(), crtObjectToSetVarName);
+        result += indent + JavaCommandUtils.generateSetter(parentObjectToSetVarName, fieldToSet.getName(), crtObjectToSetVarName);
 
         return result;
     }

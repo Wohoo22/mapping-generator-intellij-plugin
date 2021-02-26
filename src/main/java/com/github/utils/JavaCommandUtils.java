@@ -21,10 +21,14 @@ public class JavaCommandUtils {
     }
 
 
-    public static String generateEnumConverter(String desEnumQualifiedName, String objectToGetVarName, String fieldToGetName) {
+    public static String generateEnumConverter(String desEnumQualifiedName, String srcObjectToGetVarName, String enumFieldToGetName) {
         return desEnumQualifiedName + "." + "valueOf" + "(" +
-                objectToGetVarName + "." + "get" + NameUtils.toUpperCaseFirstChar(fieldToGetName) + "()" + "." + "toString()" +
+                srcObjectToGetVarName + "." + "get" + NameUtils.toUpperCaseFirstChar(enumFieldToGetName) + "()" + "." + "toString()" +
                 ")";
+    }
+
+    public static String generateEnumConverter(String desEnumQualifiedName, String srcEnumVarName) {
+        return desEnumQualifiedName + "." + "valueOf(" + srcEnumVarName + ".toString()" + ")";
     }
 
     public static String generateSetter(String objectToSetVarName, String fieldToSetName, String valueToSet) {
@@ -33,5 +37,19 @@ public class JavaCommandUtils {
 
     public static String generateGetter(String objectToGetVarName, String fieldToGetName) {
         return objectToGetVarName + dot + "get" + NameUtils.toUpperCaseFirstChar(fieldToGetName) + "()";
+    }
+
+    public static String generateForEachWithoutCloseBrace(String dataTypeQualifiedName, String varName, String listVarName) {
+        return "for (" + dataTypeQualifiedName + " " + varName + " : " + listVarName + ") {" + lb;
+
+    }
+
+
+    public static String generateListDeclaration(String dataTypeName, String varName) {
+        return dataTypeName + " " + varName + " = new ArrayList<>()" + eoc + lb;
+    }
+
+    public static String generateListAdd(String listToAddVarName, String valueToAdd) {
+        return listToAddVarName + "." + "add(" + valueToAdd + ")" + eoc + lb;
     }
 }
