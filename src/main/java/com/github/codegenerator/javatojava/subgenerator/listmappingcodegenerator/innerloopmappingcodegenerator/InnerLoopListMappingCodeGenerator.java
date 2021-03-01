@@ -38,15 +38,16 @@ public class InnerLoopListMappingCodeGenerator {
         String lastIndent = indent;
         indent = StringUtils.addSpaces(indent, 2);
 
+        InnerLoopObjectMappingCodeGenerator innerLoopObjectMappingCodeGenerator = new InnerLoopObjectMappingCodeGenerator();
+        InnerLoopEnumMappingCodeGenerator innerLoopEnumMappingCodeGenerator = new InnerLoopEnumMappingCodeGenerator();
+
         // generate inner loop mapping code
         switch (listToAddDataTypeNode.getChild().getDataType()) {
             case OBJECT:
-                InnerLoopObjectMappingCodeGenerator innerLoopObjectMappingCodeGenerator = new InnerLoopObjectMappingCodeGenerator();
                 result += indent + innerLoopObjectMappingCodeGenerator.generateMappingCode(crtListToAddVarName, listToAddDataTypeNode.getChild(), childFieldsToSet,
                         innerLoopObjectToGetVarName, childFieldsToGet, indent, usedVariableName);
                 break;
             case ENUM:
-                InnerLoopEnumMappingCodeGenerator innerLoopEnumMappingCodeGenerator = new InnerLoopEnumMappingCodeGenerator();
                 result += indent + innerLoopEnumMappingCodeGenerator.generateMappingCode(crtListToAddVarName, innerLoopObjectToGetVarName, listToAddDataTypeNode.getChild(), indent);
                 break;
             case LIST:

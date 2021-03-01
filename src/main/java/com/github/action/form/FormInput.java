@@ -25,7 +25,7 @@ public class FormInput extends DialogWrapper {
 
         gridBag.setDefaultWeightX(1.0)
                 .setDefaultFill(GridBagConstraints.HORIZONTAL)
-                .setDefaultInsets(JBUI.insets(0, 0, 5, 5))
+                .setDefaultInsets(JBUI.insets(50, 50, 50, 50))
         ;
 
         JTextField desFileQualifiedNameField = new JFormattedTextField();
@@ -33,10 +33,10 @@ public class FormInput extends DialogWrapper {
 
         JPanel jPanel = new JPanel(new GridBagLayout());
 
-        jPanel.add(new Label("Destination file qualified name"));
+        jPanel.add(new Label("Destination file qualified name:"));
         jPanel.add(desFileQualifiedNameField);
 
-        jPanel.add(new Label("Source file qualified name"));
+        jPanel.add(new Label("Source file qualified name:"));
         jPanel.add(srcFileQualifiedNameField);
 
         this.desFileQualifiedNameField = desFileQualifiedNameField;

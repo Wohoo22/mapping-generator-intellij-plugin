@@ -1,11 +1,16 @@
 package com.github.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ElementNode {
     private String name;
     private DataTypeNode dataTypeNode;
     private List<ElementNode> children;
+
+    public ElementNode() {
+        children = new ArrayList<>();
+    }
 
     public String getName() {
         return name;

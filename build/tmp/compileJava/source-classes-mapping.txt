@@ -1,39 +1,29 @@
-com/github/parser/java/utils/PsiFieldTypeToDataTypeNode.java
- com.github.parser.java.utils.PsiFieldTypeToDataTypeNode
-com/github/parser/proto/lexer/enums/ProtoToken.java
- com.github.parser.proto.lexer.enums.ProtoToken
 com/github/utils/ElementNodeUtils.java
  com.github.utils.ElementNodeUtils
 com/github/model/ElementNode.java
  com.github.model.ElementNode
-com/github/utils/StringUtils.java
- com.github.utils.StringUtils
-com/github/parser/proto/ProtoParser.java
- com.github.parser.proto.ProtoParser
-com/github/utils/NameUtils.java
- com.github.utils.NameUtils
-com/github/utils/DataTypeNodeUtils.java
- com.github.utils.DataTypeNodeUtils
+com/github/utils/JavaCommandUtils.java
+ com.github.utils.JavaCommandUtils
 com/github/parser/java/JavaParser.java
  com.github.parser.java.JavaParser
-com/github/action/form/FormInput.java
- com.github.action.form.FormInput
-com/github/parser/proto/lexer/ProtoLexer.java
- com.github.parser.proto.lexer.ProtoLexer
+com/github/parser/proto/lexer/enums/Token.java
+ com.github.parser.proto.lexer.enums.Token
+com/github/parser/proto/messageelementnodesbuilder/MessageElementNodesBuilder.java
+ com.github.parser.proto.messageelementnodesbuilder.MessageElementNodesBuilder
 com/github/model/DataTypeNode.java
  com.github.model.DataTypeNode
  com.github.model.DataTypeNode$DataType
 com/github/codegenerator/javatojava/subgenerator/listmappingcodegenerator/innerloopmappingcodegenerator/InnerLoopListMappingCodeGenerator.java
  com.github.codegenerator.javatojava.subgenerator.listmappingcodegenerator.innerloopmappingcodegenerator.InnerLoopListMappingCodeGenerator
  com.github.codegenerator.javatojava.subgenerator.listmappingcodegenerator.innerloopmappingcodegenerator.InnerLoopListMappingCodeGenerator$1
+com/github/utils/DataTypeNodeUtils.java
+ com.github.utils.DataTypeNodeUtils
 com/github/codegenerator/javatojava/subgenerator/ObjectMappingCodeGenerator.java
  com.github.codegenerator.javatojava.subgenerator.ObjectMappingCodeGenerator
-com/github/codegenerator/javatojava/subgenerator/listmappingcodegenerator/innerloopmappingcodegenerator/InnerLoopEnumMappingCodeGenerator.java
- com.github.codegenerator.javatojava.subgenerator.listmappingcodegenerator.innerloopmappingcodegenerator.InnerLoopEnumMappingCodeGenerator
-com/github/utils/JavaCommandUtils.java
- com.github.utils.JavaCommandUtils
-com/github/codegenerator/javatojava/JavaToJavaCodeGenerator.java
- com.github.codegenerator.javatojava.JavaToJavaCodeGenerator
+com/github/action/form/FormInput.java
+ com.github.action.form.FormInput
+com/github/parser/proto/model/TokenStorage.java
+ com.github.parser.proto.model.TokenStorage
 com/github/action/GenerateMappingCode.java
  com.github.action.GenerateMappingCode
 com/github/codegenerator/javatojava/subgenerator/FieldMappingCodeGenerator.java
@@ -43,5 +33,40 @@ com/github/codegenerator/javatojava/subgenerator/listmappingcodegenerator/ListMa
  com.github.codegenerator.javatojava.subgenerator.listmappingcodegenerator.ListMappingCodeGenerator$1
 com/github/action/WriteCommand.java
  com.github.action.WriteCommand
+com/github/codegenerator/javatojava/JavaToJavaCodeGenerator.java
+ com.github.codegenerator.javatojava.JavaToJavaCodeGenerator
+com/github/codegenerator/javatojava/subgenerator/listmappingcodegenerator/innerloopmappingcodegenerator/InnerLoopEnumMappingCodeGenerator.java
+ com.github.codegenerator.javatojava.subgenerator.listmappingcodegenerator.innerloopmappingcodegenerator.InnerLoopEnumMappingCodeGenerator
 com/github/codegenerator/javatojava/subgenerator/listmappingcodegenerator/innerloopmappingcodegenerator/InnerLoopObjectMappingCodeGenerator.java
  com.github.codegenerator.javatojava.subgenerator.listmappingcodegenerator.innerloopmappingcodegenerator.InnerLoopObjectMappingCodeGenerator
+com/github/parser/java/utils/PsiFieldTypeToDataTypeNode.java
+ com.github.parser.java.utils.PsiFieldTypeToDataTypeNode
+com/github/utils/NameUtils.java
+ com.github.utils.NameUtils
+com/github/utils/StringUtils.java
+ com.github.utils.StringUtils
+com/github/parser/proto/lexer/Lexer.java
+ com.github.parser.proto.lexer.Lexer
+com/github/parser/proto/lexer/utils/TokenUtils.java
+ com.github.parser.proto.lexer.utils.TokenUtils
+com/github/parser/proto/lexer/model/Reader.java
+ com.github.parser.proto.lexer.model.Reader
+com/github/parser/proto/messagetreebuilder/MessageTreeBuilder.java
+ com.github.parser.proto.messagetreebuilder.MessageTreeBuilder
+com/github/parser/proto/messageelementnodesbuilder/elementnodesbuilder/utils/TokenUtils.java
+ com.github.parser.proto.messageelementnodesbuilder.elementnodesbuilder.utils.TokenUtils
+ com.github.parser.proto.messageelementnodesbuilder.elementnodesbuilder.utils.TokenUtils$1
+com/github/parser/proto/model/MessageNode.java
+ com.github.parser.proto.model.MessageNode
+com/github/parser/proto/messagetreebuilder/nodebuilder/EnumNodeBuilder.java
+ com.github.parser.proto.messagetreebuilder.nodebuilder.EnumNodeBuilder
+com/github/parser/proto/messagetreebuilder/nodebuilder/MessageNodeBuilder.java
+ com.github.parser.proto.messagetreebuilder.nodebuilder.MessageNodeBuilder
+com/github/parser/proto/utils/MessageNodeUtils.java
+ com.github.parser.proto.utils.MessageNodeUtils
+com/github/parser/proto/messageelementnodesbuilder/elementnodesbuilder/BuildElementNodeFromTokens.java
+ com.github.parser.proto.messageelementnodesbuilder.elementnodesbuilder.BuildElementNodeFromTokens
+com/github/parser/proto/ProtoParser.java
+ com.github.parser.proto.ProtoParser
+com/github/parser/proto/elementtreebuilder/ElementTreeBuilder.java
+ com.github.parser.proto.elementtreebuilder.ElementTreeBuilder

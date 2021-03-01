@@ -28,19 +28,17 @@ public class ListMappingCodeGenerator {
 
         // if innermost data-type = MAP or OTHERS, generate getter setter right away and return
         DataTypeNode innermostDataTypeNode = fieldToSet.getDataTypeNode();
-        while (innermostDataTypeNode.getChild() != null)
-            innermostDataTypeNode = innermostDataTypeNode.getChild();
-        if (innermostDataTypeNode.getDataType() == DataTypeNode.DataType.MAP
-                || innermostDataTypeNode.getDataType() == DataTypeNode.DataType.OTHERS) {
+        while (innermostDataTypeNode.getChild() != null) innermostDataTypeNode = innermostDataTypeNode.getChild();
+        if (innermostDataTypeNode.getDataType() == DataTypeNode.DataType.MAP || innermostDataTypeNode.getDataType() == DataTypeNode.DataType.OTHERS) {
             result += indent + JavaCommandUtils.generateSetterGetter(parentObjectToGetVarName, fieldToGet.getName(), parentObjectToSetVarName, fieldToSet.getName());
             return result;
         }
 
-        // declare list-to-set
-        String crtListToSetVarName = NameUtils.generateUniqueRandomName(fieldToSet.getDataTypeNode().getPresentableName(), usedVariableName);
-        result += indent + JavaCommandUtils.generateListDeclaration(fieldToSet.getDataTypeNode().getQualifiedName(), crtListToSetVarName);
+        // declare list-to-add-data
+        String crtListToAddVarName = NameUtils.generateUniqueRandomName(fieldToSet.getDataTypeNode().getPresentableName(), usedVariableName);
+        result += indent + JavaCommandUtils.generateListDeclaration(fieldToSet.getDataTypeNode().getQualifiedName(), crtListToAddVarName);
 
-        // declare list-to-get
+        // declare list-to-get-data-from
         String crtListToGetVarName = NameUtils.generateUniqueRandomName(fieldToGet.getDataTypeNode().getPresentableName(), usedVariableName);
         result += indent + JavaCommandUtils.generateDeclarationByGetter(fieldToGet.getDataTypeNode().getQualifiedName(), crtListToGetVarName, parentObjectToGetVarName, fieldToGet.getName());
 
@@ -53,22 +51,23 @@ public class ListMappingCodeGenerator {
         String lastIndent = indent;
         indent = StringUtils.addSpaces(indent, 2);
 
+        InnerLoopObjectMappingCodeGenerator innerLoopObjectMappingCodeGenerator = new InnerLoopObjectMappingCodeGenerator();
+        InnerLoopEnumMappingCodeGenerator innerLoopEnumMappingCodeGenerator = new InnerLoopEnumMappingCodeGenerator();
+        InnerLoopListMappingCodeGenerator innerLoopListMappingCodeGenerator = new InnerLoopListMappingCodeGenerator();
+
         // generate inner loop mapping code
         switch (fieldToSet.getDataTypeNode().getChild().getDataType()) {
             case OBJECT:
-                InnerLoopObjectMappingCodeGenerator innerLoopObjectMappingCodeGenerator = new InnerLoopObjectMappingCodeGenerator();
                 result += indent + innerLoopObjectMappingCodeGenerator.generateMappingCode(
-                        crtListToSetVarName, fieldToSet.getDataTypeNode().getChild(), fieldToSet.getChildren(),
+                        crtListToAddVarName, fieldToSet.getDataTypeNode().getChild(), fieldToSet.getChildren(),
                         innerLoopObjectToGetVarName, fieldToGet.getChildren(), indent, usedVariableName
                 );
                 break;
             case ENUM:
-                InnerLoopEnumMappingCodeGenerator innerLoopEnumMappingCodeGenerator = new InnerLoopEnumMappingCodeGenerator();
-                result += indent + innerLoopEnumMappingCodeGenerator.generateMappingCode(crtListToSetVarName, innerLoopObjectToGetVarName, fieldToSet.getDataTypeNode().getChild(), indent);
+                result += indent + innerLoopEnumMappingCodeGenerator.generateMappingCode(crtListToAddVarName, innerLoopObjectToGetVarName, fieldToSet.getDataTypeNode().getChild(), indent);
                 break;
             case LIST:
-                InnerLoopListMappingCodeGenerator innerLoopListMappingCodeGenerator = new InnerLoopListMappingCodeGenerator();
-                result += indent + innerLoopListMappingCodeGenerator.generateMappingCode(fieldToSet.getDataTypeNode().getChild(), crtListToSetVarName, fieldToGet.getDataTypeNode().getChild(),
+                result += indent + innerLoopListMappingCodeGenerator.generateMappingCode(fieldToSet.getDataTypeNode().getChild(), crtListToAddVarName, fieldToGet.getDataTypeNode().getChild(),
                         innerLoopObjectToGetVarName, fieldToSet.getChildren(), fieldToGet.getChildren(), indent, usedVariableName);
         }
 
@@ -78,9 +77,7 @@ public class ListMappingCodeGenerator {
         result += "\n";
 
         // set generated list to parent object
-        result += indent + JavaCommandUtils.generateSetter(parentObjectToSetVarName, fieldToSet.getName(), crtListToSetVarName);
-
-        result += "\n";
+        result += indent + JavaCommandUtils.generateSetter(parentObjectToSetVarName, fieldToSet.getName(), crtListToAddVarName);
 
         return result;
     }

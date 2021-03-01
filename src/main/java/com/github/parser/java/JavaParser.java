@@ -18,11 +18,9 @@ public class JavaParser {
     private static final Logger logger = LoggerFactory.getLogger(JavaParser.class);
 
     public List<ElementNode> parse(String qualifiedClassName, JavaPsiFacade javaPsiFacade, GlobalSearchScope globalSearchScope) {
-
         List<ElementNode> elementNodes = new ArrayList<>();
 
         PsiClass psiClass = javaPsiFacade.findClass(qualifiedClassName, globalSearchScope);
-
         if (psiClass == null) {
             logger.error("Can't find class " + qualifiedClassName);
             return elementNodes;
@@ -40,7 +38,6 @@ public class JavaParser {
         for (PsiField field : psiFields) {
             // this is also qualified class name in Java
             String fieldName = field.getName();
-
             DataTypeNode dataTypeNode = PsiFieldTypeToDataTypeNode.convert(field.getType(), fieldName, javaPsiFacade, globalSearchScope);
 
             ElementNode elementNode = new ElementNode();
@@ -50,7 +47,10 @@ public class JavaParser {
             assert dataTypeNode != null;
 
             if (dataTypeNode.getDataType() == DataTypeNode.DataType.OBJECT) {
-                elementNode.setChildren(parse(dataTypeNode.getQualifiedName(), javaPsiFacade, globalSearchScope));
+
+                List<ElementNode> childElementNodes = this.parse(dataTypeNode.getQualifiedName(), javaPsiFacade, globalSearchScope);
+                elementNode.setChildren(childElementNodes);
+
             } else if (dataTypeNode.getDataType() == DataTypeNode.DataType.LIST) {
                 // in case of List<List<...List<Object>...>>
                 DataTypeNode innermostDataTypeNode = dataTypeNode.getChild();

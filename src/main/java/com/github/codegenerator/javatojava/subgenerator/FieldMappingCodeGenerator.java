@@ -21,6 +21,9 @@ public class FieldMappingCodeGenerator {
         if (!DataTypeNodeUtils.dataTypeEqual(fieldToSet.getDataTypeNode(), fieldToGet.getDataTypeNode()))
             return result;
 
+        ObjectMappingCodeGenerator objectMappingCodeGenerator = new ObjectMappingCodeGenerator();
+        ListMappingCodeGenerator listMappingCodeGenerator = new ListMappingCodeGenerator();
+
         // if 2 data types are equal in type and qualified_name -> can be set directly
         if (DataTypeNodeUtils.qualifiedNameEqual(fieldToSet.getDataTypeNode(), fieldToGet.getDataTypeNode())) {
             result += indent + JavaCommandUtils.generateSetterGetter(objectToGetVarName, fieldToGet.getName(), objectToSetVarName, fieldToSet.getName());
@@ -32,14 +35,12 @@ public class FieldMappingCodeGenerator {
         }
         // type == OBJECT
         else if (fieldToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.OBJECT) {
-            ObjectMappingCodeGenerator objectMappingCodeGenerator = new ObjectMappingCodeGenerator();
             result += "\n";
             result += indent + objectMappingCodeGenerator.generateMappingCode(objectToSetVarName, fieldToSet, objectToGetVarName, fieldToGet,
                     usedVariableName, indent);
         }
         // type == ARRAY
         else if (fieldToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.LIST) {
-            ListMappingCodeGenerator listMappingCodeGenerator = new ListMappingCodeGenerator();
             result += "\n";
             result += indent + listMappingCodeGenerator.generateMappingCode(objectToSetVarName, fieldToSet, objectToGetVarName, fieldToGet,
                     usedVariableName, indent);

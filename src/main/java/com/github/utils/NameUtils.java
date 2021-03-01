@@ -6,10 +6,6 @@ import java.util.Set;
 
 public class NameUtils {
 
-    public static String toLowerCaseAllChars(String name) {
-        return name.toLowerCase(Locale.ROOT);
-    }
-
     public static String toLowerCaseFirstChar(String name) {
         return name.substring(0, 1).toLowerCase(Locale.ROOT) + name.substring(1);
     }

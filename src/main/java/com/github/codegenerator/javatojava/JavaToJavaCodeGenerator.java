@@ -18,8 +18,8 @@ import java.util.Set;
 public class JavaToJavaCodeGenerator {
     private static final Logger logger = LoggerFactory.getLogger(JavaToJavaCodeGenerator.class);
 
-    private static final String desObjectVarName = "des";
-    private static final String srcObjectVarName = "src";
+    private static final String desObjectVarName = "desObj";
+    private static final String srcObjectVarName = "srcObj";
 
     public String generateMappingCode(String qualifiedSrcFileName, String qualifiedDesFileName, JavaPsiFacade javaPsiFacade, GlobalSearchScope globalSearchScope) {
 

@@ -45,7 +45,7 @@ public class JavaCommandUtils {
 
 
     public static String generateListDeclaration(String dataTypeQualifiedName, String varName) {
-        String pattern = "{data_type} {var_name} = new ArrayList<>(); \n";
+        String pattern = "{data_type} {var_name} = new java.util.ArrayList<>(); \n";
         return pattern.replace("{data_type}", dataTypeQualifiedName).replace("{var_name}", varName);
     }
 
