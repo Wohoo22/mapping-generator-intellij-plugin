@@ -1,9 +1,8 @@
 package com.github.action;
 
-import com.github.action.form.javatoproto.JavaToProtoFormInput;
+import com.github.action.form.JavaToProtoFormInput;
 import com.github.action.writer.EditorTextWriter;
 import com.github.codegenerator.javatoproto.JavaToProtoCodeGenerator;
-import com.github.enums.MappingType;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;

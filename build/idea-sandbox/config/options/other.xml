@@ -27,6 +27,11 @@
             <ProjectPluginTrackerState />
           </value>
         </entry>
+        <entry key="1pFAxRXsDj6orIy53Es99TE8OPu">
+          <value>
+            <ProjectPluginTrackerState />
+          </value>
+        </entry>
       </map>
     </option>
   </component>
@@ -36,8 +41,8 @@
     <property name="build.toolwindow.Sync.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
     <property name="decompiler.legal.notice.accepted" value="true" />
     <property name="defaultJdkConfigured" value="true" />
-    <property name="file.chooser.recent.files" value="D:/Work/work-space/nexttech/co-inventory&#10;D:/Work/work-space/nexttech/co-item&#10;D:/Work/work-space/nexttech/foo&#10;D:/Work/work-space/nexttech/co-admin-location" />
-    <property name="file.gist.reindex.count" value="268" />
+    <property name="file.chooser.recent.files" value="D:/Work/work-space/nexttech/co-order&#10;D:/Work/work-space/nexttech/co-inventory&#10;D:/Work/work-space/nexttech/co-item&#10;D:/Work/work-space/nexttech/foo&#10;D:/Work/work-space/nexttech/co-admin-location" />
+    <property name="file.gist.reindex.count" value="327" />
     <property name="fileTypeChangedCounter" value="2" />
     <property name="got.it.tooltip.reader.mode.got.it" value="1" />
     <property name="ide.memory.adjusted" value="true" />

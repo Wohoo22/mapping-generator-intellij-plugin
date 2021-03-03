@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MessageNode {
-    private String name;
+    private String presentableName;
+    private String qualifiedName;
     private MessageNode parent;
     private boolean isEnum;
     private List<MessageNode> children;
@@ -44,12 +45,12 @@ public class MessageNode {
         isEnum = anEnum;
     }
 
-    public String getName() {
-        return name;
+    public String getPresentableName() {
+        return presentableName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPresentableName(String presentableName) {
+        this.presentableName = presentableName;
     }
 
 
@@ -67,5 +68,13 @@ public class MessageNode {
 
     public void setChildren(List<MessageNode> children) {
         this.children = children;
+    }
+
+    public String getQualifiedName() {
+        return qualifiedName;
+    }
+
+    public void setQualifiedName(String qualifiedName) {
+        this.qualifiedName = qualifiedName;
     }
 }

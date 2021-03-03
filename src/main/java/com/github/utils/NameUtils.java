@@ -30,4 +30,8 @@ public class NameUtils {
         usedName.add(res);
         return res;
     }
+
+    public static boolean isQualifiedName(String s) {
+        return s.contains(".");
+    }
 }

@@ -31,7 +31,7 @@ public class Lexer {
             }
 
             // parse next word
-            String nextWord = reader.parseNextWord();
+            String nextWord = reader.parseNextKeyWord();
 
             if (nextWord.isEmpty()) {
                 reader.nextChar();

@@ -52,7 +52,7 @@
         </entry>
         <entry key="D:/Work/work-space/nexttech/co-inventory">
           <value>
-            <RecentProjectMetaInfo frameTitle="co-inventory – InventoryItem.java" opened="true" projectWorkspaceId="1hcfPzNgaVl9H0JIdcy5YUawtZ7">
+            <RecentProjectMetaInfo frameTitle="co-inventory – map.java" projectWorkspaceId="1hcfPzNgaVl9H0JIdcy5YUawtZ7">
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="IC-203.7148.57" />
               <option name="buildTimestamp" value="1611627865926" />
@@ -62,8 +62,20 @@
             </RecentProjectMetaInfo>
           </value>
         </entry>
+        <entry key="D:/Work/work-space/nexttech/co-order">
+          <value>
+            <RecentProjectMetaInfo frameTitle="co-order – Map.java" opened="true" projectWorkspaceId="1pFAxRXsDj6orIy53Es99TE8OPu">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-203.7148.57" />
+              <option name="buildTimestamp" value="1611627862699" />
+              <frame x="-9" y="-9" width="1938" height="1098" extendedState="6" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1614768711494" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
       </map>
     </option>
-    <option name="lastProjectLocation" value="$USER_HOME$/IdeaProjects" />
+    <option name="lastProjectLocation" value="D:/Work/work-space/nexttech" />
   </component>
 </application>

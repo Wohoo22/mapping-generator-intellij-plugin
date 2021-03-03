@@ -127,4 +127,10 @@ public class JavaCommandUtils {
         return pattern.replace("{obj_to_get}", sourceToGet)
                 .replace("{fld_to_get}", NameUtils.toUpperCaseFirstChar(fieldToGetName));
     }
+
+    public static String generateProtoMapGetter(String sourceToGet, String fieldToGetName) {
+        String pattern = "{obj_to_get}.get{fld_to_get}Map()";
+        return pattern.replace("{obj_to_get}", sourceToGet)
+                .replace("{fld_to_get}", NameUtils.toUpperCaseFirstChar(fieldToGetName));
+    }
 }

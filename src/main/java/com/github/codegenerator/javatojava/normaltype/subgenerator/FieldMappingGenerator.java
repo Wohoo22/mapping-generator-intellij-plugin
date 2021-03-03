@@ -40,6 +40,7 @@ public class FieldMappingGenerator {
         }
         // if type == object
         else if (elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.OBJECT) {
+            result.append("\n");
             String childObjectToSetVarName = NameUtils.generateUniqueRandomName(elementToSet.getDataTypeNode().getPresentableName(), usedVariableName);
             String sourceToGetThoseElements = JavaCommandUtils.generateGetter(sourceToGet, elementToGet.getName());
 
@@ -49,9 +50,11 @@ public class FieldMappingGenerator {
 
             result.append(mappingCode)
                     .append(JavaCommandUtils.generateSetter(objectToSetVarName, elementToSet.getName(), childObjectToSetVarName));
+            result.append("\n");
         }
         // if type == list
         else if (elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.LIST) {
+            result.append("\n");
             String listToGetSource = JavaCommandUtils.generateGetter(sourceToGet, elementToGet.getName());
             String listToAddVarName = NameUtils.generateUniqueRandomName(elementToSet.getDataTypeNode().getPresentableName(), usedVariableName);
 
@@ -61,6 +64,7 @@ public class FieldMappingGenerator {
 
             result.append(mappingCode)
                     .append(JavaCommandUtils.generateSetter(objectToSetVarName, elementToSet.getName(), listToAddVarName));
+            result.append("\n");
         }
 
         return result.toString();

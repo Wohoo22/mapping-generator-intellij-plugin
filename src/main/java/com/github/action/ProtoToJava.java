@@ -1,6 +1,6 @@
 package com.github.action;
 
-import com.github.action.form.prototojava.ProtoToJavaFormInput;
+import com.github.action.form.ProtoToJavaFormInput;
 import com.github.action.writer.EditorTextWriter;
 import com.github.codegenerator.prototojava.ProtoToJavaCodeGenerator;
 import com.github.enums.MappingType;

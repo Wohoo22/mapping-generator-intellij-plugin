@@ -30,16 +30,35 @@ public class Reader {
         index++;
     }
 
-    public String parseNextWord() {
+    public String parseNextKeyWord() {
         skipWhiteSpaces();
 
         String res = "";
 
-        while (!end() && Character.isLetterOrDigit(data.charAt(index))) {
+        while (!end() && charInKeyWord(data.charAt(index))) {
             res = res.concat(String.valueOf(data.charAt(index)));
             index++;
         }
 
         return res;
+    }
+
+    private boolean charInKeyWord(char c) {
+        if (Character.isLetterOrDigit(c))
+            return true;
+        switch (c) {
+            case ' ':
+            case '{':
+            case '}':
+            case '=':
+            case ';':
+            case '(':
+            case ')':
+            case ',':
+            case '<':
+            case '>':
+                return false;
+        }
+        return true;
     }
 }

@@ -6,19 +6,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MessageNodeUtils {
-    public static MessageNode findMessageNodeByName(List<MessageNode> rootMessageNodes, MessageNode searchScope, String name) {
+    public static MessageNode findMessageNodeByPresentableName(List<MessageNode> rootMessageNodes, MessageNode searchScope, String name) {
         if (searchScope == null) {
             for (MessageNode rootMsgNode : rootMessageNodes)
-                if (rootMsgNode.getName().equals(name))
+                if (rootMsgNode.getPresentableName().equals(name))
                     return rootMsgNode;
             return null;
         }
 
         for (MessageNode messageNode : searchScope.getChildren())
-            if (messageNode.getName().equals(name))
+            if (messageNode.getPresentableName().equals(name))
                 return messageNode;
 
-        return findMessageNodeByName(rootMessageNodes, searchScope.getParent(), name);
+        return findMessageNodeByPresentableName(rootMessageNodes, searchScope.getParent(), name);
     }
 
     public static String findQualifiedName(MessageNode messageNode, String javaOuterClassQualifiedName) {
@@ -26,7 +26,7 @@ public class MessageNodeUtils {
 
         MessageNode tmp = messageNode;
         while (tmp != null) {
-            names.add(tmp.getName());
+            names.add(tmp.getPresentableName());
             tmp = tmp.getParent();
         }
 
@@ -40,5 +40,26 @@ public class MessageNodeUtils {
                 res = res.concat(names.get(i) + ".");
 
         return res;
+    }
+
+    public static MessageNode findMessageNodeByPresentableAndQualifiedName(List<MessageNode> rootMessageNodes, MessageNode searchScope, String presentableName, String qualifiedName) {
+        MessageNode messageNode;
+
+        messageNode = findMessageNodeByPresentableName(rootMessageNodes, searchScope, presentableName);
+        if (messageNode != null) return messageNode;
+
+        messageNode = findMessageNodeByQualifiedName(rootMessageNodes, qualifiedName);
+        return messageNode;
+    }
+
+    public static MessageNode findMessageNodeByQualifiedName(List<MessageNode> rootMessageNodes, String qualifiedName) {
+        if (rootMessageNodes == null) return null;
+        for (MessageNode rootMessageNode : rootMessageNodes) {
+            if (rootMessageNode.getQualifiedName().equals(qualifiedName))
+                return rootMessageNode;
+            MessageNode child = findMessageNodeByQualifiedName(rootMessageNode.getChildren(), qualifiedName);
+            if (child != null) return child;
+        }
+        return null;
     }
 }

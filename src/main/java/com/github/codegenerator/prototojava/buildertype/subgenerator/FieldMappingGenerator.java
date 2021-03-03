@@ -27,7 +27,7 @@ public class FieldMappingGenerator {
         }
         // if type == map
         else if (elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.MAP) {
-            String mapToSet = JavaCommandUtils.generateGetter(sourceToGet, elementToGet.getName());
+            String mapToSet = JavaCommandUtils.generateProtoMapGetter(sourceToGet, elementToGet.getName());
             result.append(JavaCommandUtils.dotField(elementToSet.getName(), mapToSet));
         }
         // if type == others

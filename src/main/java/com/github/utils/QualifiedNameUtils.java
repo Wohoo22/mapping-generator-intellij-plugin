@@ -18,4 +18,8 @@ public class QualifiedNameUtils {
         }
         return s;
     }
+
+    public static String appendToBegin(String value, String name) {
+        return value + "." + name;
+    }
 }
