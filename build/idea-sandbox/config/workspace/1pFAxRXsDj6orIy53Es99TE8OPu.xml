@@ -23,8 +23,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/order/Map.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4229">
-              <caret line="215" lean-forward="true" selection-start-line="215" selection-end-line="215" />
+            <state relative-caret-position="462">
+              <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/order/utils/OrderMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-11101">
+              <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -52,7 +61,6 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -93,22 +101,13 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="grpc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="co-order" type="b2602c69:ProjectViewProjectNode" />
-              <item name="co-order" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="grpc" type="462c0819:PsiDirectoryNode" />
-              <item name="req" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -119,7 +118,7 @@
   </component>
   <component name="ToolWindowManager">
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30428955" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31300268" />
       <window_info id="Structure" order="1" side_tool="true" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Commit" order="3" />
@@ -139,6 +138,12 @@
       <window_info anchor="right" id="Maven" order="0" />
       <window_info anchor="right" id="Layout Validation" order="1" />
     </layout>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1614783993734">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1614783993734" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$MAVEN_REPOSITORY$/cloud/nextsol/core-grpc-proto-beans/1.0.676-SNAPSHOT/core-grpc-proto-beans-1.0.676-20210301.030345-2.jar!/cloud/nextsol/core/order/CoOrder.class">
@@ -163,10 +168,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/order/utils/OrderMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11101">
+          <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/order/Map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4229">
-          <caret line="215" lean-forward="true" selection-start-line="215" selection-end-line="215" />
+        <state relative-caret-position="462">
+          <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
         </state>
       </provider>
     </entry>

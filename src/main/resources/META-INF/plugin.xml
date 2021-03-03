@@ -4,8 +4,19 @@
     <vendor email="quandang2102@gmail.com" url="">Quan Dang</vendor>
 
     <description><![CDATA[
-    Generate mapping code between java classes, grpc messages<br>
-    <em></em>
+    # Mapping generator !!! The plugin that help you generate mapping code between Java entities.
+
+    ### - Features:
+    1. Java to Java (support builder type).
+
+    2. Java to Proto (proto3).
+
+    3. Proto to Java (proto3) (support builder type).
+
+    ### - Advantages:
+    1. No more auto-mapper libraries needed for your project.
+    2. Modify the mapping code is very easy (unlike auto-mappers).
+    3. Able to parse "object" fields which are imported from another class (very powerful parser).
     ]]></description>
 
     <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
@@ -28,7 +39,8 @@
                 text="MappingGenerator: Java-to-Proto">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
-        <action id="com.github.action.ProtoToJava" class="com.github.action.ProtoToJava" text="MappingGenerator: Proto-to-Java">
+        <action id="com.github.action.ProtoToJava" class="com.github.action.ProtoToJava"
+                text="MappingGenerator: Proto-to-Java">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
     </actions>
