@@ -1,52 +1,52 @@
 <application>
   <component name="ActionsLocalSummary">
     <e n="$SelectAll">
-      <i c="2" l="1614353685218" />
+      <i c="3" l="1614681139125" />
     </e>
     <e n="$Undo">
-      <i c="3" l="1614354115463" />
+      <i c="29" l="1614751175502" />
     </e>
     <e n="CodeCompletion">
       <i c="4" l="1614010999367" />
     </e>
     <e n="EditorBackSpace">
-      <i c="253" l="1614354175038" />
+      <i c="339" l="1614766875267" />
     </e>
     <e n="EditorChooseLookupItem">
-      <i c="41" l="1614354179303" />
+      <i c="45" l="1614766802271" />
     </e>
     <e n="EditorCopy">
-      <i c="19" l="1614354116311" />
+      <i c="21" l="1614759972921" />
     </e>
     <e n="EditorCut">
-      <i c="3" l="1614354114071" />
+      <i c="6" l="1614751183816" />
     </e>
     <e n="EditorDelete">
       <i c="41" l="1614353764246" />
     </e>
     <e n="EditorDown">
-      <i c="4" l="1614353037045" />
+      <i c="9" l="1614766802881" />
     </e>
     <e n="EditorDuplicate">
       <i c="1" l="1613923813237" />
     </e>
     <e n="EditorEnter">
-      <i c="75" l="1614354142583" />
+      <i c="88" l="1614766791581" />
     </e>
     <e n="EditorLeft">
-      <i c="28" l="1614353248226" />
+      <i c="29" l="1614766798919" />
     </e>
     <e n="EditorPaste">
-      <i c="34" l="1614354143110" />
+      <i c="47" l="1614766855369" />
     </e>
     <e n="EditorRight">
-      <i c="21" l="1614353251215" />
+      <i c="22" l="1614766790861" />
     </e>
     <e n="EditorTab">
-      <i c="16" l="1614354001168" />
+      <i c="18" l="1614668571620" />
     </e>
     <e n="EditorUp">
-      <i c="5" l="1614247784898" />
+      <i c="11" l="1614761290094" />
     </e>
     <e n="Generate">
       <i c="16" l="1614247945575" />
@@ -55,13 +55,13 @@
       <i c="15" l="1614247946838" />
     </e>
     <e n="GotoAction">
-      <i c="44" l="1614580885476" />
+      <i c="51" l="1614679581572" />
     </e>
     <e n="GotoDeclaration">
-      <i c="1" l="1614247769145" />
+      <i c="3" l="1614668835208" />
     </e>
     <e n="NewClass">
-      <i c="7" l="1614353696568" />
+      <i c="8" l="1614766764265" />
     </e>
     <e n="NewElement">
       <i c="1" l="1613838812194" />
@@ -73,19 +73,25 @@
       <i c="3" l="1614353152461" />
     </e>
     <e n="ReformatCode">
-      <i c="48" l="1614354180372" />
+      <i c="58" l="1614766895428" />
     </e>
     <e n="SaveAll">
-      <i c="87" l="1614354180653" />
+      <i c="102" l="1614766895920" />
+    </e>
+    <e n="SelectInProjectView">
+      <i c="1" l="1614766753764" />
     </e>
     <e n="Switcher">
-      <i c="81" l="1614353305471" />
+      <i c="91" l="1614759978455" />
     </e>
     <e n="Tree-selectNextExtendSelection">
       <i c="17" l="1614247846947" />
     </e>
     <e n="WelcomeScreen.OpenProject">
       <i c="1" l="1613804635062" />
+    </e>
+    <e n="com.intellij.ide.ReopenProjectAction">
+      <i c="2" l="1614766671181" />
     </e>
     <e n="com.intellij.openapi.editor.impl.EditorMarkupModelImpl$StatusAction">
       <i c="1" l="1614354161156" />
@@ -94,10 +100,10 @@
       <i c="5" l="1614353712672" />
     </e>
     <e n="com.intellij.openapi.project.DumbAwareAction$SimpleDumbAwareAction">
-      <i c="40" l="1614580888044" />
+      <i c="46" l="1614679582601" />
     </e>
     <e n="com.intellij.openapi.ui.DialogWrapper$5">
-      <i c="1" l="1614187366876" />
+      <i c="3" l="1614679602476" />
     </e>
     <e n="com.intellij.openapi.wm.impl.ToolWindowHeader$HideAction">
       <i c="2" l="1614354168021" />

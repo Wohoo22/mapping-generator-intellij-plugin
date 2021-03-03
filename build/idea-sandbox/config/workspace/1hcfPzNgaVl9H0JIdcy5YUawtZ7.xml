@@ -1,23 +1,20 @@
 <project version="4">
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/tmp.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/entity/InventoryItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="123" column="133" selection-start-line="123" selection-start-column="133" selection-end-line="123" selection-end-column="133" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="672">
+              <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="41" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/entity/InventoryItem.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/map.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            <state relative-caret-position="252">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -31,24 +28,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/TmpItemInstance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2982">
-              <caret line="149" column="27" selection-start-line="149" selection-start-column="27" selection-end-line="149" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/src/main/java/cloud/nextsol/core/TmpItemInstance.java" />
       <option value="$PROJECT_DIR$/src/main/java/cloud/nextsol/core/tmp.java" />
+      <option value="$PROJECT_DIR$/src/main/java/cloud/nextsol/core/map.java" />
     </changedPaths>
   </component>
   <component name="IgnoredFileRootStore">
@@ -65,13 +51,72 @@
     </treeState>
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1" />
-    <panes />
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="co-inventory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="co-inventory" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="co-inventory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="co-inventory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="co-inventory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="co-inventory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="co-inventory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="co-inventory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="co-inventory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="co-inventory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="co-inventory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="co-inventory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="co-inventory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="co-inventory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+              <item name="InventoryItem" type="1a9f42e2:ClassTreeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="ToolWindowManager">
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2647453" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26407507" />
       <window_info id="Structure" order="1" side_tool="true" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Commit" order="3" />
@@ -93,10 +138,10 @@
     </layout>
   </component>
   <component name="WindowStateProjectService">
-    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1614580888047">
+    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1614668562599">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1614580888047" />
+    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1614668562599" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/entity/InventoryItemMirror.java">
@@ -106,20 +151,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/tmp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="123" column="133" selection-start-line="123" selection-start-column="133" selection-end-line="123" selection-end-column="133" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/tmp.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/TmpItemInstance.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/entity/InventoryItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="672">
+          <caret line="40" column="42" lean-forward="true" selection-start-line="40" selection-start-column="42" selection-end-line="41" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -130,13 +167,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/TmpItemInstance.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2982">
-          <caret line="149" column="27" selection-start-line="149" selection-start-column="27" selection-end-line="149" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="252">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>

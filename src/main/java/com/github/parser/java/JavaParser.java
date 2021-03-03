@@ -46,21 +46,11 @@ public class JavaParser {
 
             assert dataTypeNode != null;
 
-            if (dataTypeNode.getDataType() == DataTypeNode.DataType.OBJECT) {
+            if (dataTypeNode.getDataType() == DataTypeNode.DataType.OBJECT)
+                elementNode.setChildren(this.parse(dataTypeNode.getQualifiedName(), javaPsiFacade, globalSearchScope));
 
-                List<ElementNode> childElementNodes = this.parse(dataTypeNode.getQualifiedName(), javaPsiFacade, globalSearchScope);
-                elementNode.setChildren(childElementNodes);
-
-            } else if (dataTypeNode.getDataType() == DataTypeNode.DataType.LIST) {
-                // in case of List<List<...List<Object>...>>
-                DataTypeNode innermostDataTypeNode = dataTypeNode.getChild();
-
-                while (innermostDataTypeNode.getDataType() == DataTypeNode.DataType.LIST)
-                    innermostDataTypeNode = innermostDataTypeNode.getChild();
-
-                if (innermostDataTypeNode.getDataType() == DataTypeNode.DataType.OBJECT)
-                    elementNode.setChildren(parse(innermostDataTypeNode.getQualifiedName(), javaPsiFacade, globalSearchScope));
-            }
+            else if (dataTypeNode.getDataType() == DataTypeNode.DataType.LIST && dataTypeNode.getChild().getDataType() == DataTypeNode.DataType.OBJECT)
+                elementNode.setChildren(this.parse(dataTypeNode.getChild().getQualifiedName(), javaPsiFacade, globalSearchScope));
 
             elementNodes.add(elementNode);
         }

@@ -20,7 +20,7 @@ public class ProtoParser {
 
     private static final Logger logger = LoggerFactory.getLogger(ProtoParser.class);
 
-    public List<ElementNode> parse(String fileName, String desiredMessageName) {
+    public List<ElementNode> parse(String javaOuterClassQualifiedName,String fileName, String messageQualifiedName) {
 
         // open file
         String data;
@@ -37,7 +37,7 @@ public class ProtoParser {
 
         // create message tree
         MessageTreeBuilder messageTreeBuilder = new MessageTreeBuilder();
-        List<MessageNode> rootMessageNodes = messageTreeBuilder.build(data, tokenStorage);
+        List<MessageNode> rootMessageNodes = messageTreeBuilder.build(tokenStorage);
 
         // build message element nodes
         MessageElementNodesBuilder messageElementNodesBuilder = new MessageElementNodesBuilder();
@@ -45,7 +45,7 @@ public class ProtoParser {
 
         // build element tree
         ElementTreeBuilder elementTreeBuilder = new ElementTreeBuilder();
-        List<ElementNode> elementTree = elementTreeBuilder.build(rootMessageNodes, desiredMessageName);
+        List<ElementNode> elementTree = elementTreeBuilder.build(rootMessageNodes, messageQualifiedName, javaOuterClassQualifiedName);
 
         return elementTree;
     }

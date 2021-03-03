@@ -2,6 +2,7 @@ package com.github.parser.proto.utils;
 
 import com.github.parser.proto.model.MessageNode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MessageNodeUtils {
@@ -18,5 +19,26 @@ public class MessageNodeUtils {
                 return messageNode;
 
         return findMessageNodeByName(rootMessageNodes, searchScope.getParent(), name);
+    }
+
+    public static String findQualifiedName(MessageNode messageNode, String javaOuterClassQualifiedName) {
+        List<String> names = new ArrayList<>();
+
+        MessageNode tmp = messageNode;
+        while (tmp != null) {
+            names.add(tmp.getName());
+            tmp = tmp.getParent();
+        }
+
+        names.add(javaOuterClassQualifiedName);
+
+        String res = "";
+        for (int i = names.size() - 1; i >= 0; i--)
+            if (i == 0)
+                res = res.concat(names.get(i));
+            else
+                res = res.concat(names.get(i) + ".");
+
+        return res;
     }
 }

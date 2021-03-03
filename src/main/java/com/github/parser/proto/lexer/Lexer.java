@@ -39,10 +39,7 @@ public class Lexer {
             }
 
             Token token = TokenUtils.stringToToken(nextWord);
-
-            if (token == null) continue;
-
-            tokenStorage.add(token, nextWord);
+            if (token != null) tokenStorage.add(token, nextWord);
         }
 
         return tokenStorage;

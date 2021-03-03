@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MessageTreeBuilder {
-    public List<MessageNode> build(String data, TokenStorage tokenStorage) {
+    public List<MessageNode> build(TokenStorage tokenStorage) {
 
         List<MessageNode> messageNodes = new ArrayList<>();
 

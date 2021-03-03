@@ -13,7 +13,7 @@ public class ElementTreeBuilder {
 
     private static final Logger logger = LoggerFactory.getLogger(ElementTreeBuilder.class);
 
-    public List<ElementNode> build(List<MessageNode> rootMessageNodes, String messageName) {
+    public List<ElementNode> build(List<MessageNode> rootMessageNodes, String messageName, String javaOuterClassQualifiedName) {
 
         MessageNode desiredMessageNode = MessageNodeUtils.findMessageNodeByName(rootMessageNodes, null, messageName);
 
@@ -25,12 +25,12 @@ public class ElementTreeBuilder {
             return null;
         }
 
-        buildElementNodes(desiredMessageNode, rootMessageNodes);
+        buildElementNodes(desiredMessageNode, rootMessageNodes, javaOuterClassQualifiedName);
 
         return desiredMessageNode.getElementNodes();
     }
 
-    private static void buildElementNodes(MessageNode messageNode, List<MessageNode> rootMessageNodes) {
+    private static void buildElementNodes(MessageNode messageNode, List<MessageNode> rootMessageNodes, String javaOuterClassQualifiedName) {
         if (messageNode == null || messageNode.isEnum()) return;
 
         for (ElementNode elementNode : messageNode.getElementNodes()) {
@@ -40,7 +40,12 @@ public class ElementTreeBuilder {
                 MessageNode childMsgNode = MessageNodeUtils.findMessageNodeByName(rootMessageNodes, messageNode,
                         elementNode.getDataTypeNode().getQualifiedName());
 
-                buildElementNodes(childMsgNode, rootMessageNodes);
+                // get qualified name
+                String qualifiedName = MessageNodeUtils.findQualifiedName(childMsgNode, javaOuterClassQualifiedName);
+                elementNode.getDataTypeNode().setQualifiedName(qualifiedName);
+
+                // build child element nodes
+                buildElementNodes(childMsgNode, rootMessageNodes, javaOuterClassQualifiedName);
                 assert childMsgNode != null;
                 elementNode.setChildren(childMsgNode.getElementNodes());
             }
@@ -51,9 +56,20 @@ public class ElementTreeBuilder {
                 MessageNode childMsgNode = MessageNodeUtils.findMessageNodeByName(rootMessageNodes, messageNode,
                         elementNode.getDataTypeNode().getChild().getQualifiedName());
 
-                buildElementNodes(childMsgNode, rootMessageNodes);
+                // get qualified name
+                String qualifiedName = MessageNodeUtils.findQualifiedName(childMsgNode, javaOuterClassQualifiedName);
+                elementNode.getDataTypeNode().getChild().setQualifiedName(qualifiedName);
+
+                // build child element nodes
+                buildElementNodes(childMsgNode, rootMessageNodes, javaOuterClassQualifiedName);
                 assert childMsgNode != null;
                 elementNode.setChildren(childMsgNode.getElementNodes());
+            }
+            // enum
+            else if (elementNode.getDataTypeNode().getDataType() == DataTypeNode.DataType.ENUM) {
+                // get qualified name
+                String qualifiedName = MessageNodeUtils.findQualifiedName(messageNode, javaOuterClassQualifiedName);
+                elementNode.getDataTypeNode().setQualifiedName(qualifiedName);
             }
         }
     }

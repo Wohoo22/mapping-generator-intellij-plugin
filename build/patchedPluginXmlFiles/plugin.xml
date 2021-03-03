@@ -15,16 +15,13 @@
   <depends>com.intellij.modules.java</depends>
   <extensions defaultExtensionNs="com.intellij"/>
   <actions>
-    <action id="com.github.action.TestPopUp" class="com.github.action.TestPopUp" text="TestPopUp">
+    <action id="com.github.action.JavaToJava" class="com.github.action.JavaToJava" text="MappingGenerator: Java-to-Java">
       <add-to-group group-id="ToolsMenu" anchor="first"/>
     </action>
-    <action id="com.github.action.PopUp" class="com.github.action.PopUp" text="TestingTesting">
+    <action id="com.github.action.JavaToProto" class="com.github.action.JavaToProto" text="MappingGenerator: Java-to-Proto">
       <add-to-group group-id="ToolsMenu" anchor="first"/>
     </action>
-    <action id="com.github.action.GenerateMappingCode" class="com.github.action.GenerateMappingCode" text="Quan">
-      <add-to-group group-id="ToolsMenu" anchor="first"/>
-    </action>
-    <action id="com.github.action.GuiForm" class="com.github.action.GuiForm" text="Mapping generator">
+    <action id="com.github.action.ProtoToJava" class="com.github.action.ProtoToJava" text="MappingGenerator: Proto-to-Java">
       <add-to-group group-id="ToolsMenu" anchor="first"/>
     </action>
   </actions>
