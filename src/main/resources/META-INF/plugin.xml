@@ -4,18 +4,20 @@
     <vendor email="quandang2102@gmail.com" url="">Quan Dang</vendor>
 
     <description><![CDATA[
-    <h1> Mapping generator !!! The plugin that help you generate mapping code between Java entities.</h1>
+    <h1> Mapping generator !!! The plugin that helps you generate mapping code between Java entities.</h1>
     <h3> Features: </h3> <br />
-    1. Java to Java (support builder type). <br />
+    1. Java to Java (support both normal type and lombok builder type). <br />
 
     2. Java to Proto (proto3). <br />
 
-    3. Proto to Java (proto3) (support builder type). <br />
+    3. Proto to Java (proto3) (support both normal type and lombok builder type). <br />
 
     <h3> Advantages: </h3> <br />
     1. No more auto-mapper libraries needed for your project. <br />
     2. Modify the mapping code is very easy (unlike auto-mappers). <br />
-    3. Able to parse "object" fields which are imported from another class (very powerful parser). <br />
+
+    <h3> Github: </h3> <br />
+    https://github.com/Wohoo22/mapping-generator-intellij-plugin
     ]]></description>
 
     <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html

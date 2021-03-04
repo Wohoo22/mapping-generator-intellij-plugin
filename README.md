@@ -2,17 +2,17 @@
 
 ## Main features:
 
-1. ###### Java to Java (support both _normal_ and _lombok builder_ type)
+1. ###### Java to Java (support both _normal_ type and _lombok builder_ type)
 
 <br />![](pictures/javatojava/form.png)
 <br />![](pictures/javatojava/generated.png)
 
-2. ###### Java to Proto (java class generated from proto is _builder_ by default)
+2. ###### Java to Proto (java class generated from proto is _builder_ type by default)
 
 <br />![](pictures/javatoproto/form.png)
 <br />![](pictures/javatoproto/generated.png)
 
-3. ###### Proto to Java (support both _normal_ and _lombok builder_ type)
+3. ###### Proto to Java (support both _normal_ type and _lombok builder_ type)
 
 <br />![](pictures/prototojava/form.png)
 <br />![](pictures/prototojava/generated.png)
