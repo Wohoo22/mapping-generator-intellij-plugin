@@ -1,5 +1,5 @@
 <idea-plugin>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.3-SNAPSHOT</version>
   <change-notes>
       First version&lt;br&gt;
       &lt;em&gt;&lt;/em&gt;</change-notes>
@@ -8,8 +8,19 @@
   <name>MappingGenerator</name>
   <vendor email="quandang2102@gmail.com" url="">Quan Dang</vendor>
   <description>
-    Generate mapping code between java classes, grpc messages&lt;br&gt;
-    &lt;em&gt;&lt;/em&gt;
+    &lt;h1&gt; Mapping generator !!! The plugin that help you generate mapping code between Java entities.&lt;/h1&gt; &lt;br /&gt;
+
+    &lt;h3&gt; Features: &lt;/h3&gt; &lt;br /&gt;
+    1. Java to Java (support builder type). &lt;br /&gt;
+
+    2. Java to Proto (proto3). &lt;br /&gt;
+
+    3. Proto to Java (proto3) (support builder type). &lt;br /&gt;
+
+    &lt;h3&gt; Advantages: &lt;/h3&gt; &lt;br /&gt;
+    1. No more auto-mapper libraries needed for your project. &lt;br /&gt;
+    2. Modify the mapping code is very easy (unlike auto-mappers). &lt;br /&gt;
+    3. Able to parse "object" fields which are imported from another class (very powerful parser). &lt;br /&gt;
     </description>
   <depends>com.intellij.modules.platform</depends>
   <depends>com.intellij.modules.java</depends>
