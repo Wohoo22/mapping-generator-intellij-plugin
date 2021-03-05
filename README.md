@@ -26,6 +26,11 @@
 
 * https://plugins.jetbrains.com/plugin/16237-mappinggenerator
 
+## Mapping rules:
+* Same name.
+* As much fields as possible.
+* Child objects will be generated recursively.
+
 ## How to use:
 
 1. ###### Install the plugin into Intellij.
