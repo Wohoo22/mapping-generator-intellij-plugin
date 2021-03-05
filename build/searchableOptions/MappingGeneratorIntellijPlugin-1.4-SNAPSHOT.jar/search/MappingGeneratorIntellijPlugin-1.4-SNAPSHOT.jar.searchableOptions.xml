@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<options>
+  <configurable id="preferences.keymap" configurable_name="Keymap">
+    <option name="java-to-java" path="ActionManager" hit="MappingGenerator: Java-to-Java" />
+    <option name="mappinggenerator" path="ActionManager" hit="MappingGenerator: Java-to-Java" />
+    <option name="java-to-proto" path="ActionManager" hit="MappingGenerator: Java-to-Proto" />
+    <option name="mappinggenerator" path="ActionManager" hit="MappingGenerator: Java-to-Proto" />
+    <option name="mappinggenerator" path="ActionManager" hit="MappingGenerator: Proto-to-Java" />
+    <option name="proto-to-java" path="ActionManager" hit="MappingGenerator: Proto-to-Java" />
+  </configurable>
+</options>
+
