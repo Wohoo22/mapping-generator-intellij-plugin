@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.github.MappingGeneratorIntellijPlugin</id>
-    <name>MappingGenerator</name>
+    <name>Mapping Generator</name>
     <vendor email="quandang2102@gmail.com" url="">Quan Dang</vendor>
 
     <description><![CDATA[

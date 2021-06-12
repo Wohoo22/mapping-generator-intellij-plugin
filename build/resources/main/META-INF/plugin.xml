@@ -1,11 +1,11 @@
 <idea-plugin>
-  <version>1.4-SNAPSHOT</version>
+  <version>1.5</version>
   <change-notes>
-      First version&lt;br&gt;
+      Update version compatible&lt;br&gt;
       &lt;em&gt;&lt;/em&gt;</change-notes>
-  <idea-version since-build="203.7148" until-build="203.*"/>
+  <idea-version since-build="203.7148.57"/>
   <id>com.github.MappingGeneratorIntellijPlugin</id>
-  <name>MappingGenerator</name>
+  <name>Mapping Generator</name>
   <vendor email="quandang2102@gmail.com" url="">Quan Dang</vendor>
   <description>
     &lt;h1&gt; Mapping generator !!! The plugin that helps you generate mapping code between Java entities.&lt;/h1&gt;

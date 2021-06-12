@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.github'
-version '1.4-SNAPSHOT'
+version '1.5'
 
 repositories {
     mavenCentral()
@@ -19,12 +19,18 @@ dependencies {
 intellij {
     version '2020.3.2'
     plugins = ['com.intellij.java']
+    updateSinceUntilBuild false
 }
 patchPluginXml {
     changeNotes """
-      First version<br>
+      Update version compatible<br>
       <em></em>"""
+    sinceBuild '203.7148.57'
 }
 test {
     useJUnitPlatform()
+}
+
+buildSearchableOptions {
+    enabled = true
 }
