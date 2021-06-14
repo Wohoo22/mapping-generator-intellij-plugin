@@ -20,13 +20,12 @@ com/github/parser/proto/lexer/Lexer.java
  com.github.parser.proto.lexer.Lexer
 com/github/parser/proto/model/MessageNode.java
  com.github.parser.proto.model.MessageNode
-com/github/parser/java/JavaParser.java
- com.github.parser.java.JavaParser
- com.github.parser.java.JavaParser$JavaParserBuilder
+com/github/action/JavaToProto.java
+ com.github.action.JavaToProto
 com/github/parser/proto/elementtreebuilder/ElementTreeBuilder.java
  com.github.parser.proto.elementtreebuilder.ElementTreeBuilder
-com/github/utils/NameUtils.java
- com.github.utils.NameUtils
+com/github/codegenerator/prototojava/normaltype/NormalTypeCodeGenerator.java
+ com.github.codegenerator.prototojava.normaltype.NormalTypeCodeGenerator
 com/github/parser/proto/messageelementnodesbuilder/elementnodesbuilder/utils/TokenUtils.java
  com.github.parser.proto.messageelementnodesbuilder.elementnodesbuilder.utils.TokenUtils
  com.github.parser.proto.messageelementnodesbuilder.elementnodesbuilder.utils.TokenUtils$1
@@ -42,8 +41,9 @@ com/github/action/classnamesuggestion/dropdowntextsuggestion/SuggestionDropDownD
  com.github.action.classnamesuggestion.dropdowntextsuggestion.SuggestionDropDownDecorator
  com.github.action.classnamesuggestion.dropdowntextsuggestion.SuggestionDropDownDecorator$1
  com.github.action.classnamesuggestion.dropdowntextsuggestion.SuggestionDropDownDecorator$2
-com/github/parser/java/utils/PsiFieldTypeToDataTypeNode.java
- com.github.parser.java.utils.PsiFieldTypeToDataTypeNode
+com/github/action/writer/EditorTextWriter.java
+ com.github.action.writer.EditorTextWriter
+ com.github.action.writer.EditorTextWriter$EditorTextWriterBuilder
 com/github/parser/proto/messagetreebuilder/nodebuilder/EnumNodeBuilder.java
  com.github.parser.proto.messagetreebuilder.nodebuilder.EnumNodeBuilder
 com/github/utils/PsiUtils.java
@@ -69,9 +69,8 @@ com/github/parser/proto/messagetreebuilder/nodebuilder/MessageNodeBuilder.java
  com.github.parser.proto.messagetreebuilder.nodebuilder.MessageNodeBuilder
 com/github/parser/proto/messageelementnodesbuilder/elementnodesbuilder/BuildElementNodeFromTokens.java
  com.github.parser.proto.messageelementnodesbuilder.elementnodesbuilder.BuildElementNodeFromTokens
-com/github/codegenerator/javatojava/normaltype/subgenerator/FieldMappingGenerator.java
- com.github.codegenerator.javatojava.normaltype.subgenerator.FieldMappingGenerator
- com.github.codegenerator.javatojava.normaltype.subgenerator.FieldMappingGenerator$FieldMappingGeneratorBuilder
+com/github/codegenerator/prototojava/buildertype/BuilderTypeCodeGenerator.java
+ com.github.codegenerator.prototojava.buildertype.BuilderTypeCodeGenerator
 com/github/action/form/JavaToProtoFormInput.java
  com.github.action.form.JavaToProtoFormInput
 com/github/utils/DataTypeNodeUtils.java
@@ -80,15 +79,14 @@ com/github/parser/proto/model/TokenStorage.java
  com.github.parser.proto.model.TokenStorage
 com/github/utils/QualifiedNameUtils.java
  com.github.utils.QualifiedNameUtils
+com/github/codegenerator/javatojava/normaltype/NormalTypeCodeGenerator.java
+ com.github.codegenerator.javatojava.normaltype.NormalTypeCodeGenerator
+ com.github.codegenerator.javatojava.normaltype.NormalTypeCodeGenerator$NormalTypeCodeGeneratorBuilder
+com/github/codegenerator/prototojava/normaltype/subgenerator/ObjectMappingGenerator.java
+ com.github.codegenerator.prototojava.normaltype.subgenerator.ObjectMappingGenerator
 com/github/codegenerator/javatojava/JavaToJavaCodeGenerator.java
  com.github.codegenerator.javatojava.JavaToJavaCodeGenerator
  com.github.codegenerator.javatojava.JavaToJavaCodeGenerator$JavaToJavaCodeGeneratorBuilder
-com/github/codegenerator/prototojava/normaltype/subgenerator/ObjectMappingGenerator.java
- com.github.codegenerator.prototojava.normaltype.subgenerator.ObjectMappingGenerator
-com/github/codegenerator/javatojava/normaltype/subgenerator/ListMappingGenerator.java
- com.github.codegenerator.javatojava.normaltype.subgenerator.ListMappingGenerator
- com.github.codegenerator.javatojava.normaltype.subgenerator.ListMappingGenerator$1
- com.github.codegenerator.javatojava.normaltype.subgenerator.ListMappingGenerator$ListMappingGeneratorBuilder
 com/github/codegenerator/prototojava/buildertype/subgenerator/FieldMappingGenerator.java
  com.github.codegenerator.prototojava.buildertype.subgenerator.FieldMappingGenerator
 com/github/codegenerator/javatojava/normaltype/subgenerator/ObjectMappingGenerator.java
@@ -100,42 +98,44 @@ com/github/codegenerator/javatoproto/subgenerator/ObjectMappingGenerator.java
  com.github.codegenerator.javatoproto.subgenerator.ObjectMappingGenerator
 com/github/codegenerator/javatoproto/JavaToProtoCodeGenerator.java
  com.github.codegenerator.javatoproto.JavaToProtoCodeGenerator
-com/github/utils/JavaCommandUtils.java
- com.github.utils.JavaCommandUtils
-com/github/codegenerator/javatoproto/subgenerator/FieldMappingGenerator.java
- com.github.codegenerator.javatoproto.subgenerator.FieldMappingGenerator
 com/github/action/JavaToJava.java
  com.github.action.JavaToJava
+com/github/codegenerator/javatoproto/subgenerator/FieldMappingGenerator.java
+ com.github.codegenerator.javatoproto.subgenerator.FieldMappingGenerator
+com/github/parser/java/JavaParser.java
+ com.github.parser.java.JavaParser
+ com.github.parser.java.JavaParser$JavaParserBuilder
+com/github/parser/java/utils/PsiFieldTypeToDataTypeNode.java
+ com.github.parser.java.utils.PsiFieldTypeToDataTypeNode
+com/github/codegenerator/javatojava/buildertype/BuilderTypeCodeGenerator.java
+ com.github.codegenerator.javatojava.buildertype.BuilderTypeCodeGenerator
+ com.github.codegenerator.javatojava.buildertype.BuilderTypeCodeGenerator$BuilderTypeCodeGeneratorBuilder
 com/github/codegenerator/prototojava/buildertype/subgenerator/ListMappingGenerator.java
  com.github.codegenerator.prototojava.buildertype.subgenerator.ListMappingGenerator
 com/github/codegenerator/prototojava/normaltype/subgenerator/FieldMappingGenerator.java
  com.github.codegenerator.prototojava.normaltype.subgenerator.FieldMappingGenerator
-com/github/action/writer/EditorTextWriter.java
- com.github.action.writer.EditorTextWriter
- com.github.action.writer.EditorTextWriter$EditorTextWriterBuilder
-com/github/codegenerator/prototojava/normaltype/NormalTypeCodeGenerator.java
- com.github.codegenerator.prototojava.normaltype.NormalTypeCodeGenerator
-com/github/codegenerator/javatoproto/subgenerator/ListMappingGenerator.java
- com.github.codegenerator.javatoproto.subgenerator.ListMappingGenerator
-com/github/codegenerator/prototojava/buildertype/BuilderTypeCodeGenerator.java
- com.github.codegenerator.prototojava.buildertype.BuilderTypeCodeGenerator
-com/github/codegenerator/prototojava/normaltype/subgenerator/ListMappingGenerator.java
- com.github.codegenerator.prototojava.normaltype.subgenerator.ListMappingGenerator
- com.github.codegenerator.prototojava.normaltype.subgenerator.ListMappingGenerator$1
-com/github/codegenerator/javatojava/normaltype/NormalTypeCodeGenerator.java
- com.github.codegenerator.javatojava.normaltype.NormalTypeCodeGenerator
- com.github.codegenerator.javatojava.normaltype.NormalTypeCodeGenerator$NormalTypeCodeGeneratorBuilder
-com/github/codegenerator/javatojava/buildertype/subgenerator/ObjectMappingGenerator.java
- com.github.codegenerator.javatojava.buildertype.subgenerator.ObjectMappingGenerator
- com.github.codegenerator.javatojava.buildertype.subgenerator.ObjectMappingGenerator$ObjectMappingGeneratorBuilder
-com/github/action/JavaToProto.java
- com.github.action.JavaToProto
-com/github/codegenerator/javatojava/buildertype/BuilderTypeCodeGenerator.java
- com.github.codegenerator.javatojava.buildertype.BuilderTypeCodeGenerator
- com.github.codegenerator.javatojava.buildertype.BuilderTypeCodeGenerator$BuilderTypeCodeGeneratorBuilder
 com/github/codegenerator/javatojava/buildertype/subgenerator/FieldMappingGenerator.java
  com.github.codegenerator.javatojava.buildertype.subgenerator.FieldMappingGenerator
  com.github.codegenerator.javatojava.buildertype.subgenerator.FieldMappingGenerator$FieldMappingGeneratorBuilder
+com/github/codegenerator/prototojava/normaltype/subgenerator/ListMappingGenerator.java
+ com.github.codegenerator.prototojava.normaltype.subgenerator.ListMappingGenerator
+ com.github.codegenerator.prototojava.normaltype.subgenerator.ListMappingGenerator$1
+com/github/codegenerator/javatojava/normaltype/subgenerator/ListMappingGenerator.java
+ com.github.codegenerator.javatojava.normaltype.subgenerator.ListMappingGenerator
+ com.github.codegenerator.javatojava.normaltype.subgenerator.ListMappingGenerator$1
+ com.github.codegenerator.javatojava.normaltype.subgenerator.ListMappingGenerator$ListMappingGeneratorBuilder
+com/github/codegenerator/javatojava/buildertype/subgenerator/ObjectMappingGenerator.java
+ com.github.codegenerator.javatojava.buildertype.subgenerator.ObjectMappingGenerator
+ com.github.codegenerator.javatojava.buildertype.subgenerator.ObjectMappingGenerator$ObjectMappingGeneratorBuilder
+com/github/utils/JavaCommandUtils.java
+ com.github.utils.JavaCommandUtils
+com/github/codegenerator/javatojava/normaltype/subgenerator/FieldMappingGenerator.java
+ com.github.codegenerator.javatojava.normaltype.subgenerator.FieldMappingGenerator
+ com.github.codegenerator.javatojava.normaltype.subgenerator.FieldMappingGenerator$FieldMappingGeneratorBuilder
 com/github/codegenerator/javatojava/buildertype/subgenerator/ListMappingGenerator.java
  com.github.codegenerator.javatojava.buildertype.subgenerator.ListMappingGenerator
  com.github.codegenerator.javatojava.buildertype.subgenerator.ListMappingGenerator$ListMappingGeneratorBuilder
+com/github/codegenerator/javatoproto/subgenerator/ListMappingGenerator.java
+ com.github.codegenerator.javatoproto.subgenerator.ListMappingGenerator
+com/github/utils/NameUtils.java
+ com.github.utils.NameUtils

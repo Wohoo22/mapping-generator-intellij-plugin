@@ -20,6 +20,7 @@ public class BuilderTypeCodeGenerator {
     public String generateMappingCode() {
         StringBuilder result = new StringBuilder();
         Set<String> usedVariableName = new HashSet<>();
+        Set<String> usedPresentableName = new HashSet<>();
 
         ObjectMappingGenerator objectMappingGenerator = ObjectMappingGenerator.builder()
                 .elementsToSet(elementsToSet)
@@ -30,6 +31,7 @@ public class BuilderTypeCodeGenerator {
                 .indent("")
                 .usedVariableName(usedVariableName)
                 .referredQualifiedName(referredQualifiedName)
+                .usedPresentableName(usedPresentableName)
                 .build();
         String mappingCode = objectMappingGenerator.generateMappingCode();
         result.append(mappingCode);

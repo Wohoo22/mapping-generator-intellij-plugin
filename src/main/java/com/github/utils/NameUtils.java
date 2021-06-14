@@ -31,7 +31,17 @@ public class NameUtils {
         return res;
     }
 
-    public static boolean isQualifiedName(String s) {
-        return s.contains(".");
+    public static String getGenerationNameAndMark(String objectToSetPresentableName, String objectToSetQualifiedName,
+                                                  Set<String> usedPresentableName, Set<String> referredQualifiedName) {
+        if (objectToSetPresentableName.equals(objectToSetQualifiedName))
+            return objectToSetPresentableName;
+
+        if (usedPresentableName.contains(objectToSetPresentableName))
+            return objectToSetQualifiedName;
+        else {
+            usedPresentableName.add(objectToSetPresentableName);
+            referredQualifiedName.add(objectToSetQualifiedName);
+            return objectToSetPresentableName;
+        }
     }
 }

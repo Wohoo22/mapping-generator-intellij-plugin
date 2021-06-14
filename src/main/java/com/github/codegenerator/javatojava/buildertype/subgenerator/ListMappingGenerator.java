@@ -12,11 +12,12 @@ import java.util.Set;
 @Builder
 public class ListMappingGenerator {
     private final String listSource;
-    private  ElementNode elementToSet;
-    private  ElementNode elementToGet;
+    private ElementNode elementToSet;
+    private ElementNode elementToGet;
     private final String indent;
     private final Set<String> usedVariableName;
     private final Set<String> referredQualifiedName;
+    private final Set<String> usedPresentableName;
 
     public String generateMappingCode() {
 
@@ -25,8 +26,6 @@ public class ListMappingGenerator {
         // open stream map
         result.append(indent).append(JavaCommandUtils.openStreamMap(listSource));
 
-        referredQualifiedName.add(elementToSet.getDataTypeNode().getQualifiedName());
-        referredQualifiedName.add(elementToGet.getDataTypeNode().getQualifiedName());
 
         ElementNode childElementToSet = new ElementNode(
                 elementToSet.getName(),
@@ -41,8 +40,6 @@ public class ListMappingGenerator {
                 elementToGet.getChildren()
         );
 
-        referredQualifiedName.add(childElementToSet.getDataTypeNode().getQualifiedName());
-        referredQualifiedName.add(childElementToGet.getDataTypeNode().getQualifiedName());
 
         elementToSet = childElementToSet;
         elementToGet = childElementToGet;
@@ -66,7 +63,13 @@ public class ListMappingGenerator {
         StringBuilder result = new StringBuilder();
         // if type == enum
         if (elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.ENUM) {
-            String enumConversion = JavaCommandUtils.generateEnumConverter(elementToSet.getDataTypeNode().getPresentableName(), innerStreamSourceToGet);
+            String setterGenerationName = NameUtils.getGenerationNameAndMark(
+                    elementToSet.getDataTypeNode().getPresentableName(),
+                    elementToSet.getDataTypeNode().getQualifiedName(),
+                    usedPresentableName,
+                    referredQualifiedName
+            );
+            String enumConversion = JavaCommandUtils.generateEnumConverter(setterGenerationName, innerStreamSourceToGet);
             result.append(indent).append(enumConversion);
         }
         // if type == others
@@ -90,6 +93,7 @@ public class ListMappingGenerator {
                 .indent(StringUtils.addSpaces(indent, 2))
                 .usedVariableName(usedVariableName)
                 .referredQualifiedName(referredQualifiedName)
+                .usedPresentableName(usedPresentableName)
                 .build();
 
         return objectMappingGenerator.generateMappingCode();

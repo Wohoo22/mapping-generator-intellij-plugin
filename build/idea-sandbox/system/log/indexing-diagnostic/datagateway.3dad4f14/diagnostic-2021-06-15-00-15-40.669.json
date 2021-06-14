@@ -1,0 +1,86 @@
+{
+  "appInfo" : {
+    "build" : "203.7148.57",
+    "buildDate" : "Tue, 26 Jan 2021 09:24:22 +0700",
+    "productCode" : "IC",
+    "generated" : "Tue, 15 Jun 2021 00:15:40 +0700",
+    "os" : "Windows 10 10.0",
+    "runtime" : "JetBrains s.r.o. 11.0.9.1 11.0.9.1+11-b1145.77"
+  },
+  "runtimeInfo" : {
+    "maxMemory" : 536870912,
+    "numberOfProcessors" : 12,
+    "maxNumberOfIndexingThreads" : 4,
+    "maxSizeOfFileForIntelliSense" : 2560000,
+    "maxSizeOfFileForContentLoading" : 20971520
+  },
+  "projectIndexingHistory" : {
+    "projectName" : "datagateway",
+    "numberOfFileProviders" : 195,
+    "totalNumberOfFiles" : 130045,
+    "totalNumberOfUpToDateFiles" : 130044,
+    "times" : {
+      "totalUpdatingTime" : "5 s 969 ms",
+      "indexingTime" : "200 ms",
+      "pushPropertiesTime" : "813 ms",
+      "updatingStart" : "Tue, 15 Jun 2021 00:15:34 +0700",
+      "updatingEnd" : "Tue, 15 Jun 2021 00:15:40 +0700",
+      "wasInterrupted" : false
+    },
+    "numberOfIndexingThreads" : 4,
+    "totalStatsPerFileType" : [ {
+      "fileType" : "JAVA",
+      "partOfTotalIndexingTime" : "100.0%",
+      "partOfTotalContentLoadingTime" : "100.0%",
+      "totalNumberOfFiles" : 1,
+      "totalFilesSize" : "23.62 kB",
+      "indexingSpeed" : "778.1 kB/s",
+      "biggestContributors" : [ {
+        "providerName" : "Module 'datagateway'",
+        "numberOfFiles" : 1,
+        "totalFilesSize" : "23.62 kB",
+        "partOfTotalIndexingTimeOfThisFileType" : "100.0%"
+      } ]
+    } ],
+    "totalStatsPerIndexer" : [ {
+      "indexId" : "Stubs",
+      "partOfTotalIndexingTime" : "61.3%",
+      "totalNumberOfFiles" : 1,
+      "totalNumberOfFilesIndexedByExtensions" : 0,
+      "totalFilesSize" : "23.62 kB",
+      "indexingSpeed" : "1.27 MB/s"
+    }, {
+      "indexId" : "Trigram.Index",
+      "partOfTotalIndexingTime" : "38.7%",
+      "totalNumberOfFiles" : 1,
+      "totalNumberOfFilesIndexedByExtensions" : 0,
+      "totalFilesSize" : "23.62 kB",
+      "indexingSpeed" : "2.01 MB/s"
+    } ],
+    "fileProviderStatistics" : [ {
+      "providerName" : "Module 'datagateway'",
+      "totalNumberOfFiles" : 1,
+      "totalNumberOfFilesFullyIndexedByExtensions" : 0,
+      "totalIndexingTime" : "189 ms",
+      "statsPerFileType" : [ {
+        "fileType" : "JAVA",
+        "numberOfFiles" : 1,
+        "totalFilesSize" : "23.62 kB",
+        "partOfTotalIndexingTime" : "100.0%",
+        "partOfTotalContentLoadingTime" : "100.0%"
+      } ],
+      "statsPerIndexer" : [ {
+        "indexId" : "Stubs",
+        "numberOfFiles" : 1,
+        "numberOfFilesIndexedByExtensions" : 0,
+        "partOfTotalIndexingTime" : "61.3%"
+      }, {
+        "indexId" : "Trigram.Index",
+        "numberOfFiles" : 1,
+        "numberOfFilesIndexedByExtensions" : 0,
+        "partOfTotalIndexingTime" : "38.7%"
+      } ],
+      "fastIndexers" : [ ]
+    } ]
+  }
+}

@@ -4,6 +4,7 @@ import com.github.model.DataTypeNode;
 import com.github.model.ElementNode;
 import com.github.utils.DataTypeNodeUtils;
 import com.github.utils.JavaCommandUtils;
+import com.github.utils.NameUtils;
 import com.github.utils.StringUtils;
 import lombok.Builder;
 
@@ -17,10 +18,9 @@ public class FieldMappingGenerator {
     private final String indent;
     private final Set<String> usedVariableName;
     private final Set<String> referredQualifiedName;
+    private final Set<String> usedPresentableName;
 
     public String generateMappingCode() {
-        referredQualifiedName.add(elementToSet.getDataTypeNode().getQualifiedName());
-        referredQualifiedName.add(elementToGet.getDataTypeNode().getQualifiedName());
 
         StringBuilder result = new StringBuilder();
         result.append(indent);
@@ -62,8 +62,14 @@ public class FieldMappingGenerator {
     }
 
     private String forEnum() {
-        String enumConversion = JavaCommandUtils.generateEnumConverter(
+        String setterGenerationName = NameUtils.getGenerationNameAndMark(
                 elementToSet.getDataTypeNode().getPresentableName(),
+                elementToSet.getDataTypeNode().getQualifiedName(),
+                usedPresentableName,
+                referredQualifiedName
+        );
+        String enumConversion = JavaCommandUtils.generateEnumConverter(
+                setterGenerationName,
                 sourceToGet,
                 elementToGet.getName());
         return JavaCommandUtils.dotField(elementToSet.getName(), enumConversion);
@@ -91,6 +97,7 @@ public class FieldMappingGenerator {
                 .indent(StringUtils.addSpaces(indent, 2))
                 .usedVariableName(usedVariableName)
                 .referredQualifiedName(referredQualifiedName)
+                .usedPresentableName(usedPresentableName)
                 .build();
         String valueToSet = objectMappingGenerator.generateMappingCode();
         return JavaCommandUtils.dotField(elementToSet.getName(), valueToSet);
@@ -105,6 +112,7 @@ public class FieldMappingGenerator {
                 .indent(indent)
                 .usedVariableName(usedVariableName)
                 .referredQualifiedName(referredQualifiedName)
+                .usedPresentableName(usedPresentableName)
                 .build();
         String valueToSet = listMappingGenerator.generateMappingCode();
         return JavaCommandUtils.dotField(elementToSet.getName(), valueToSet);
