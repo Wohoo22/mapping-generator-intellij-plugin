@@ -1,29 +1,20 @@
 <project version="4">
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="-1">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/entity/InventoryItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="41" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/map.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/utils/mapper/ItemInstanceMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="-6481">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/entity/model/ItemInstance.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/utils/mapper/LineItemMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="11" selection-start-line="11" selection-end-line="14" selection-end-column="19" />
+            <state relative-caret-position="-125">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -53,8 +44,6 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -107,16 +96,36 @@
               <item name="entity" type="462c0819:PsiDirectoryNode" />
               <item name="InventoryItem" type="1a9f42e2:ClassTreeNode" />
             </path>
+            <path>
+              <item name="co-inventory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="co-inventory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="co-inventory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="co-inventory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="ToolWindowManager">
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27144772" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27476883" />
       <window_info id="Structure" order="1" side_tool="true" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Commit" order="3" />
@@ -138,14 +147,10 @@
     </layout>
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="187" width="438" height="490" key="FileChooserDialogImpl" timestamp="1614768708305">
+    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1623654971496">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="187" width="438" height="490" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1614768708305" />
-    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1614668562599">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1614668562599" />
+    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1623654971496" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/entity/InventoryItemMirror.java">
@@ -157,10 +162,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/tmp.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/TmpItemInstance.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/map.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/utils/mapper/InventoryItemMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-41">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/entity/InventoryItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="41" selection-end-column="32" />
+        <state relative-caret-position="651">
+          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="41" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -171,10 +184,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/map.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/utils/mapper/InventoryItemMirrorMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="84">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/utils/mapper/LineItemMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-125">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/utils/mapper/ItemInstanceMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6481">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>

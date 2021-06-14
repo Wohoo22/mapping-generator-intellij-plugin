@@ -22,6 +22,7 @@ com/github/parser/proto/model/MessageNode.java
  com.github.parser.proto.model.MessageNode
 com/github/codegenerator/javatojava/buildertype/subgenerator/ObjectMappingGenerator.java
  com.github.codegenerator.javatojava.buildertype.subgenerator.ObjectMappingGenerator
+ com.github.codegenerator.javatojava.buildertype.subgenerator.ObjectMappingGenerator$ObjectMappingGeneratorBuilder
 com/github/parser/proto/elementtreebuilder/ElementTreeBuilder.java
  com.github.parser.proto.elementtreebuilder.ElementTreeBuilder
 com/github/codegenerator/javatoproto/subgenerator/ListMappingGenerator.java
@@ -33,6 +34,8 @@ com/github/parser/proto/messagetreebuilder/utils/MessageNodeUtils.java
  com.github.parser.proto.messagetreebuilder.utils.MessageNodeUtils
 com/github/codegenerator/javatojava/buildertype/subgenerator/FieldMappingGenerator.java
  com.github.codegenerator.javatojava.buildertype.subgenerator.FieldMappingGenerator
+ com.github.codegenerator.javatojava.buildertype.subgenerator.FieldMappingGenerator$Args
+ com.github.codegenerator.javatojava.buildertype.subgenerator.FieldMappingGenerator$Args$ArgsBuilder
 com/github/parser/proto/lexer/utils/TokenUtils.java
  com.github.parser.proto.lexer.utils.TokenUtils
 com/github/action/classnamesuggestion/ClassNameSuggestion.java
@@ -57,20 +60,21 @@ com/github/codegenerator/prototojava/normaltype/subgenerator/FieldMappingGenerat
  com.github.codegenerator.prototojava.normaltype.subgenerator.FieldMappingGenerator
 com/github/codegenerator/prototojava/normaltype/NormalTypeCodeGenerator.java
  com.github.codegenerator.prototojava.normaltype.NormalTypeCodeGenerator
-com/github/action/JavaToProto.java
- com.github.action.JavaToProto
+com/github/parser/proto/messagetreebuilder/MessageTreeBuilder.java
+ com.github.parser.proto.messagetreebuilder.MessageTreeBuilder
 com/github/codegenerator/prototojava/buildertype/BuilderTypeCodeGenerator.java
  com.github.codegenerator.prototojava.buildertype.BuilderTypeCodeGenerator
 com/github/codegenerator/javatojava/normaltype/NormalTypeCodeGenerator.java
  com.github.codegenerator.javatojava.normaltype.NormalTypeCodeGenerator
+ com.github.codegenerator.javatojava.normaltype.NormalTypeCodeGenerator$NormalTypeCodeGeneratorBuilder
 com/github/parser/proto/messagetreebuilder/nodebuilder/MessageNodeBuilder.java
  com.github.parser.proto.messagetreebuilder.nodebuilder.MessageNodeBuilder
 com/github/parser/proto/messageelementnodesbuilder/elementnodesbuilder/BuildElementNodeFromTokens.java
  com.github.parser.proto.messageelementnodesbuilder.elementnodesbuilder.BuildElementNodeFromTokens
 com/github/action/writer/EditorTextWriter.java
  com.github.action.writer.EditorTextWriter
-com/github/action/JavaToJava.java
- com.github.action.JavaToJava
+com/github/utils/PsiUtils.java
+ com.github.utils.PsiUtils
 com/github/utils/DataTypeNodeUtils.java
  com.github.utils.DataTypeNodeUtils
 com/github/parser/proto/model/TokenStorage.java
@@ -81,16 +85,19 @@ com/github/model/ElementNode.java
  com.github.model.ElementNode
 com/github/codegenerator/javatojava/normaltype/subgenerator/ObjectMappingGenerator.java
  com.github.codegenerator.javatojava.normaltype.subgenerator.ObjectMappingGenerator
+ com.github.codegenerator.javatojava.normaltype.subgenerator.ObjectMappingGenerator$ObjectMappingGeneratorBuilder
 com/github/parser/proto/ProtoParser.java
  com.github.parser.proto.ProtoParser
 com/github/action/classnamesuggestion/dropdowntextsuggestion/suggestionclient/SuggestionClient.java
  com.github.action.classnamesuggestion.dropdowntextsuggestion.suggestionclient.SuggestionClient
-com/github/codegenerator/javatoproto/JavaToProtoCodeGenerator.java
- com.github.codegenerator.javatoproto.JavaToProtoCodeGenerator
-com/github/parser/java/JavaParser.java
- com.github.parser.java.JavaParser
+com/github/codegenerator/prototojava/normaltype/subgenerator/ListMappingGenerator.java
+ com.github.codegenerator.prototojava.normaltype.subgenerator.ListMappingGenerator
+ com.github.codegenerator.prototojava.normaltype.subgenerator.ListMappingGenerator$1
+com/github/utils/NameUtils.java
+ com.github.utils.NameUtils
 com/github/codegenerator/javatojava/buildertype/subgenerator/ListMappingGenerator.java
  com.github.codegenerator.javatojava.buildertype.subgenerator.ListMappingGenerator
+ com.github.codegenerator.javatojava.buildertype.subgenerator.ListMappingGenerator$ListMappingGeneratorBuilder
 com/github/parser/proto/messageelementnodesbuilder/MessageElementNodesBuilder.java
  com.github.parser.proto.messageelementnodesbuilder.MessageElementNodesBuilder
 com/github/model/DataTypeNode.java
@@ -98,10 +105,12 @@ com/github/model/DataTypeNode.java
  com.github.model.DataTypeNode$DataType
 com/github/codegenerator/javatojava/buildertype/BuilderTypeCodeGenerator.java
  com.github.codegenerator.javatojava.buildertype.BuilderTypeCodeGenerator
+ com.github.codegenerator.javatojava.buildertype.BuilderTypeCodeGenerator$BuilderTypeCodeGeneratorBuilder
 com/github/codegenerator/javatojava/normaltype/subgenerator/FieldMappingGenerator.java
  com.github.codegenerator.javatojava.normaltype.subgenerator.FieldMappingGenerator
-com/github/codegenerator/prototojava/ProtoToJavaCodeGenerator.java
- com.github.codegenerator.prototojava.ProtoToJavaCodeGenerator
+ com.github.codegenerator.javatojava.normaltype.subgenerator.FieldMappingGenerator$FieldMappingGeneratorBuilder
+com/github/utils/JavaCommandUtils.java
+ com.github.utils.JavaCommandUtils
 com/github/action/form/ProtoToJavaFormInput.java
  com.github.action.form.ProtoToJavaFormInput
 com/github/parser/proto/lexer/model/Reader.java
@@ -109,22 +118,24 @@ com/github/parser/proto/lexer/model/Reader.java
 com/github/codegenerator/javatojava/normaltype/subgenerator/ListMappingGenerator.java
  com.github.codegenerator.javatojava.normaltype.subgenerator.ListMappingGenerator
  com.github.codegenerator.javatojava.normaltype.subgenerator.ListMappingGenerator$1
+ com.github.codegenerator.javatojava.normaltype.subgenerator.ListMappingGenerator$ListMappingGeneratorBuilder
 com/github/action/classnamesuggestion/dropdowntextsuggestion/suggestionclient/impl/TextComponentSuggestionClient.java
  com.github.action.classnamesuggestion.dropdowntextsuggestion.suggestionclient.impl.TextComponentSuggestionClient
-com/github/action/ProtoToJava.java
- com.github.action.ProtoToJava
-com/github/utils/JavaCommandUtils.java
- com.github.utils.JavaCommandUtils
-com/github/parser/proto/messagetreebuilder/MessageTreeBuilder.java
- com.github.parser.proto.messagetreebuilder.MessageTreeBuilder
-com/github/utils/NameUtils.java
- com.github.utils.NameUtils
-com/github/utils/PsiUtils.java
- com.github.utils.PsiUtils
-com/github/codegenerator/prototojava/normaltype/subgenerator/ListMappingGenerator.java
- com.github.codegenerator.prototojava.normaltype.subgenerator.ListMappingGenerator
- com.github.codegenerator.prototojava.normaltype.subgenerator.ListMappingGenerator$1
 com/github/action/form/JavaToProtoFormInput.java
  com.github.action.form.JavaToProtoFormInput
+com/github/action/JavaToProto.java
+ com.github.action.JavaToProto
+com/github/action/ProtoToJava.java
+ com.github.action.ProtoToJava
+com/github/codegenerator/javatoproto/JavaToProtoCodeGenerator.java
+ com.github.codegenerator.javatoproto.JavaToProtoCodeGenerator
+com/github/action/JavaToJava.java
+ com.github.action.JavaToJava
+com/github/parser/java/JavaParser.java
+ com.github.parser.java.JavaParser
+ com.github.parser.java.JavaParser$JavaParserBuilder
 com/github/codegenerator/javatojava/JavaToJavaCodeGenerator.java
  com.github.codegenerator.javatojava.JavaToJavaCodeGenerator
+ com.github.codegenerator.javatojava.JavaToJavaCodeGenerator$JavaToJavaCodeGeneratorBuilder
+com/github/codegenerator/prototojava/ProtoToJavaCodeGenerator.java
+ com.github.codegenerator.prototojava.ProtoToJavaCodeGenerator

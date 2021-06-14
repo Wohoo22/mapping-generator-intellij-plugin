@@ -5,12 +5,19 @@ import com.github.model.ElementNode;
 import com.github.utils.JavaCommandUtils;
 import com.github.utils.NameUtils;
 import com.github.utils.StringUtils;
+import lombok.Builder;
 
 import java.util.Set;
 
+@Builder
 public class ListMappingGenerator {
-    public String generateMappingCode(String listSource, ElementNode elementToSet, ElementNode elementToGet,
-                                      String indent, Set<String> usedVariableName) {
+    private final String listSource;
+    private final ElementNode elementToSet;
+    private final ElementNode elementToGet;
+    private final String indent;
+    private final Set<String> usedVariableName;
+
+    public String generateMappingCode() {
 
         StringBuilder result = new StringBuilder();
 
@@ -33,7 +40,7 @@ public class ListMappingGenerator {
         result.append(indent).append(JavaCommandUtils.generateArrow(innerStreamSourceToGet));
 
         // generate mapping
-        String innerListMappingCode = generateInnerListMappingCode(childElementToSet, childElementToGet, innerStreamSourceToGet, StringUtils.addSpaces(indent, 2), usedVariableName);
+        String innerListMappingCode = generateInnerListMappingCode(innerStreamSourceToGet, StringUtils.addSpaces(indent, 2));
         result.append(indent).append(innerListMappingCode);
 
         // close stream map
@@ -42,7 +49,7 @@ public class ListMappingGenerator {
         return result.toString();
     }
 
-    private String generateInnerListMappingCode(ElementNode elementToSet, ElementNode elementToGet, String innerStreamSourceToGet, String indent, Set<String> usedVariableName) {
+    private String generateInnerListMappingCode(String innerStreamSourceToGet, String indent) {
         StringBuilder result = new StringBuilder();
         // if type == enum
         if (elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.ENUM) {
@@ -55,9 +62,17 @@ public class ListMappingGenerator {
         }
         // if type == object
         else if (elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.OBJECT) {
-            ObjectMappingGenerator objectMappingGenerator = new ObjectMappingGenerator();
-            String mappingCode = objectMappingGenerator.generateMappingCode(elementToSet.getChildren(), elementToGet.getChildren(),
-                    innerStreamSourceToGet, elementToSet.getDataTypeNode().getQualifiedName(), StringUtils.addSpaces(indent, 2), usedVariableName);
+
+            ObjectMappingGenerator objectMappingGenerator = ObjectMappingGenerator.builder()
+                    .elementsToSet(elementToSet.getChildren())
+                    .elementsToGet(elementToGet.getChildren())
+                    .sourceToGet(innerStreamSourceToGet)
+                    .objectToSetQualifiedName(elementToSet.getDataTypeNode().getQualifiedName())
+                    .indent(StringUtils.addSpaces(indent, 2))
+                    .usedVariableName(usedVariableName)
+                    .build();
+
+            String mappingCode = objectMappingGenerator.generateMappingCode();
             result.append(indent).append(mappingCode);
         }
         return result.toString();

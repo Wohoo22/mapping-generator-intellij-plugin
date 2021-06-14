@@ -16,10 +16,13 @@ public class JavaToProtoCodeGenerator {
     public String generateMappingCode(String javaQualifiedClassName, String javaObjectVariableName, JavaPsiFacade javaPsiFacade, GlobalSearchScope globalSearchScope,
                                       String protoFileName, String protoMessageQualifiedName, String protoJavaOuterClassName) {
 
-        JavaParser javaParser = new JavaParser();
+        JavaParser javaParser = JavaParser.builder()
+                .globalSearchScope(globalSearchScope)
+                .javaPsiFacade(javaPsiFacade)
+                .build();
         ProtoParser protoParser = new ProtoParser();
 
-        List<ElementNode> javaElementTree = javaParser.parse(javaQualifiedClassName, javaPsiFacade, globalSearchScope);
+        List<ElementNode> javaElementTree = javaParser.parse(javaQualifiedClassName);
         List<ElementNode> protoElementTree = protoParser.parse(protoJavaOuterClassName, protoFileName, protoMessageQualifiedName);
 
         if (javaElementTree.size() == 0 || protoElementTree.size() == 0)

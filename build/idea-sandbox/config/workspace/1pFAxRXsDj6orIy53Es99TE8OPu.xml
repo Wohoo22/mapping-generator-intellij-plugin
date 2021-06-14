@@ -23,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/order/Map.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+            <state relative-caret-position="-693">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -107,8 +107,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="TerminalArrangementManager">
@@ -117,8 +117,9 @@
     </option>
   </component>
   <component name="ToolWindowManager">
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32171583" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32628798" />
       <window_info id="Structure" order="1" side_tool="true" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Commit" order="3" />
@@ -140,10 +141,10 @@
     </layout>
   </component>
   <component name="WindowStateProjectService">
-    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1614783993734">
+    <state x="430" y="181" key="search.everywhere.popup" timestamp="1623654897604">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1614783993734" />
+    <state x="430" y="181" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1623654897604" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$MAVEN_REPOSITORY$/cloud/nextsol/core-grpc-proto-beans/1.0.676-SNAPSHOT/core-grpc-proto-beans-1.0.676-20210301.030345-2.jar!/cloud/nextsol/core/order/CoOrder.class">
@@ -177,8 +178,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cloud/nextsol/core/order/Map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+        <state relative-caret-position="-693">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>

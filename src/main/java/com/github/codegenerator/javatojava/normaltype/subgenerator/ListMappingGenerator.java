@@ -5,12 +5,20 @@ import com.github.model.ElementNode;
 import com.github.utils.JavaCommandUtils;
 import com.github.utils.NameUtils;
 import com.github.utils.StringUtils;
+import lombok.Builder;
 
 import java.util.Set;
 
+@Builder
 public class ListMappingGenerator {
-    public String generateMappingCode(String listToGetSource, String listToAddVarName, ElementNode elementToSet, ElementNode elementToGet,
-                                      String indent, Set<String> usedVariableName) {
+    private final String listToGetSource;
+    private final String listToAddVarName;
+    private final ElementNode elementToSet;
+    private final ElementNode elementToGet;
+    private final String indent;
+    private final Set<String> usedVariableName;
+
+    public String generateMappingCode() {
 
         StringBuilder result = new StringBuilder();
 
@@ -34,13 +42,10 @@ public class ListMappingGenerator {
                 break;
             case OBJECT:
                 String childObjectToSetVarName = NameUtils.generateUniqueRandomName(childElementToSetDataTypeNode.getPresentableName(), usedVariableName);
-
-                ObjectMappingGenerator objectMappingGenerator = new ObjectMappingGenerator();
-                String mappingCode = objectMappingGenerator.generateMappingCode(elementToSet.getChildren(), elementToGet.getChildren(), childObjectToSetVarName,
-                        innerLoopSourceToGet, childElementToSetDataTypeNode.getQualifiedName(), StringUtils.addSpaces(indent, 2), usedVariableName);
-
+                String mappingCode = forChildObject(childElementToSetDataTypeNode, innerLoopSourceToGet, childObjectToSetVarName);
                 result.append(indent).append(mappingCode);
                 valueToAdd.append(childObjectToSetVarName);
+                break;
         }
 
         // add to list
@@ -52,5 +57,19 @@ public class ListMappingGenerator {
         return result.toString();
     }
 
+    private String forChildObject(DataTypeNode childElementToSetDataTypeNode, String innerLoopSourceToGet, String childObjectToSetVarName) {
+
+        ObjectMappingGenerator objectMappingGenerator = ObjectMappingGenerator.builder()
+                .elementsToSet(elementToSet.getChildren())
+                .elementsToGet(elementToGet.getChildren())
+                .objectToSetVarName(childObjectToSetVarName)
+                .sourceToGet(innerLoopSourceToGet)
+                .objectToSetQualifiedName(childElementToSetDataTypeNode.getQualifiedName())
+                .indent(StringUtils.addSpaces(indent, 2))
+                .usedVariableName(usedVariableName)
+                .build();
+
+        return objectMappingGenerator.generateMappingCode();
+    }
 }
 

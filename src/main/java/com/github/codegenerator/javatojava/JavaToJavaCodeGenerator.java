@@ -7,18 +7,31 @@ import com.github.model.ElementNode;
 import com.github.parser.java.JavaParser;
 import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.search.GlobalSearchScope;
+import lombok.Builder;
 
 import java.util.List;
 
+@Builder
 public class JavaToJavaCodeGenerator {
+    private final String objectToSetQualifiedName;
+    private final String objectToGetVariableName;
+    private final String objectToGetQualifiedName;
+    private final JavaPsiFacade javaPsiFacade;
+    private final GlobalSearchScope globalSearchScope;
+    private final MappingType mappingType;
 
-    public String generateMappingCode(String objectToSetQualifiedName, String objectToGetVariableName, String objectToGetQualifiedName,
-                                      JavaPsiFacade javaPsiFacade, GlobalSearchScope globalSearchScope, MappingType mappingType) {
+    public String generateMappingCode() {
 
-        JavaParser javaParser = new JavaParser();
-
-        List<ElementNode> elementsToSet = javaParser.parse(objectToSetQualifiedName, javaPsiFacade, globalSearchScope);
-        List<ElementNode> elementsToGet = javaParser.parse(objectToGetQualifiedName, javaPsiFacade, globalSearchScope);
+        JavaParser setParser = JavaParser.builder()
+                .javaPsiFacade(javaPsiFacade)
+                .globalSearchScope(globalSearchScope)
+                .build();
+        List<ElementNode> elementsToSet = setParser.parse(objectToSetQualifiedName);
+        JavaParser getParser = JavaParser.builder()
+                .javaPsiFacade(javaPsiFacade)
+                .globalSearchScope(globalSearchScope)
+                .build();
+        List<ElementNode> elementsToGet = getParser.parse(objectToGetQualifiedName);
 
         if (elementsToGet.size() == 0 || elementsToSet.size() == 0)
             return "";
@@ -26,12 +39,22 @@ public class JavaToJavaCodeGenerator {
         StringBuilder result = new StringBuilder();
 
         if (mappingType == MappingType.BUILDER) {
-            BuilderTypeCodeGenerator builderTypeCodeGenerator = new BuilderTypeCodeGenerator();
-            String mappingCode = builderTypeCodeGenerator.generateMappingCode(elementsToGet, elementsToSet, objectToGetVariableName, objectToSetQualifiedName);
+            BuilderTypeCodeGenerator builderTypeCodeGenerator = BuilderTypeCodeGenerator.builder()
+                    .elementsToGet(elementsToGet)
+                    .elementsToSet(elementsToSet)
+                    .objectToGetVariableName(objectToGetVariableName)
+                    .objectToSetQualifiedName(objectToSetQualifiedName)
+                    .build();
+            String mappingCode = builderTypeCodeGenerator.generateMappingCode();
             result.append(mappingCode);
         } else {
-            NormalTypeCodeGenerator normalTypeCodeGenerator = new NormalTypeCodeGenerator();
-            String mappingCode = normalTypeCodeGenerator.generateMappingCode(elementsToGet, elementsToSet, objectToGetVariableName, objectToSetQualifiedName);
+            NormalTypeCodeGenerator normalTypeCodeGenerator = NormalTypeCodeGenerator.builder()
+                    .elementsToGet(elementsToGet)
+                    .elementsToSet(elementsToSet)
+                    .objectToGetVariableName(objectToGetVariableName)
+                    .objectToSetQualifiedName(objectToSetQualifiedName)
+                    .build();
+            String mappingCode = normalTypeCodeGenerator.generateMappingCode();
             result.append(mappingCode);
         }
 

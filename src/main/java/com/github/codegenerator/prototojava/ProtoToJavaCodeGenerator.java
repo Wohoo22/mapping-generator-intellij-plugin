@@ -19,10 +19,13 @@ public class ProtoToJavaCodeGenerator {
                                       GlobalSearchScope globalSearchScope, MappingType mappingType) {
 
         ProtoParser protoParser = new ProtoParser();
-        JavaParser javaParser = new JavaParser();
+        JavaParser javaParser = JavaParser.builder()
+                .javaPsiFacade(javaPsiFacade)
+                .globalSearchScope(globalSearchScope)
+                .build();
 
         List<ElementNode> protoElementTree = protoParser.parse(protoJavaOuterClassQualifiedName, protoFileName, protoQualifiedMessageName);
-        List<ElementNode> javaElementTree = javaParser.parse(javaQualifiedClassName, javaPsiFacade, globalSearchScope);
+        List<ElementNode> javaElementTree = javaParser.parse(javaQualifiedClassName);
 
         if (javaElementTree.size() == 0 || protoElementTree.size() == 0)
             return "";

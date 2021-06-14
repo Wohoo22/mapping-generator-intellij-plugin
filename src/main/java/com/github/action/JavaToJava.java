@@ -34,13 +34,20 @@ public class JavaToJava extends AnAction {
         JavaToJavaFormInput javaToJavaFormInput = new JavaToJavaFormInput(project, globalSearchScope);
         javaToJavaFormInput.showAndGet();
 
-        JavaToJavaCodeGenerator javaToJavaCodeGenerator = new JavaToJavaCodeGenerator();
         MappingType mappingType = MappingType.NORMAL;
         if (javaToJavaFormInput.isTargetClassBuilder())
             mappingType = MappingType.BUILDER;
 
-        String mappingCode = javaToJavaCodeGenerator.generateMappingCode(javaToJavaFormInput.getTargetClassQualifiedName(), javaToJavaFormInput.getSourceClassVariableName(),
-                javaToJavaFormInput.getSourceClassQualifiedName(), javaPsiFacade, globalSearchScope, mappingType);
+        JavaToJavaCodeGenerator javaToJavaCodeGenerator = JavaToJavaCodeGenerator.builder()
+                .objectToSetQualifiedName(javaToJavaFormInput.getTargetClassQualifiedName())
+                .objectToGetVariableName(javaToJavaFormInput.getSourceClassVariableName())
+                .objectToGetQualifiedName(javaToJavaFormInput.getSourceClassQualifiedName())
+                .javaPsiFacade(javaPsiFacade)
+                .globalSearchScope(globalSearchScope)
+                .mappingType(mappingType)
+                .build();
+
+        String mappingCode = javaToJavaCodeGenerator.generateMappingCode();
 
         Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
         EditorTextWriter editorTextWriter = new EditorTextWriter();

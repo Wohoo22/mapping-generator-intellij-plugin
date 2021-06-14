@@ -55,6 +55,7 @@
     <f p="./.idea\libraries\Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" t="1600766837" />
     <f p="./.idea\libraries\Maven__org_junit_jupiter_junit_jupiter_params_5_6_2.xml" t="1600766838" />
     <f p="./.idea\libraries\Maven__org_xmlunit_xmlunit_core_2_7_0.xml" t="1600766838" />
+    <f p="./.idea\libraries\Maven__cloud_nextsol_core_grpc_common_1_0_136_SNAPSHOT.xml" t="1618284047" />
     <f p="./.idea\libraries\Maven__jakarta_activation_jakarta_activation_api_1_2_2.xml" t="1600766838" />
     <f p="./.idea\libraries\Maven__org_elasticsearch_elasticsearch_x_content_7_6_2.xml" t="1611888419" />
     <f p="./.idea\libraries\Maven__org_hamcrest_hamcrest_core_2_2.xml" t="1611030709" />
@@ -75,7 +76,7 @@
     <f p="./.idea\libraries\Maven__io_netty_netty_codec_4_1_51_Final.xml" t="1610088410" />
     <f p="./.idea\libraries\Maven__net_bytebuddy_byte_buddy_agent_1_10_13.xml" t="1610088410" />
     <f p="./.idea\libraries\Maven__org_elasticsearch_plugin_lang_mustache_client_7_6_2.xml" t="1611888419" />
-    <f p="./.idea\workspace.xml" t="1614768710" />
+    <f p="./.idea\workspace.xml" t="1623398710" />
     <f p="./.idea\jarRepositories.xml" t="1612495940" />
     <f p="./.idea\libraries\Maven__org_elasticsearch_client_elasticsearch_rest_client_7_6_2.xml" t="1611888419" />
     <f p="./.idea\libraries\Maven__org_hdrhistogram_HdrHistogram_2_1_9.xml" t="1611888419" />
@@ -108,12 +109,12 @@
     <f p="./.idea\libraries\Maven__io_netty_netty_codec_socks_4_1_51_Final.xml" t="1610088410" />
     <f p="./.idea\libraries\Maven__org_apache_lucene_lucene_spatial_extras_8_4_0.xml" t="1611888419" />
     <f p="./.idea\libraries\Maven__org_apache_lucene_lucene_queries_8_4_0.xml" t="1611888419" />
-    <f p="./.idea\co-inventory.iml" t="1614353253" />
+    <f p="./.idea\co-inventory.iml" t="1618284047" />
     <f p="./.idea\libraries\Maven__com_google_android_annotations_4_1_1_4.xml" t="1600766837" />
     <f p="./.idea\libraries\Maven__commons_io_commons_io_2_6.xml" t="1611888419" />
+    <f p="./.idea\libraries\Maven__cloud_nextsol_core_grpc_proto_beans_1_0_715_SNAPSHOT.xml" t="1618283430" />
     <f p="./.idea\libraries\Maven__org_apache_lucene_lucene_suggest_8_4_0.xml" t="1611888419" />
     <f p="./.idea\libraries\Maven__io_grpc_grpc_protobuf_lite_1_29_0.xml" t="1605592679" />
-    <f p="./.idea\libraries\Maven__cloud_nextsol_core_grpc_proto_beans_1_0_607_SNAPSHOT.xml" t="1612755901" />
     <f p="./.idea\libraries\Maven__com_google_errorprone_error_prone_annotations_2_3_4.xml" t="1600766837" />
     <f p="./.idea\libraries\Maven__org_junit_platform_junit_platform_engine_1_6_2.xml" t="1600766838" />
     <f p="./.idea\libraries\Maven__org_projectlombok_lombok_1_18_12.xml" t="1610088410" />
@@ -168,7 +169,6 @@
     <f p="./.idea\libraries\Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_cbor_2_11_1.xml" t="1611888419" />
     <f p="./.idea\libraries\Maven__org_mockito_mockito_all_1_10_19.xml" t="1611030847" />
     <f p="./.idea\libraries\Maven__org_skyscreamer_jsonassert_1_5_0.xml" t="1600766838" />
-    <f p="./.idea\libraries\Maven__cloud_nextsol_core_grpc_common_1_0_93_SNAPSHOT.xml" t="1613982626" />
     <f p="./.idea\libraries\Maven__org_hamcrest_hamcrest_2_2.xml" t="1600766838" />
     <f p="./.idea\libraries\Maven__org_springframework_security_spring_security_web_5_3_3_RELEASE.xml" t="1611888419" />
   </project-files>

@@ -45,8 +45,7 @@ public class ProtoParser {
 
         // build element tree
         ElementTreeBuilder elementTreeBuilder = new ElementTreeBuilder();
-        List<ElementNode> elementTree = elementTreeBuilder.build(rootMessageNodes, messageQualifiedName, javaOuterClassQualifiedName);
 
-        return elementTree;
+        return elementTreeBuilder.build(rootMessageNodes, messageQualifiedName, javaOuterClassQualifiedName);
     }
 }
