@@ -1,8 +1,13 @@
 package com.github.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
+@AllArgsConstructor
 public class ElementNode {
     private String name;
     private DataTypeNode dataTypeNode;
@@ -10,29 +15,5 @@ public class ElementNode {
 
     public ElementNode() {
         children = new ArrayList<>();
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public DataTypeNode getDataTypeNode() {
-        return dataTypeNode;
-    }
-
-    public void setDataTypeNode(DataTypeNode dataTypeNode) {
-        this.dataTypeNode = dataTypeNode;
-    }
-
-    public List<ElementNode> getChildren() {
-        return children;
-    }
-
-    public void setChildren(List<ElementNode> children) {
-        this.children = children;
     }
 }

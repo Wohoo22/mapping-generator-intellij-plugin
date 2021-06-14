@@ -7,6 +7,7 @@ import com.intellij.psi.search.GlobalSearchScope;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 
 public class PsiUtils {
@@ -21,7 +22,11 @@ public class PsiUtils {
             for (PsiClass psiClass : psiClasses)
                 res.add(psiClass.getQualifiedName());
         }
-
+        sort(res);
         return res;
+    }
+
+   private static void sort(List<String> names) {
+        names.sort(Comparator.comparingInt(String::length));
     }
 }

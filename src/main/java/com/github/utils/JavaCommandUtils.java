@@ -1,5 +1,12 @@
 package com.github.utils;
 
+import com.intellij.psi.JavaPsiFacade;
+import com.intellij.psi.PsiClass;
+import com.intellij.psi.PsiJavaFile;
+import com.intellij.psi.codeStyle.JavaCodeStyleManager;
+import com.intellij.psi.search.GlobalSearchScope;
+import lombok.Builder;
+
 public class JavaCommandUtils {
 
     public static String generateObjectDeclaration(String qualifiedName, String varName) {

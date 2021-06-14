@@ -14,28 +14,34 @@ public class ObjectMappingGenerator {
     private final List<ElementNode> elementsToGet;
     private final String sourceToGet;
     private final String objectToSetQualifiedName;
+    private final String objectToSetPresentableName;
     private final String indent;
     private final Set<String> usedVariableName;
+    private final Set<String> referredQualifiedName;
 
     public String generateMappingCode() {
         StringBuilder result = new StringBuilder();
 
         // open the builder
         result.append(indent);
-        result.append(JavaCommandUtils.openObjectBuilder(objectToSetQualifiedName));
+        result.append(JavaCommandUtils.openObjectBuilder(objectToSetPresentableName));
+
+        referredQualifiedName.add(objectToSetQualifiedName);
 
         // generate mapping for fields
         for (ElementNode elementToSet : elementsToSet) {
             ElementNode elementToGet = ElementNodeUtils.findElementWithEqualNameAndDataType(elementToSet, elementsToGet);
             if (elementToGet == null)
                 continue;
-            result.append(FieldMappingGenerator.generateMappingCode(FieldMappingGenerator.Args.builder()
+            FieldMappingGenerator fieldMappingGenerator = FieldMappingGenerator.builder()
                     .elementToSet(elementToSet)
                     .elementToGet(elementToGet)
                     .sourceToGet(sourceToGet)
                     .indent(indent)
                     .usedVariableName(usedVariableName)
-                    .build()));
+                    .referredQualifiedName(referredQualifiedName)
+                    .build();
+            result.append(fieldMappingGenerator.generateMappingCode());
         }
 
         // close the builder

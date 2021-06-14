@@ -38,18 +38,6 @@
             </RecentProjectMetaInfo>
           </value>
         </entry>
-        <entry key="D:/Work/work-space/nexttech/co-item">
-          <value>
-            <RecentProjectMetaInfo frameTitle="co-item – tmp.java" projectWorkspaceId="1ogSxxj3ZUIcqLJUj09gq5bzFDK">
-              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="build" value="IC-203.7148.57" />
-              <option name="buildTimestamp" value="1611627854147" />
-              <frame x="-9" y="-9" width="1938" height="1098" extendedState="6" />
-              <option name="productionCode" value="IC" />
-              <option name="projectOpenTimestamp" value="1614668566494" />
-            </RecentProjectMetaInfo>
-          </value>
-        </entry>
         <entry key="D:/Work/work-space/nexttech/co-inventory">
           <value>
             <RecentProjectMetaInfo frameTitle="co-inventory – map.java" projectWorkspaceId="1hcfPzNgaVl9H0JIdcy5YUawtZ7">
@@ -64,13 +52,36 @@
         </entry>
         <entry key="D:/Work/work-space/nexttech/co-order">
           <value>
-            <RecentProjectMetaInfo frameTitle="co-order – Map.java" opened="true" projectWorkspaceId="1pFAxRXsDj6orIy53Es99TE8OPu">
+            <RecentProjectMetaInfo frameTitle="co-order – Map.java" projectWorkspaceId="1pFAxRXsDj6orIy53Es99TE8OPu">
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="IC-203.7148.57" />
               <option name="buildTimestamp" value="1611627862699" />
               <frame x="-9" y="-9" width="1938" height="1098" extendedState="6" />
               <option name="productionCode" value="IC" />
               <option name="projectOpenTimestamp" value="1614768711494" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="D:/Work/work-space/nexttech/co-item">
+          <value>
+            <RecentProjectMetaInfo frameTitle="co-item – CoItem.java" projectWorkspaceId="1qumQ1DzI3rlhx89gyaw1DsqBlr">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-203.7148.57" />
+              <option name="buildTimestamp" value="1611627873230" />
+              <frame x="-9" y="-9" width="1938" height="1098" extendedState="6" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1623655589188" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="D:/Work/work-space/nexttech/datagateway">
+          <value>
+            <RecentProjectMetaInfo opened="true" projectWorkspaceId="1tei39hsaLCSvUhUoyXZbjSMG6t">
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-203.7148.57" />
+              <option name="buildTimestamp" value="1611627842295" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1623662348829" />
             </RecentProjectMetaInfo>
           </value>
         </entry>

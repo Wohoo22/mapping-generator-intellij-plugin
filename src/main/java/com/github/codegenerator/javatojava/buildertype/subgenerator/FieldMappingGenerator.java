@@ -9,101 +9,104 @@ import lombok.Builder;
 
 import java.util.Set;
 
+@Builder
 public class FieldMappingGenerator {
-    @Builder
-    public static class Args {
-        private final ElementNode elementToSet;
-        private final ElementNode elementToGet;
-        private final String sourceToGet;
-        private final String indent;
-        private final Set<String> usedVariableName;
-    }
+    private final ElementNode elementToSet;
+    private final ElementNode elementToGet;
+    private final String sourceToGet;
+    private final String indent;
+    private final Set<String> usedVariableName;
+    private final Set<String> referredQualifiedName;
 
-    public static String generateMappingCode(Args args) {
-
+    public String generateMappingCode() {
+        referredQualifiedName.add(elementToSet.getDataTypeNode().getQualifiedName());
+        referredQualifiedName.add(elementToGet.getDataTypeNode().getQualifiedName());
 
         StringBuilder result = new StringBuilder();
-        result.append(args.indent);
+        result.append(indent);
 
         // if 2 elements are exactly match
         if (DataTypeNodeUtils.qualifiedNameEqual(
-                args.elementToSet.getDataTypeNode(),
-                args.elementToGet.getDataTypeNode()
+                elementToSet.getDataTypeNode(),
+                elementToGet.getDataTypeNode()
         )) {
-            result.append(forMatchingElements(args));
+            result.append(forMatchingElements());
         }
         // if type == enum
-        else if (args.elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.ENUM) {
-            result.append(forEnum(args));
+        else if (elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.ENUM) {
+            result.append(forEnum());
         }
         // if type == map
-        else if (args.elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.MAP) {
-            result.append(forMap(args));
+        else if (elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.MAP) {
+            result.append(forMap());
         }
         // if type == others
-        else if (args.elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.OTHERS) {
-            result.append(forOthers(args));
+        else if (elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.OTHERS) {
+            result.append(forOthers());
         }
         // if type == object
-        else if (args.elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.OBJECT) {
-            result.append(forObject(args));
+        else if (elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.OBJECT) {
+            result.append(forObject());
         }
         // if type == list
-        else if (args.elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.LIST) {
-            result.append(forList(args));
+        else if (elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.LIST) {
+            result.append(forList());
         }
 
         return result.toString();
     }
 
-    private static String forMatchingElements(Args args) {
-        String getter = JavaCommandUtils.generateGetter(args.sourceToGet, args.elementToGet.getName());
-        return JavaCommandUtils.dotField(args.elementToSet.getName(), getter);
+    private String forMatchingElements() {
+        String getter = JavaCommandUtils.generateGetter(sourceToGet, elementToGet.getName());
+        return JavaCommandUtils.dotField(elementToSet.getName(), getter);
     }
 
-    private static String forEnum(Args args) {
+    private String forEnum() {
         String enumConversion = JavaCommandUtils.generateEnumConverter(
-                args.elementToSet.getDataTypeNode().getQualifiedName(),
-                args.sourceToGet,
-                args.elementToGet.getName());
-        return JavaCommandUtils.dotField(args.elementToSet.getName(), enumConversion);
+                elementToSet.getDataTypeNode().getPresentableName(),
+                sourceToGet,
+                elementToGet.getName());
+        return JavaCommandUtils.dotField(elementToSet.getName(), enumConversion);
     }
 
-    private static String forMap(Args args) {
-        String mapToSet = JavaCommandUtils.generateGetter(args.sourceToGet, args.elementToGet.getName());
-        return JavaCommandUtils.dotField(args.elementToSet.getName(), mapToSet);
+    private String forMap() {
+        String mapToSet = JavaCommandUtils.generateGetter(sourceToGet, elementToGet.getName());
+        return JavaCommandUtils.dotField(elementToSet.getName(), mapToSet);
     }
 
-    private static String forOthers(Args args) {
-        String getter = JavaCommandUtils.generateGetter(args.sourceToGet, args.elementToGet.getName());
-        return JavaCommandUtils.dotField(args.elementToSet.getName(), getter);
+    private String forOthers() {
+        String getter = JavaCommandUtils.generateGetter(sourceToGet, elementToGet.getName());
+        return JavaCommandUtils.dotField(elementToSet.getName(), getter);
     }
 
-    private static String forObject(Args args) {
-        String sourceToGetThoseElements = JavaCommandUtils.generateGetter(args.sourceToGet, args.elementToGet.getName());
+    private String forObject() {
+        String sourceToGetThoseElements = JavaCommandUtils.generateGetter(sourceToGet, elementToGet.getName());
         ObjectMappingGenerator objectMappingGenerator = ObjectMappingGenerator
                 .builder()
-                .elementsToSet(args.elementToSet.getChildren())
-                .elementsToGet(args.elementToGet.getChildren())
+                .elementsToSet(elementToSet.getChildren())
+                .elementsToGet(elementToGet.getChildren())
                 .sourceToGet(sourceToGetThoseElements)
-                .objectToSetQualifiedName(args.elementToSet.getDataTypeNode().getQualifiedName())
-                .indent(StringUtils.addSpaces(args.indent, 2))
-                .usedVariableName(args.usedVariableName)
+                .objectToSetQualifiedName(elementToSet.getDataTypeNode().getQualifiedName())
+                .objectToSetPresentableName(elementToSet.getDataTypeNode().getPresentableName())
+                .indent(StringUtils.addSpaces(indent, 2))
+                .usedVariableName(usedVariableName)
+                .referredQualifiedName(referredQualifiedName)
                 .build();
         String valueToSet = objectMappingGenerator.generateMappingCode();
-        return JavaCommandUtils.dotField(args.elementToSet.getName(), valueToSet);
+        return JavaCommandUtils.dotField(elementToSet.getName(), valueToSet);
     }
 
-    private static String forList(Args args) {
-        String listSource = JavaCommandUtils.generateGetter(args.sourceToGet, args.elementToGet.getName());
+    private String forList() {
+        String listSource = JavaCommandUtils.generateGetter(sourceToGet, elementToGet.getName());
         ListMappingGenerator listMappingGenerator = ListMappingGenerator.builder()
                 .listSource(listSource)
-                .elementToSet(args.elementToSet)
-                .elementToGet(args.elementToGet)
-                .indent(args.indent)
-                .usedVariableName(args.usedVariableName)
+                .elementToSet(elementToSet)
+                .elementToGet(elementToGet)
+                .indent(indent)
+                .usedVariableName(usedVariableName)
+                .referredQualifiedName(referredQualifiedName)
                 .build();
         String valueToSet = listMappingGenerator.generateMappingCode();
-        return JavaCommandUtils.dotField(args.elementToSet.getName(), valueToSet);
+        return JavaCommandUtils.dotField(elementToSet.getName(), valueToSet);
     }
 }

@@ -41,7 +41,11 @@ public class JavaToProto extends AnAction {
                 javaToProtoFormInput.getProtoJavaOuterClassName());
 
         Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
-        EditorTextWriter editorTextWriter = new EditorTextWriter();
-        editorTextWriter.write(editor, project, mappingCode);
+        EditorTextWriter editorTextWriter = EditorTextWriter.builder()
+                .editor(editor)
+                .project(project)
+                .text(mappingCode)
+                .build();
+        editorTextWriter.write();
     }
 }

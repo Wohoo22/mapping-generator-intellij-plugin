@@ -4,22 +4,25 @@
       <i c="4" l="1614768812161" />
     </e>
     <e n="$Undo">
-      <i c="30" l="1614768985614" />
+      <i c="34" l="1623662439729" />
     </e>
     <e n="ActivateTerminalToolWindow">
       <i c="1" l="1614768720763" />
+    </e>
+    <e n="AddToFavoritesPopup">
+      <i c="1" l="1623685144866" />
     </e>
     <e n="CodeCompletion">
       <i c="5" l="1614768843359" />
     </e>
     <e n="EditorBackSpace">
-      <i c="393" l="1614784108370" />
+      <i c="403" l="1623686174084" />
     </e>
     <e n="EditorChooseLookupItem">
-      <i c="46" l="1614768845916" />
+      <i c="48" l="1623660059097" />
     </e>
     <e n="EditorCopy">
-      <i c="27" l="1614783974668" />
+      <i c="29" l="1623662377631" />
     </e>
     <e n="EditorCut">
       <i c="7" l="1614768984757" />
@@ -28,28 +31,28 @@
       <i c="41" l="1614353764246" />
     </e>
     <e n="EditorDown">
-      <i c="10" l="1614768845286" />
+      <i c="16" l="1623686157033" />
     </e>
     <e n="EditorDuplicate">
       <i c="1" l="1613923813237" />
     </e>
     <e n="EditorEnter">
-      <i c="94" l="1614783960275" />
+      <i c="100" l="1623686157397" />
     </e>
     <e n="EditorLeft">
-      <i c="29" l="1614766798919" />
+      <i c="30" l="1623662385303" />
     </e>
     <e n="EditorPaste">
-      <i c="72" l="1614784087923" />
+      <i c="75" l="1623662383166" />
     </e>
     <e n="EditorRight">
       <i c="23" l="1614768831561" />
     </e>
     <e n="EditorTab">
-      <i c="25" l="1614784011698" />
+      <i c="28" l="1623686159516" />
     </e>
     <e n="EditorUp">
-      <i c="12" l="1614783012221" />
+      <i c="14" l="1623686158194" />
     </e>
     <e n="Generate">
       <i c="16" l="1614247945575" />
@@ -73,13 +76,13 @@
       <i c="1" l="1613838769982" />
     </e>
     <e n="OpenFile">
-      <i c="4" l="1614768698863" />
+      <i c="5" l="1623662289963" />
     </e>
     <e n="ReformatCode">
-      <i c="64" l="1614784114968" />
+      <i c="70" l="1623686211015" />
     </e>
     <e n="SaveAll">
-      <i c="108" l="1614784115690" />
+      <i c="113" l="1623686212511" />
     </e>
     <e n="SelectInProjectView">
       <i c="1" l="1614766753764" />
@@ -93,8 +96,11 @@
     <e n="WelcomeScreen.OpenProject">
       <i c="1" l="1613804635062" />
     </e>
+    <e n="com.github.action.JavaToJava">
+      <i c="2" l="1623686192797" />
+    </e>
     <e n="com.intellij.ide.ReopenProjectAction">
-      <i c="2" l="1614766671181" />
+      <i c="3" l="1623655586768" />
     </e>
     <e n="com.intellij.openapi.editor.impl.EditorMarkupModelImpl$StatusAction">
       <i c="1" l="1614354161156" />

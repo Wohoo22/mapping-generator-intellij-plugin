@@ -12,10 +12,11 @@ import java.util.Set;
 @Builder
 public class ListMappingGenerator {
     private final String listSource;
-    private final ElementNode elementToSet;
-    private final ElementNode elementToGet;
+    private  ElementNode elementToSet;
+    private  ElementNode elementToGet;
     private final String indent;
     private final Set<String> usedVariableName;
+    private final Set<String> referredQualifiedName;
 
     public String generateMappingCode() {
 
@@ -24,15 +25,27 @@ public class ListMappingGenerator {
         // open stream map
         result.append(indent).append(JavaCommandUtils.openStreamMap(listSource));
 
-        ElementNode childElementToSet = new ElementNode();
-        childElementToSet.setName(elementToSet.getName());
-        childElementToSet.setDataTypeNode(elementToSet.getDataTypeNode().getChild());
-        childElementToSet.setChildren(elementToSet.getChildren());
+        referredQualifiedName.add(elementToSet.getDataTypeNode().getQualifiedName());
+        referredQualifiedName.add(elementToGet.getDataTypeNode().getQualifiedName());
 
-        ElementNode childElementToGet = new ElementNode();
-        childElementToGet.setName(elementToGet.getName());
-        childElementToGet.setDataTypeNode(elementToGet.getDataTypeNode().getChild());
-        childElementToGet.setChildren(elementToGet.getChildren());
+        ElementNode childElementToSet = new ElementNode(
+                elementToSet.getName(),
+                elementToSet.getDataTypeNode().getChild(),
+                elementToSet.getChildren()
+        );
+
+
+        ElementNode childElementToGet = new ElementNode(
+                elementToGet.getName(),
+                elementToGet.getDataTypeNode().getChild(),
+                elementToGet.getChildren()
+        );
+
+        referredQualifiedName.add(childElementToSet.getDataTypeNode().getQualifiedName());
+        referredQualifiedName.add(childElementToGet.getDataTypeNode().getQualifiedName());
+
+        elementToSet = childElementToSet;
+        elementToGet = childElementToGet;
 
         String innerStreamSourceToGet = NameUtils.generateUniqueRandomName(elementToGet.getName(), usedVariableName);
 
@@ -53,7 +66,7 @@ public class ListMappingGenerator {
         StringBuilder result = new StringBuilder();
         // if type == enum
         if (elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.ENUM) {
-            String enumConversion = JavaCommandUtils.generateEnumConverter(elementToSet.getDataTypeNode().getQualifiedName(), innerStreamSourceToGet);
+            String enumConversion = JavaCommandUtils.generateEnumConverter(elementToSet.getDataTypeNode().getPresentableName(), innerStreamSourceToGet);
             result.append(indent).append(enumConversion);
         }
         // if type == others
@@ -62,19 +75,23 @@ public class ListMappingGenerator {
         }
         // if type == object
         else if (elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.OBJECT) {
-
-            ObjectMappingGenerator objectMappingGenerator = ObjectMappingGenerator.builder()
-                    .elementsToSet(elementToSet.getChildren())
-                    .elementsToGet(elementToGet.getChildren())
-                    .sourceToGet(innerStreamSourceToGet)
-                    .objectToSetQualifiedName(elementToSet.getDataTypeNode().getQualifiedName())
-                    .indent(StringUtils.addSpaces(indent, 2))
-                    .usedVariableName(usedVariableName)
-                    .build();
-
-            String mappingCode = objectMappingGenerator.generateMappingCode();
-            result.append(indent).append(mappingCode);
+            result.append(indent).append(forInnerListObject(innerStreamSourceToGet));
         }
         return result.toString();
+    }
+
+    public String forInnerListObject(String innerStreamSourceToGet) {
+        ObjectMappingGenerator objectMappingGenerator = ObjectMappingGenerator.builder()
+                .elementsToSet(elementToSet.getChildren())
+                .elementsToGet(elementToGet.getChildren())
+                .sourceToGet(innerStreamSourceToGet)
+                .objectToSetQualifiedName(elementToSet.getDataTypeNode().getQualifiedName())
+                .objectToSetPresentableName(elementToSet.getDataTypeNode().getPresentableName())
+                .indent(StringUtils.addSpaces(indent, 2))
+                .usedVariableName(usedVariableName)
+                .referredQualifiedName(referredQualifiedName)
+                .build();
+
+        return objectMappingGenerator.generateMappingCode();
     }
 }

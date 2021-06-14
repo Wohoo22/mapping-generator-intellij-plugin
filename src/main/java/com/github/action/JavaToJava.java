@@ -10,10 +10,14 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.JavaPsiFacade;
+import com.intellij.psi.PsiJavaFile;
 import com.intellij.psi.search.GlobalSearchScope;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class JavaToJava extends AnAction {
 
@@ -38,20 +42,31 @@ public class JavaToJava extends AnAction {
         if (javaToJavaFormInput.isTargetClassBuilder())
             mappingType = MappingType.BUILDER;
 
+        PsiJavaFile openingPsiFile = (PsiJavaFile) e.getData(CommonDataKeys.PSI_FILE);
+        Set<String> referredQualifiedName = new HashSet<>();
         JavaToJavaCodeGenerator javaToJavaCodeGenerator = JavaToJavaCodeGenerator.builder()
                 .objectToSetQualifiedName(javaToJavaFormInput.getTargetClassQualifiedName())
                 .objectToGetVariableName(javaToJavaFormInput.getSourceClassVariableName())
                 .objectToGetQualifiedName(javaToJavaFormInput.getSourceClassQualifiedName())
+                .mappingType(mappingType)
                 .javaPsiFacade(javaPsiFacade)
                 .globalSearchScope(globalSearchScope)
-                .mappingType(mappingType)
+                .referredQualifiedName(referredQualifiedName)
                 .build();
 
         String mappingCode = javaToJavaCodeGenerator.generateMappingCode();
 
         Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
-        EditorTextWriter editorTextWriter = new EditorTextWriter();
-        editorTextWriter.write(editor, project, mappingCode);
+        EditorTextWriter editorTextWriter = EditorTextWriter.builder()
+                .editor(editor)
+                .project(project)
+                .text(mappingCode)
+                .openingPsiFile(openingPsiFile)
+                .referredQualifiedName(referredQualifiedName)
+                .javaPsiFacade(javaPsiFacade)
+                .globalSearchScope(globalSearchScope)
+                .build();
+        editorTextWriter.write();
     }
 }
 
