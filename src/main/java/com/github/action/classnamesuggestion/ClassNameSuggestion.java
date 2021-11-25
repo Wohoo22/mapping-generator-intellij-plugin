@@ -1,6 +1,7 @@
 package com.github.action.classnamesuggestion;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class ClassNameSuggestion {
@@ -21,6 +22,7 @@ public class ClassNameSuggestion {
             if (className.contains(inp))
                 res.add(className);
         }
+        res.sort(Comparator.comparingInt(s -> s.length()));
         return res;
     }
 }
