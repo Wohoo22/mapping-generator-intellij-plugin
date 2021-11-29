@@ -1,0 +1,5 @@
+com/github/FileUtils.java
+ com.github.FileUtils
+com/github/generator/GeneratorTest.java
+ com.github.generator.GeneratorTest
+ com.github.generator.GeneratorTest$NodesWrapper

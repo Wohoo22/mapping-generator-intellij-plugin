@@ -1,6 +1,0 @@
-co-item.3a126c8e
-co-inventory.8b81dcc1
-co-order.88ec533
-foo.cbf2f280
-foo.74c8c07
-co-admin-location.c997fc2e

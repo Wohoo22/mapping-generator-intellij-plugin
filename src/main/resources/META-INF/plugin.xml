@@ -32,16 +32,19 @@
     <actions>
         <!-- Add your actions here -->
 
-        <action id="com.github.action.JavaToJava" class="com.github.action.JavaToJava"
+        <action id="com.github_old.action.JavaToJava" class="com.github_old.action.JavaToJava"
                 text="MappingGenerator: Java-to-Java">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
-        <action id="com.github.action.JavaToProto" class="com.github.action.JavaToProto"
+        <action id="com.github_old.action.JavaToProto" class="com.github_old.action.JavaToProto"
                 text="MappingGenerator: Java-to-Proto">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
-        <action id="com.github.action.ProtoToJava" class="com.github.action.ProtoToJava"
+        <action id="com.github_old.action.ProtoToJava" class="com.github_old.action.ProtoToJava"
                 text="MappingGenerator: Proto-to-Java">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+        <action id="com.github_new.JavaToJava" class="com.github_new.JavaToJava" text="Map Java Pojo to Java Pojo">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
     </actions>

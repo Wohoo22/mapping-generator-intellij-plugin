@@ -1,0 +1,74 @@
+com.mg.UserDTO
+src
+com.mg.UserDAO
+NORMAL
+{
+    "nodes": [
+        {
+            "name": "name",
+            "dataTypeNode": {
+                "dataType": "OTHERS",
+                "child": null,
+                "qualifiedName": "java.util.String",
+                "presentableName": "String"
+            },
+            "children": []
+        },
+        {
+            "name": "type",
+            "dataTypeNode": {
+                "dataType": "ENUM",
+                "child": null,
+                "qualifiedName": "com.mg.UserDTO.Type",
+                "presentableName": "Type"
+            },
+            "children": []
+        },
+        {
+            "name": "meta",
+            "dataTypeNode": {
+                "dataType": "MAP",
+                "child": null,
+                "qualifiedName": "java.util.Map",
+                "presentableName": "Map"
+            },
+            "children": []
+        }
+    ]
+}
+#
+{
+    "nodes": [
+        {
+            "name": "name",
+            "dataTypeNode": {
+                "dataType": "OTHERS",
+                "child": null,
+                "qualifiedName": "java.util.String",
+                "presentableName": "String"
+            },
+            "children": []
+        },
+        {
+            "name": "type",
+            "dataTypeNode": {
+                "dataType": "ENUM",
+                "child": null,
+                "qualifiedName": "com.mg.User.Type",
+                "presentableName": "Type"
+            },
+            "children": []
+        },
+        {
+            "name": "meta",
+            "dataTypeNode": {
+                "dataType": "MAP",
+                "child": null,
+                "qualifiedName": "java.util.Map",
+                "presentableName": "Map"
+            },
+            "children": []
+        }
+    ]
+}
+#

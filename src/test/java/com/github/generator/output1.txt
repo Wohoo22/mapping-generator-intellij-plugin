@@ -1,0 +1,2 @@
+com.mg.UserDTO resultObject = new com.mg.UserDTO(); 
+resultObject.setName(src.getName()); 

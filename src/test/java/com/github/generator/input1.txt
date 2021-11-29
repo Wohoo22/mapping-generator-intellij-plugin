@@ -1,0 +1,34 @@
+com.mg.UserDTO
+src
+com.mg.UserDAO
+NORMAL
+{
+    "nodes": [
+        {
+            "name": "name",
+            "dataTypeNode": {
+                "dataType": "OTHERS",
+                "child": null,
+                "qualifiedName": "java.util.String",
+                "presentableName": "String"
+            },
+            "children": []
+        }
+    ]
+}
+#
+{
+    "nodes": [
+        {
+            "name": "name",
+            "dataTypeNode": {
+                "dataType": "OTHERS",
+                "child": null,
+                "qualifiedName": "java.util.String",
+                "presentableName": "String"
+            },
+            "children": []
+        }
+    ]
+}
+#

@@ -1,0 +1,4 @@
+com.mg.UserDTO.builder() 
+.name(src.getName()) 
+.build() 
+; 
