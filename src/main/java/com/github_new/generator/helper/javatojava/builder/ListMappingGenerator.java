@@ -12,8 +12,8 @@ import java.util.Set;
 @Builder
 public class ListMappingGenerator {
     private final String listSource;
-    private final ElementNode elementToSet;
-    private final ElementNode elementToGet;
+    private ElementNode elementToSet;
+    private ElementNode elementToGet;
     private final String indent;
     private final Set<String> usedVariableName;
 
@@ -40,7 +40,9 @@ public class ListMappingGenerator {
         result.append(indent).append(JavaCommandUtils.generateArrow(innerStreamSourceToGet));
 
         // generate mapping
-        String innerListMappingCode = generateInnerListMappingCode(innerStreamSourceToGet, StringUtils.addSpaces(indent, 2));
+        String innerListMappingCode = generateInnerListMappingCode(
+                innerStreamSourceToGet, StringUtils.addSpaces(indent, 2),
+                childElementToSet, childElementToGet);
         result.append(indent).append(innerListMappingCode);
 
         // close stream map
@@ -49,25 +51,26 @@ public class ListMappingGenerator {
         return result.toString();
     }
 
-    private String generateInnerListMappingCode(String innerStreamSourceToGet, String indent) {
+    private String generateInnerListMappingCode(String innerStreamSourceToGet, String indent,
+                                                ElementNode childElementToSet, ElementNode childElementToGet) {
         StringBuilder result = new StringBuilder();
         // if type == enum
-        if (elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.ENUM) {
-            String enumConversion = JavaCommandUtils.generateEnumConverter(elementToSet.getDataTypeNode().getQualifiedName(), innerStreamSourceToGet);
+        if (childElementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.ENUM) {
+            String enumConversion = JavaCommandUtils.generateEnumConverter(childElementToSet.getDataTypeNode().getQualifiedName(), innerStreamSourceToGet);
             result.append(indent).append(enumConversion);
         }
         // if type == others
-        else if (elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.OTHERS) {
+        else if (childElementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.OTHERS) {
             result.append(indent).append(innerStreamSourceToGet);
         }
         // if type == object
-        else if (elementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.OBJECT) {
+        else if (childElementToSet.getDataTypeNode().getDataType() == DataTypeNode.DataType.OBJECT) {
 
             ObjectMappingGenerator objectMappingGenerator = ObjectMappingGenerator.builder()
-                    .elementsToSet(elementToSet.getChildren())
-                    .elementsToGet(elementToGet.getChildren())
+                    .elementsToSet(childElementToSet.getChildren())
+                    .elementsToGet(childElementToGet.getChildren())
                     .sourceToGet(innerStreamSourceToGet)
-                    .objectToSetQualifiedName(elementToSet.getDataTypeNode().getQualifiedName())
+                    .objectToSetQualifiedName(childElementToSet.getDataTypeNode().getQualifiedName())
                     .indent(StringUtils.addSpaces(indent, 2))
                     .usedVariableName(usedVariableName)
                     .build();

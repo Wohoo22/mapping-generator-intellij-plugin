@@ -1,12 +1,30 @@
 com.mg.UserDTO resultObject = new com.mg.UserDTO(); 
-resultObject.setNameList(src.getNameList()); 
-resultObject.setTypeList(src.getTypeList()); 
+
+  java.util.List list = new java.util.ArrayList<>(); 
+  for (java.util.String string : src.getNameList()) { 
+list.add(string); 
+  } 
+resultObject.setNameList(list); 
+
+
+  java.util.List list0 = new java.util.ArrayList<>(); 
+  for (com.mg.User.Type type : src.getTypeList()) { 
+list0.add(com.mg.UserDTO.Type.valueOf(type.toString())); 
+  } 
+resultObject.setTypeList(list0); 
+
 
 
 ############
 
 com.mg.UserDTO.builder() 
-.nameList(src.getNameList()) 
-.typeList(src.getTypeList()) 
+.nameList(src.getNameList().stream().map( 
+nameList -> 
+  nameList).collect(java.util.stream.Collectors.toList()) 
+) 
+.typeList(src.getTypeList().stream().map( 
+typeList -> 
+  com.mg.UserDTO.Type.valueOf(typeList.toString())).collect(java.util.stream.Collectors.toList()) 
+) 
 .build() 
 ; 

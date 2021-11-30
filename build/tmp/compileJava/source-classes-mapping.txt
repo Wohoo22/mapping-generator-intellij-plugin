@@ -2,8 +2,8 @@ com/github_new/input/classnamesuggestion/dropdowntextsuggestion/suggestionclient
  com.github_new.input.classnamesuggestion.dropdowntextsuggestion.suggestionclient.SuggestionClient
 com/github_old/codegenerator/prototojava/buildertype/subgenerator/ListMappingGenerator.java
  com.github_old.codegenerator.prototojava.buildertype.subgenerator.ListMappingGenerator
-com/github_new/JavaToJava.java
- com.github_new.JavaToJava
+com/github_new/domain/ElementNode.java
+ com.github_new.domain.ElementNode
 com/github_old/action/classnamesuggestion/dropdowntextsuggestion/suggestionclient/impl/TextComponentSuggestionClient.java
  com.github_old.action.classnamesuggestion.dropdowntextsuggestion.suggestionclient.impl.TextComponentSuggestionClient
 com/github_old/parser/proto/elementtreebuilder/ElementTreeBuilder.java
@@ -38,8 +38,11 @@ com/github_new/output/impl/WriterImpl.java
  com.github_new.output.impl.WriterImpl
 com/github_old/action/writer/EditorTextWriter.java
  com.github_old.action.writer.EditorTextWriter
-com/github_new/generator/impl/JavaToJavaGeneratorImpl.java
- com.github_new.generator.impl.JavaToJavaGeneratorImpl
+com/github_new/generator/ports/JavaToJavaGeneratorPort.java
+ com.github_new.generator.ports.JavaToJavaGeneratorPort
+ com.github_new.generator.ports.JavaToJavaGeneratorPort$GenerateInput
+ com.github_new.generator.ports.JavaToJavaGeneratorPort$GenerateInput$GenerateInputBuilder
+ com.github_new.generator.ports.JavaToJavaGeneratorPort$GenerateInput$MappingType
 com/github_new/input/classnamesuggestion/dropdowntextsuggestion/suggestionclient/impl/TextComponentSuggestionClient.java
  com.github_new.input.classnamesuggestion.dropdowntextsuggestion.suggestionclient.impl.TextComponentSuggestionClient
 com/github_old/codegenerator/javatojava/buildertype/BuilderTypeCodeGenerator.java
@@ -163,51 +166,50 @@ com/github_old/codegenerator/javatojava/normaltype/subgenerator/FieldMappingGene
 com/github_old/parser/java/JavaParser.java
  com.github_old.parser.java.JavaParser
  com.github_old.parser.java.JavaParser$JavaParserBuilder
-com/github_new/generator/helper/utils/JavaCommandUtils.java
- com.github_new.generator.helper.utils.JavaCommandUtils
+com/github_new/domain/DataTypeNode.java
+ com.github_new.domain.DataTypeNode
+ com.github_new.domain.DataTypeNode$DataType
+com/github_new/input/impl/JavaToJavaInputFormImpl.java
+ com.github_new.input.impl.JavaToJavaInputFormImpl
+com/github_new/generator/helper/javatojava/builder/ObjectMappingGenerator.java
+ com.github_new.generator.helper.javatojava.builder.ObjectMappingGenerator
+ com.github_new.generator.helper.javatojava.builder.ObjectMappingGenerator$ObjectMappingGeneratorBuilder
+com/github_new/generator/helper/javatojava/normal/ObjectMappingGenerator.java
+ com.github_new.generator.helper.javatojava.normal.ObjectMappingGenerator
+ com.github_new.generator.helper.javatojava.normal.ObjectMappingGenerator$ObjectMappingGeneratorBuilder
+com/github_new/generator/interfaces/JavaToJavaGenerator.java
+ com.github_new.generator.interfaces.JavaToJavaGenerator
+com/github_new/input/classnamesuggestion/ClassNameSuggestion.java
+ com.github_new.input.classnamesuggestion.ClassNameSuggestion
+com/github_new/generator/helper/utils/ElementNodeUtils.java
+ com.github_new.generator.helper.utils.ElementNodeUtils
+com/github_new/generator/helper/utils/DataTypeNodeUtils.java
+ com.github_new.generator.helper.utils.DataTypeNodeUtils
 com/github_new/generator/helper/javatojava/builder/FieldMappingGenerator.java
  com.github_new.generator.helper.javatojava.builder.FieldMappingGenerator
  com.github_new.generator.helper.javatojava.builder.FieldMappingGenerator$Args
  com.github_new.generator.helper.javatojava.builder.FieldMappingGenerator$Args$ArgsBuilder
+com/github_new/generator/helper/utils/StringUtils.java
+ com.github_new.generator.helper.utils.StringUtils
+com/github_new/parser/impl/JavaParserImpl.java
+ com.github_new.parser.impl.JavaParserImpl
+com/github_new/generator/impl/JavaToJavaGeneratorImpl.java
+ com.github_new.generator.impl.JavaToJavaGeneratorImpl
+com/github_new/generator/helper/javatojava/normal/FieldMappingGenerator.java
+ com.github_new.generator.helper.javatojava.normal.FieldMappingGenerator
+ com.github_new.generator.helper.javatojava.normal.FieldMappingGenerator$FieldMappingGeneratorBuilder
 com/github_new/generator/helper/javatojava/normal/ListMappingGenerator.java
  com.github_new.generator.helper.javatojava.normal.ListMappingGenerator
  com.github_new.generator.helper.javatojava.normal.ListMappingGenerator$1
  com.github_new.generator.helper.javatojava.normal.ListMappingGenerator$ListMappingGeneratorBuilder
 com/github_new/generator/helper/utils/NameUtils.java
  com.github_new.generator.helper.utils.NameUtils
-com/github_new/generator/interfaces/JavaToJavaGenerator.java
- com.github_new.generator.interfaces.JavaToJavaGenerator
 com/github_new/generator/helper/javatojava/builder/ListMappingGenerator.java
  com.github_new.generator.helper.javatojava.builder.ListMappingGenerator
  com.github_new.generator.helper.javatojava.builder.ListMappingGenerator$ListMappingGeneratorBuilder
-com/github_new/generator/helper/utils/ElementNodeUtils.java
- com.github_new.generator.helper.utils.ElementNodeUtils
-com/github_new/generator/helper/utils/DataTypeNodeUtils.java
- com.github_new.generator.helper.utils.DataTypeNodeUtils
-com/github_new/generator/helper/javatojava/normal/ObjectMappingGenerator.java
- com.github_new.generator.helper.javatojava.normal.ObjectMappingGenerator
- com.github_new.generator.helper.javatojava.normal.ObjectMappingGenerator$ObjectMappingGeneratorBuilder
-com/github_new/generator/helper/utils/StringUtils.java
- com.github_new.generator.helper.utils.StringUtils
-com/github_new/generator/helper/javatojava/normal/FieldMappingGenerator.java
- com.github_new.generator.helper.javatojava.normal.FieldMappingGenerator
- com.github_new.generator.helper.javatojava.normal.FieldMappingGenerator$FieldMappingGeneratorBuilder
-com/github_new/domain/DataTypeNode.java
- com.github_new.domain.DataTypeNode
- com.github_new.domain.DataTypeNode$DataType
-com/github_new/generator/helper/javatojava/builder/ObjectMappingGenerator.java
- com.github_new.generator.helper.javatojava.builder.ObjectMappingGenerator
- com.github_new.generator.helper.javatojava.builder.ObjectMappingGenerator$ObjectMappingGeneratorBuilder
-com/github_new/generator/ports/JavaToJavaGeneratorPort.java
- com.github_new.generator.ports.JavaToJavaGeneratorPort
- com.github_new.generator.ports.JavaToJavaGeneratorPort$GenerateInput
- com.github_new.generator.ports.JavaToJavaGeneratorPort$GenerateInput$GenerateInputBuilder
- com.github_new.generator.ports.JavaToJavaGeneratorPort$GenerateInput$MappingType
-com/github_new/domain/ElementNode.java
- com.github_new.domain.ElementNode
-com/github_new/parser/impl/JavaParserImpl.java
- com.github_new.parser.impl.JavaParserImpl
-com/github_new/input/classnamesuggestion/ClassNameSuggestion.java
- com.github_new.input.classnamesuggestion.ClassNameSuggestion
-com/github_new/input/impl/JavaToJavaInputFormImpl.java
- com.github_new.input.impl.JavaToJavaInputFormImpl
+com/github_new/domain/GlobalCounter.java
+ com.github_new.domain.GlobalCounter
+com/github_new/JavaToJava.java
+ com.github_new.JavaToJava
+com/github_new/generator/helper/utils/JavaCommandUtils.java
+ com.github_new.generator.helper.utils.JavaCommandUtils

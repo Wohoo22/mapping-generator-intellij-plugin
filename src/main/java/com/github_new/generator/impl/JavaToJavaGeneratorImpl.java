@@ -1,5 +1,6 @@
 package com.github_new.generator.impl;
 
+import com.github_new.domain.GlobalCounter;
 import com.github_new.generator.helper.utils.JavaCommandUtils;
 import com.github_new.generator.interfaces.JavaToJavaGenerator;
 import com.github_new.generator.ports.JavaToJavaGeneratorPort;
@@ -10,6 +11,7 @@ import java.util.Set;
 public class JavaToJavaGeneratorImpl implements JavaToJavaGenerator {
     @Override
     public String generate(JavaToJavaGeneratorPort.GenerateInput input) {
+        GlobalCounter.reset();
         if (input.mappingType == JavaToJavaGeneratorPort.GenerateInput.MappingType.NORMAL) {
             return forNormal(input);
         }

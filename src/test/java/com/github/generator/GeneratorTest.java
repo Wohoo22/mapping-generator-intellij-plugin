@@ -21,7 +21,7 @@ public class GeneratorTest {
     @Test
     public void runTests() throws Exception {
         int total = 2;
-        for (int i = 1; i <= total; i++) {
+        for (int i = 2; i <= total; i++) {
             BufferedReader input = FileUtils.readBuffer("/generator/input" + i + ".txt");
 
             String objectToSetQualifiedName = input.readLine();

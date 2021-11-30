@@ -26,10 +26,8 @@ public class FieldMappingGenerator {
         result.append(args.indent);
 
         // if 2 elements are exactly match
-        if (DataTypeNodeUtils.qualifiedNameEqual(
-                args.elementToSet.getDataTypeNode(),
-                args.elementToGet.getDataTypeNode()
-        )) {
+        if (args.elementToSet.getDataTypeNode().getDataType() != DataTypeNode.DataType.LIST
+                && DataTypeNodeUtils.qualifiedNameEqual(args.elementToSet.getDataTypeNode(), args.elementToGet.getDataTypeNode())) {
             result.append(forMatchingElements(args));
         }
         // if type == enum

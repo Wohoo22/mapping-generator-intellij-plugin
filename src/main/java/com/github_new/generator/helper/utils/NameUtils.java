@@ -1,11 +1,11 @@
 package com.github_new.generator.helper.utils;
 
+import com.github_new.domain.GlobalCounter;
+
 import java.util.Locale;
-import java.util.Random;
 import java.util.Set;
 
 public class NameUtils {
-
     public static String toLowerCaseFirstChar(String name) {
         return name.substring(0, 1).toLowerCase(Locale.ROOT) + name.substring(1);
     }
@@ -24,8 +24,10 @@ public class NameUtils {
         cleanedName = toLowerCaseFirstChar(cleanedName);
 
         String res = cleanedName;
-        while (usedName.contains(res))
-            res = cleanedName.concat(String.valueOf(new Random().nextInt(100000)));
+        while (usedName.contains(res)) {
+            res = cleanedName.concat(GlobalCounter.get() + "");
+            GlobalCounter.inc();
+        }
 
         usedName.add(res);
         return res;
