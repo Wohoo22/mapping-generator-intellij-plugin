@@ -1,2 +1,14 @@
 com.mg.UserDTO resultObject = new com.mg.UserDTO(); 
 resultObject.setName(src.getName()); 
+resultObject.setType(com.mg.UserDTO.Type.valueOf(src.getType().toString())); 
+resultObject.setMeta(src.getMeta()); 
+
+
+############
+
+com.mg.UserDTO.builder() 
+.name(src.getName()) 
+.type(com.mg.UserDTO.Type.valueOf(src.getType().toString())) 
+.meta(src.getMeta()) 
+.build() 
+; 

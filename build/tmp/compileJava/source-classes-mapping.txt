@@ -2,8 +2,8 @@ com/github_new/input/classnamesuggestion/dropdowntextsuggestion/suggestionclient
  com.github_new.input.classnamesuggestion.dropdowntextsuggestion.suggestionclient.SuggestionClient
 com/github_old/codegenerator/prototojava/buildertype/subgenerator/ListMappingGenerator.java
  com.github_old.codegenerator.prototojava.buildertype.subgenerator.ListMappingGenerator
-com/github_new/input/classnamesuggestion/ClassNameSuggestion.java
- com.github_new.input.classnamesuggestion.ClassNameSuggestion
+com/github_new/JavaToJava.java
+ com.github_new.JavaToJava
 com/github_old/action/classnamesuggestion/dropdowntextsuggestion/suggestionclient/impl/TextComponentSuggestionClient.java
  com.github_old.action.classnamesuggestion.dropdowntextsuggestion.suggestionclient.impl.TextComponentSuggestionClient
 com/github_old/parser/proto/elementtreebuilder/ElementTreeBuilder.java
@@ -38,8 +38,8 @@ com/github_new/output/impl/WriterImpl.java
  com.github_new.output.impl.WriterImpl
 com/github_old/action/writer/EditorTextWriter.java
  com.github_old.action.writer.EditorTextWriter
-com/github_new/input/impl/JavaToJavaInputFormImpl.java
- com.github_new.input.impl.JavaToJavaInputFormImpl
+com/github_new/generator/impl/JavaToJavaGeneratorImpl.java
+ com.github_new.generator.impl.JavaToJavaGeneratorImpl
 com/github_new/input/classnamesuggestion/dropdowntextsuggestion/suggestionclient/impl/TextComponentSuggestionClient.java
  com.github_new.input.classnamesuggestion.dropdowntextsuggestion.suggestionclient.impl.TextComponentSuggestionClient
 com/github_old/codegenerator/javatojava/buildertype/BuilderTypeCodeGenerator.java
@@ -207,7 +207,7 @@ com/github_new/domain/ElementNode.java
  com.github_new.domain.ElementNode
 com/github_new/parser/impl/JavaParserImpl.java
  com.github_new.parser.impl.JavaParserImpl
-com/github_new/generator/impl/JavaToJavaGeneratorImpl.java
- com.github_new.generator.impl.JavaToJavaGeneratorImpl
-com/github_new/JavaToJava.java
- com.github_new.JavaToJava
+com/github_new/input/classnamesuggestion/ClassNameSuggestion.java
+ com.github_new.input.classnamesuggestion.ClassNameSuggestion
+com/github_new/input/impl/JavaToJavaInputFormImpl.java
+ com.github_new.input.impl.JavaToJavaInputFormImpl

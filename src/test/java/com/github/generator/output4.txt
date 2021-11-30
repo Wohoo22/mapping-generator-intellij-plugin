@@ -1,6 +1,0 @@
-com.mg.UserDTO.builder() 
-.name(src.getName()) 
-.type(com.mg.UserDTO.Type.valueOf(src.getType().toString())) 
-.meta(src.getMeta()) 
-.build() 
-; 

@@ -1,16 +1,35 @@
 com.mg.UserDTO
 src
 com.mg.UserDAO
-BUILDER
 {
     "nodes": [
         {
-            "name": "name",
+            "name": "nameList",
             "dataTypeNode": {
-                "dataType": "OTHERS",
-                "child": null,
-                "qualifiedName": "java.util.String",
-                "presentableName": "String"
+                "dataType": "LIST",
+                "child": {
+                     "dataType": "OTHERS",
+                     "child": null,
+                     "qualifiedName": "java.util.String",
+                     "presentableName": "String"
+                 },
+                "qualifiedName": "java.util.List",
+                "presentableName": "List"
+            },
+            "children": []
+        },
+        {
+            "name": "typeList",
+            "dataTypeNode": {
+                "dataType": "LIST",
+                "child": {
+                     "dataType": "ENUM",
+                     "child": null,
+                     "qualifiedName": "com.mg.UserDTO.Type",
+                     "presentableName": "Type"
+                 },
+                "qualifiedName": "java.util.List",
+                "presentableName": "List"
             },
             "children": []
         }
@@ -20,12 +39,32 @@ BUILDER
 {
     "nodes": [
         {
-            "name": "name",
+            "name": "nameList",
             "dataTypeNode": {
-                "dataType": "OTHERS",
-                "child": null,
-                "qualifiedName": "java.util.String",
-                "presentableName": "String"
+                "dataType": "LIST",
+                "child": {
+                     "dataType": "OTHERS",
+                     "child": null,
+                     "qualifiedName": "java.util.String",
+                     "presentableName": "String"
+                 },
+                "qualifiedName": "java.util.List",
+                "presentableName": "List"
+            },
+            "children": []
+        },
+        {
+            "name": "typeList",
+            "dataTypeNode": {
+                "dataType": "LIST",
+                "child": {
+                     "dataType": "ENUM",
+                     "child": null,
+                     "qualifiedName": "com.mg.User.Type",
+                     "presentableName": "Type"
+                 },
+                "qualifiedName": "java.util.List",
+                "presentableName": "List"
             },
             "children": []
         }

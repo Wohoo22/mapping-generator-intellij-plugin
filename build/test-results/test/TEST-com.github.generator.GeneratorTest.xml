@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.github.generator.GeneratorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-29T17:09:24" hostname="quanvda-Bravo-15-A4DCR" time="0.101">
+<testsuite name="com.github.generator.GeneratorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-30T15:34:39" hostname="quanvda-Bravo-15-A4DCR" time="0.099">
   <properties/>
-  <testcase name="runTests()" classname="com.github.generator.GeneratorTest" time="0.101"/>
+  <testcase name="runTests()" classname="com.github.generator.GeneratorTest" time="0.099"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

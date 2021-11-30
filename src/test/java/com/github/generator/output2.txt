@@ -1,4 +1,12 @@
+com.mg.UserDTO resultObject = new com.mg.UserDTO(); 
+resultObject.setNameList(src.getNameList()); 
+resultObject.setTypeList(src.getTypeList()); 
+
+
+############
+
 com.mg.UserDTO.builder() 
-.name(src.getName()) 
+.nameList(src.getNameList()) 
+.typeList(src.getTypeList()) 
 .build() 
 ; 
